@@ -1,0 +1,5 @@
+{
+  "name": "week10-profiling-student-materials",
+  "private": true,
+  "scripts": { "check": "node tools-check.cjs" }
+}
