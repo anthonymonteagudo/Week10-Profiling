@@ -1,10 +1,10 @@
 # Week 10 Optimization Triage War Room
 
-You are reviewing a set-dressed glass showroom for a 60 FPS target, or **16.67 ms per frame**. Preserve the visibility of the objects behind the glass and the showroom's focal presentation. Your team will make one change and decide whether it should ship.
+You are reviewing a small gallery for a 60 FPS target, or **16.67 ms per frame**. Your team will test one change and decide whether it should ship. In the lighting case, preserve the shape of the blue sphere and its contact shadow. In the glass case, keep the blue sphere and amber trim readable through the glass.
 
 ## 0–8 minutes · Baseline
 
-Open the assigned project copy in Unreal Engine 5.7. Open the DemoScene map if it did not open on launch. In the Play menu choose Standalone Game. The level opens on Audit Camera. Stay in that view. In the console use `r.SetRes 2560x1440w`, `r.ScreenPercentage 100`, `r.VSync 0` and `t.MaxFPS 0`. If your screen requires a smaller window, use 1280×720 for both runs and record that choice. Record your machine and scalability settings. Use the same mode and settings for both measurements. Allow shader compilation to finish and wait for timings to stabilize. In the console, run `stat unit` and record three readings a few seconds apart. Compare Frame, Game, Draw and GPU across those readings. If results cluster near a cap or vary substantially, record that before interpreting the result.
+Open your writable copy of `Week10Assessment.uproject` in Unreal Engine 5.7. Use Reference to establish the intended view, then open your assigned Lighting or Glass map under Content → Assessment. In the Play menu choose Standalone Game. The level opens on Audit Camera. Stay in that view. In the console use `r.SetRes 2560x1440w`, `r.ScreenPercentage 100`, `r.VSync 0` and `t.MaxFPS 0`. If your screen requires a smaller window, use 1280×720 for both runs and record that choice. Record your machine and scalability settings. Use the same mode and settings for both measurements. Allow shader compilation to finish and wait for timings to stabilize. In the console, run `stat unit` and record three readings a few seconds apart. Compare Frame, Game, Draw and GPU across those readings. If results cluster near a cap or vary substantially, record that before interpreting the result.
 
 Use `stat gpu` to look for a costly rendering pass if GPU time tracks Frame. If Game or Draw tracks Frame, examine the appropriate thread in Unreal Insights or use instructor-provided capture evidence. Shader Complexity and Light Complexity help you decide where to inspect. They are visual diagnostics, so confirm any suspected cost with timing.
 
@@ -16,11 +16,11 @@ Pick one cost supported by a timing signal and a specific scene observation. Wri
 
 If you already have a Week 7 audit tool, adapt one read-only rule to report a suspect actor or component. Include its identity, the property observed and the threshold or policy used. Try the rule on one intentional exception or known-good actor before trusting it. You can also inspect Details and the Outliner by hand.
 
-Take a baseline screenshot, close the game window and make one reversible change in the editor. Save the level before relaunching Standalone Game for the retest. Actors created for the exercise are under Showroom. To inspect the surrounding set dressing in the editor, load the area around Audit Camera in World Partition if needed.
+Take a baseline screenshot, close the game window and make one reversible change in the editor. Save the level before relaunching Standalone Game for the retest. Actors created for the exercise are under Showroom.
 
 ## 22–30 minutes · Retest and recommendation
 
-Use the same view and settings. Record three new readings, compare their median and range, and capture the same view again. Save your recommendation even if your change failed. A difference smaller than the observed spread may need a longer capture.
+Use the same view and settings. Record three new readings, compare their median and range, and capture the same view again. Treat three readings as a quick check. Use a per-frame CSV to estimate p95. Save your recommendation even if your change failed. A difference smaller than the observed spread may need a longer capture.
 
 | Evidence | Your team |
 |---|---|
@@ -84,7 +84,7 @@ During your retest, record which conditions you held constant. If the A and B ti
 
 ### Practice with the recorded glass captures
 
-The instructor example uses Audit Camera. A has overlapping glass panes. B retains one pane. The scene target is 60 FPS, which gives each frame about 16.67 ms.
+The worked instructor example uses the earlier showroom and its own Audit Camera. Use these values for the debrief. Compare your assigned case against your own baseline. A has overlapping glass panes. B retains one pane. The scene target is 60 FPS, which gives each frame about 16.67 ms.
 
 | Metric | A | B |
 |---|---:|---:|

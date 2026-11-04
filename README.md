@@ -7,7 +7,7 @@
 - [Frame-budget report](Tools/report_perf_budget.py)
 - [Texture mask packer](Tools/pack_masks.py) and [practice inputs](Tools/DemoInputs)
 
-For the texture demos, extract the release ZIP and open Week10ProfilingLab.uproject. The project opens ArrayDemo. Use Unreal Engine 5.7 for the assessment lab. Ask your instructor for the assigned DemoScene case and make a writable copy before making edits. Open the project, launch Standalone Game, and use the Audit Camera.
+For the texture demos, extract the release ZIP and open Week10ProfilingLab.uproject. The project opens ArrayDemo. Use Unreal Engine 5.7 for the assessment lab. Ask your instructor for the separate Week10Assessment project and your assigned Lighting or Glass map. Make a writable copy before editing. Launch Standalone Game and use Audit Camera.
 
 For an offline comparison of two matching Unreal CSV Profiler captures, run:
 
@@ -20,3 +20,4 @@ The texture packer requires Python and Pillow. From the repository root, run:
 ```powershell
 python Tools/pack_masks.py Tools/DemoInputs/AO.png Tools/DemoInputs/Roughness.png Tools/DemoInputs/Metallic.png Packed_ORM.png
 ```
+
