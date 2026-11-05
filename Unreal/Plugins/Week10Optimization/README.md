@@ -31,3 +31,5 @@ Scope is the loaded editor world. Runtime-spawned actors, unloaded cells, actual
 To refresh the assessment plugin from its canonical source, run `python Tools/install_optimization_tools.py` from the parent profiling project. Validate with `Tools/validate_optimization_tools.py` in a UE Python commandlet and `python Tools/test_report_writer.py` outside Unreal.
 
 Additional lounge rules inspect Always shadow-cache invalidation and groups of 8+ distinct material-instance assets with the same immediate parent and no exposed scalar/vector/texture/static-switch overrides. Other property differences require manual comparison. Neither rule proves a runtime saving.
+
+The JSON export now records an editor console snapshot (screen percentage, dynamic resolution mode, Nanite pixel error, sharpening, Detail Mode, selected quality groups and PSO-precache flag). These are global editor-process values, not effective per-view resolution or proof of a packaged configuration. Inventory separates light components with Affects World on/off; only enabled components enter light-policy findings. Visible light icons are not a count of effective lights.

@@ -56,3 +56,10 @@ Use the [single Week 10 deck](Week10-Slides.pptx) and [optimization study guide]
 ## Follow-up: material logic
 
 Use the [shader practice section](Optimization-Study-Guide.md#material-and-shader-logic) for two controlled experiments: runtime-zero versus static-disabled logic, and pixel versus vertex UV math. Record compiled stats, repeated timing and image agreement before transferring a change to a duplicate lounge material. This is a follow-up, not an extra requirement inside the 30-minute triage block.
+
+
+## Optional article investigation
+
+After the main lab, choose one follow-up: Nanite pixel error versus silhouette quality; a material path versus shadow invalidation; a first-use hitch versus a warm route; or shader variant/cook growth versus runtime cost. Use the [study guide](Optimization-Study-Guide.md#looman-articles-and-04-investigations) for the procedure and version limits. Packaged PSO work is an advanced separate investigation, not a requirement inside the lounge session.
+
+Add to your conditions: engine/RHI/build type, output size, internal scene percentage, upscaler, dynamic-resolution policy, quality groups, Detail Mode, Nanite MaxPixelsPerEdge and whether this is a first encounter or a repeated route. Save the audit JSON for editor provenance, then verify the actual capture's effective settings separately. State the quantity/event/pass your evidence measures and a visual failure condition. Report an inconclusive result when variation exceeds the apparent improvement.

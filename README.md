@@ -2,7 +2,7 @@
 
 ## Start here
 
-1. [Set up the UE 5.7 furnished lounge lab](Unreal/README.md). The [starter ZIP](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-optimization-lab-v2) contains our project tools and setup; obtain the free Fab environment separately.
+1. [Set up the UE 5.7 furnished lounge lab](Unreal/README.md). The [starter ZIP](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-optimization-lab-v3) contains our project tools and setup; obtain the free Fab environment separately.
 2. Follow the [student lab and evidence worksheet](Student-Lab.md).
 3. Use the [single Week 10 slide deck](Week10-Slides.pptx) and [optimization study guide](Optimization-Study-Guide.md).
 
@@ -22,6 +22,8 @@ Use the local dashboard generated from your own open map. The lecture's private 
 
 ## Material and shader logic
 
-The deck now includes an 11-slide sequence at 54–64. The [study guide](Optimization-Study-Guide.md#material-and-shader-logic) supplies optimization decisions, graph recipes, two runnable experiments and a results worksheet. Use the updated comparison-project release for DynamicZero/MasterOff and UVPixel/UVVertex.
+The deck now includes a sequence at 60–71. The [study guide](Optimization-Study-Guide.md#material-and-shader-logic) supplies optimization decisions, graph recipes, two runnable experiments and a results worksheet. Use the updated comparison-project release for DynamicZero/MasterOff and UVPixel/UVVertex.
 
 Browse the [material lab source and experiment instructions](MaterialCostLab/README.md). Generated material assets are supplied in the v2 comparison release.
+
+The consolidated deck has 126 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 89.

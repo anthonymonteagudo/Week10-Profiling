@@ -6,7 +6,7 @@ Requires Unreal Engine 5.7 on Windows. This content-only project needs no C++ co
 
 1. Obtain the free [Cigar Room Environment by Hane Studios](https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4) in your Fab library.
 2. Add it to `Week10Assessment.uproject` through the Epic Games Launcher/Fab workflow. Keep its original `Content/Cigar_room` path.
-3. Close this project in Unreal. In PowerShell from this folder run `.Setup-Lab.ps1`. Use `-Engine 'D:/Epic/UE_5.7'` if needed. If you already have the Fab pack in another project, use `-FabProject 'D:/MyProject/MyProject.uproject'` instead of adding it again.
+3. Close this project in Unreal. In PowerShell from this folder run `.\Setup-Lab.ps1`. Use `-Engine 'D:/Epic/UE_5.7'` if needed. If you already have the Fab pack in another project, use `-FabProject 'D:/MyProject/MyProject.uproject'` instead of adding it again.
 4. Open `Week10Assessment.uproject`. It now opens **Lounge_Unoptimized**. The setup creates its own maps and materials, preserves the source Fab map, and refuses to overwrite an existing lab.
 
 The public starter contains course-authored scripts, configuration and the editor plugin. Fab assets are acquired separately. Do not move their folder or commit it to a public repository.
@@ -40,3 +40,5 @@ Pass `-Map '/Game/OptimizationLab/YourDuplicate'` to capture an edited duplicate
 - Checkerboard material: wait for shaders, then inspect the actual material slot. Two empty source wine-bottle slots are documented source data, not a download failure.
 - Unexpected camera: stop debug camera or piloting, close/relaunch Standalone, and verify Audit Camera.
 - Near-identical timing: report the variation and collect a longer or more targeted trace. An inconclusive treatment is valid evidence.
+
+The audit JSON records global editor console settings and active/disabled light counts for provenance. Verify the effective settings in your actual capture separately; defaults and per-view overrides can differ. See the study guide in the repository root for interpretation.

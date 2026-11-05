@@ -192,3 +192,52 @@ Despite the instruction differences, three warmed standalone runs per treatment 
 - [Viewport diagnostic modes](https://dev.epicgames.com/documentation/unreal-engine/viewport-modes-in-unreal-engine)
 
 Use the engine/platform version of each reference. The older artist-performance guidance is a conceptual foundation; historical renderer-specific rules are not universal UE 5.7 prescriptions.
+
+
+## Looman articles and 04 investigations
+
+Use these as optional follow-ups to the main lounge lab. Choose the question your evidence supports; preserve the baseline and change one variable.
+
+### Read the source in its engine context
+
+The supplied 04 video shows Dark Ruins in UE 5.5. The [Far Far West article](https://tomlooman.com/unreal-engine-optimization-farfarwest/) describes another project in UE 5.7. Their timings do not predict our lounge's result. The classroom project remains UE 5.7.
+
+| Engine reading | What to carry into your investigation |
+|---|---|
+| [5.5 highlights](https://tomlooman.com/unreal-engine-5-5-performance-highlights/) | MegaLights was experimental in the source video's context. |
+| [5.6 highlights](https://tomlooman.com/unreal-engine-5-6-performance-highlights/) | GPU Profiler 2.0 exposes graphics/compute queue work; overlapping events are not a serial sum. |
+| [5.7 highlights](https://tomlooman.com/unreal-engine-5-7-performance-highlights/) | Matches this lab. ShaderTypeStats.csv helps compare shader permutation/code growth after cooking; it is not total VRAM usage. MegaLights is Beta. |
+| [5.8 highlights](https://tomlooman.com/unreal-engine-5-8-performance-highlights/) | Further reading, including changed feature status. Do not upgrade the classroom project to reproduce an unrelated feature. |
+
+### First-use hitches and PSOs
+
+A compiled shader, a graphics API pipeline state object (PSO) and the cost of drawing with it are different. A driver cache can hide pipeline creation on a repeated route; restarting the process alone does not establish a cold cache. A hitch may also be loading, streaming or gameplay. Use an Insights trace to identify the work before selecting a remedy.
+
+For an advanced investigation, use a **packaged Development build** on the target RHI, fixed quality settings and a documented first-encounter route. Record the cache conditions and repeat the route. Check PSO misses/late preparation, frame spikes, loading time and visible proxy/pop-in behavior. `stat psoprecache` needs a non-editor build; launching UnrealEditor with `-game` does not satisfy that requirement. Do not clear shared system caches as a classroom shortcut. Precaching prepares supported states before use; bundled caches cover recorded states, so route/quality/pass coverage matters. A successful editor launch is not proof of packaged coverage. This lab supplies no measured PSO-coverage result. Read [PSO precaching and bundled PSOs](https://tomlooman.com/unreal-engine-psocaching/); its Advanced Shader Delivery section is for 5.8.4+, outside the 5.7 setup.
+
+### Nanite, materials and representations
+
+- Increasing `r.Nanite.MaxPixelsPerEdge` permits coarser geometry. Compare cluster/VisBuffer evidence, then check silhouettes and transitions in Lit. Restore the baseline after a diagnostic extreme.
+- Evaluate WPO indicates where the material path is active. Green is not a universal error color. Confirm the deformation need, actual function and shadow cost before bypassing work.
+- A material contact-shadow function, a light's Contact Shadow Length and VSM invalidation are separate controls.
+- Nanite rendering, fallback geometry and the representation used by collision queries are separate. Check each consumer before reducing a fallback; Auto is not a universal repair.
+
+The [production case](https://tomlooman.com/unreal-engine-optimization-farfarwest/) offers masked-foliage, decal and water examples. Carry over the diagnostic question and quality test, then measure your own workload.
+
+### Runtime, iteration and quality budgets
+
+A static-disabled branch may remove runtime work while creating another compiled variant. Measure GPU/pass cost, compile duration, cooked shader bytes and PSO preparation separately. In 5.7 compare ShaderTypeStats.csv from matched target cooks; packaging/chunk duplication can affect size. Remove renderer permutations only when the feature is genuinely unused across the project, then rebuild and test affected content. The older [shader compilation article](https://tomlooman.com/unreal-engine-optimize-shader-compile-time/) supplies the principle; its checkbox choices are not a preset for this project.
+
+Hardware benchmark results are CPU/GPU performance indices, not a guaranteed scene FPS. Calibrate scalability thresholds using representative minimum and recommended devices, test the actual game route, and allow player override. Run selection at a planned setup/menu stage, outside timed capture windows. Detail Mode can exclude intentionally expendable components; keep required cues and interactions. In the installed UE 5.7 defaults, Effects quality maps Detail Mode to 0/1/1/3/3; verify your project's overrides. Read [hardware-based graphics selection](https://tomlooman.com/unreal-engine-optimal-graphics-settings/).
+
+### Record enough context to explain a trace
+
+A counter records a quantity; a CPU scope records CPU execution; a GPU event records GPU work. Add bookmarks/regions for route and quality changes, and enable the relevant trace channels. Keep detailed diagnostic captures separate from minimal timing runs. Read [counters and traces](https://tomlooman.com/unreal-engine-profiling-stat-commands/) and [optimization on a budget](https://tomlooman.com/unreal-engine-optimization-talk/).
+
+The lab audit JSON includes `editor_console_snapshot` for screen percentage, dynamic resolution, Nanite error, sharpening, Detail Mode, quality groups and PSO precaching. These are global values from the editor process, **not** effective per-view/post-process values, measured dynamic resolution or packaged runtime state. Resolve defaults/sentinels (such as 0 or -1) in the actual view before interpreting them. Record output dimensions, internal scene percentage and upscaler separately. At 3840×2160 output, 50% of each dimension gives 1920×1080 internal rendering; resizing the viewport changes the workload. Sharpening cannot restore missing geometric or temporal detail.
+
+The inventory distinguishes lights with Affects World enabled from disabled components. Editor icons alone do not establish active light influence. Disabled components may still occupy memory.
+
+### When a promising number is inconclusive
+
+The 04 source's lens-flare A/B output reports about 16.03 versus 16.10 ms and explicitly flags a 27% chance of noise. That screenshot does not establish a saving. Repeat independent launches, inspect distributions and preserve the image requirement. Do not add together the video's separate experiments: several treatments are reset between tests.

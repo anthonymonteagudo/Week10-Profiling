@@ -31,7 +31,7 @@ def scan_world():
     if not world:raise RuntimeError('Open a map in the editor before running the audit.')
     actors=unreal.get_editor_subsystem(unreal.EditorActorSubsystem).get_all_level_actors()
     mesh_editor=unreal.get_editor_subsystem(unreal.StaticMeshEditorSubsystem)
-    findings=[];overlay=[];inventory={'actors':len(actors),'lights':0,'meshes':0,'niagara':0,'translucent_components':0,'unique_mesh_assets':0}
+    findings=[];overlay=[];inventory={'actors':len(actors),'lights':0,'meshes':0,'niagara':0,'translucent_components':0,'unique_mesh_assets':0,'lights_affecting_world':0,'lights_disabled_affect_world':0}
     checks={'LIGHT_RADIUS':0,'LIGHT_DISTANCE':0,'MOVABLE_SHADOW':0,'MESH_DENSITY':0,'FALLBACK_DENSITY':0,'EMPTY_MATERIAL':0,'NIAGARA_EFFECT_TYPE':0,'TRANSLUCENT_STACK':0,'SHADOW_CACHE_ALWAYS':0,'MATERIAL_DUPLICATES':0}
     coverage=[];mesh_cache={};translucent=[];material_groups={}
     def finding(actor,component,rule,severity,observed,limit,reason,next_check,asset=None):
@@ -45,7 +45,9 @@ def scan_world():
     for actor in actors:
         for c in actor.get_components_by_class(unreal.LightComponent):
             inventory['lights']+=1
-            if not prop(c,'affects_world',True):continue
+            if not prop(c,'affects_world',True):
+                inventory['lights_disabled_affect_world']+=1;continue
+            inventory['lights_affecting_world']+=1
             if isinstance(c,unreal.LocalLightComponent):
                 radius=prop(c,'attenuation_radius',0.0);distance=prop(c,'max_draw_distance',0.0)
                 checks['LIGHT_RADIUS']+=1;checks['LIGHT_DISTANCE']+=1
@@ -149,7 +151,11 @@ def scan_world():
     for item in overlay:
         old=boxes.get(item['actor_path'])
         if not old or severity[item['severity']]>severity[old['severity']]:boxes[item['actor_path']]=item
-    return {'schema_version':1,'title':'Week 10 Optimization Audit','created_utc':datetime.now(timezone.utc).isoformat(),'engine':unreal.SystemLibrary.get_engine_version(),'project':Path(unreal.Paths.project_dir()).name,'map':world.get_path_name(),'scope':'Loaded editor world only. Unloaded cells and runtime-spawned actors are excluded. Editor Niagara counts are not live particle counts.','interpretation':'Policy findings identify inspection candidates. They do not measure runtime milliseconds or prove a bottleneck.','inventory':inventory,'checks':checks,'coverage':coverage,'rules':config,'findings':findings,'overlay':list(boxes.values())[:config['overlay_max_actors']],'overlay_total':len(boxes),'scan_ms':1000*(time.perf_counter()-started),'captures':[]}
+    settings={}
+    for name in ['r.ScreenPercentage','r.DynamicRes.OperationMode','r.Nanite.MaxPixelsPerEdge','r.Tonemapper.Sharpen','r.DetailMode','sg.ShadowQuality','sg.EffectsQuality','sg.GlobalIlluminationQuality','sg.ReflectionQuality','r.PSOPrecaching']:
+        try:settings[name]=float(unreal.SystemLibrary.get_console_variable_float_value(name))
+        except Exception:settings[name]=None
+    return {'schema_version':1,'editor_console_snapshot':settings,'snapshot_scope':'Global console values in the loaded editor process at scan time. These are not a runtime capture and exclude per-view/Post Process overrides, dynamic effective resolution and packaged-build state.','title':'Week 10 Optimization Audit','created_utc':datetime.now(timezone.utc).isoformat(),'engine':unreal.SystemLibrary.get_engine_version(),'project':Path(unreal.Paths.project_dir()).name,'map':world.get_path_name(),'scope':'Loaded editor world only. Unloaded cells and runtime-spawned actors are excluded. Editor Niagara counts are not live particle counts.','interpretation':'Policy findings identify inspection candidates. They do not measure runtime milliseconds or prove a bottleneck.','inventory':inventory,'checks':checks,'coverage':coverage,'rules':config,'findings':findings,'overlay':list(boxes.values())[:config['overlay_max_actors']],'overlay_total':len(boxes),'scan_ms':1000*(time.perf_counter()-started),'captures':[]}
 
 
 def run_audit(open_browser=True,capture_paths=None,start=190,stop=395):
