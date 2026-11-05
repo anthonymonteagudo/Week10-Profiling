@@ -1,13 +1,13 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 10 · Optimization study guide</title><style>body{overflow-wrap:anywhere;font:18px/1.65 system-ui;max-width:1100px;margin:32px auto;padding:26px;color:#162d3c;background:#f6f9fb}a{color:#006578}h1,h2,h3{line-height:1.25}h2{margin-top:2em}img{max-width:100%;height:auto}pre{overflow-x:auto;background:#e6eef1;padding:18px;white-space:pre-wrap}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid #bdced7;padding:10px;text-align:left;overflow-wrap:anywhere}nav{border-bottom:1px solid #bdced7;padding-bottom:15px}nav a{margin-right:15px}@media(max-width:650px){body{padding:12px;font-size:17px}table{display:block;overflow-x:auto}}@media print{body{background:white;color:black;font-size:10pt;max-width:none}nav{display:none}pre,table{break-inside:auto}h2,h3{break-after:avoid}a{color:black}img{max-height:300px;object-fit:contain}}</style><nav><a href="../../START-HERE.html">Start Here</a><a href="../../Week10-Slides.pptx">Deck with notes</a><a href="Student-Lab.html">Lab worksheet</a><a href="Study-Guide.html">Study guide</a><a href="../Simon-Field-Guide/index.html">Visual definitions</a></nav><p>Offline course handout · Print from your browser · <a href="../../Optimization-Study-Guide.md">Editable Markdown source</a></p><main><h1 id="week-10-optimization-study-guide">Week 10 · Optimization study guide</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 10 · Optimization study guide</title><style>body{overflow-wrap:anywhere;font:18px/1.65 system-ui;max-width:1100px;margin:32px auto;padding:26px;color:#162d3c;background:#f6f9fb}a{color:#006578}h1,h2,h3{line-height:1.25}h2{margin-top:2em}img{max-width:100%;height:auto}pre{overflow-x:auto;background:#e6eef1;padding:18px;white-space:pre-wrap}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid #bdced7;padding:10px;text-align:left;overflow-wrap:anywhere}nav{border-bottom:1px solid #bdced7;padding-bottom:15px}nav a{margin-right:15px}@media(max-width:650px){body{padding:12px;font-size:17px}table{display:block;overflow-x:auto}}@media print{body{background:white;color:black;font-size:10pt;max-width:none}nav{display:none}pre,table{break-inside:auto}h2,h3{break-after:avoid}a{color:black}img{max-height:300px;object-fit:contain}}</style><nav><a href="../../START-HERE.html">Start Here</a><a href="../../Week10-Slides.pptx">Deck with notes</a><a href="Student-Lab.html">Lab worksheet</a><a href="Study-Guide.html">Study guide</a><a href="../Optimization-Field-Guide/index.html">Visual definitions</a></nav><p>Offline course handout · Print from your browser · <a href="../../Optimization-Study-Guide.md">Editable Markdown source</a></p><main><h1 id="week-10-optimization-study-guide">Week 10 · Optimization study guide</h1>
 <p>Use <strong>Week10-Slides.pptx</strong> for the whole session. The lecture, measured examples and walkthrough appendix are all in that file. Use the existing Student Lab for the assessment activity and current Canvas instructions for formal requirements.</p>
 <h2 id="ab-testing-and-slide-note-definitions">A/B testing and slide-note definitions</h2>
-<p>Slide <strong>7</strong> defines A/B testing: A is the baseline, and B changes one selected factor. Use it to test a performance hypothesis while checking image quality and interaction. Slide <strong>149</strong> gives the detailed setup. Preserve A, duplicate it for B, state the expected timing change and visual requirement, and hold the workload, machine, build and settings constant. Warm both versions for a steady test, repeat unchanged A/A runs to estimate variation, and compare repeated equal-length A–B–B–A captures. Disable diagnostics and return to Lit before timing. Keep inconclusive results and inspect the relevant pass as well as total frame time.</p>
-<p>The same deck includes <strong>106 plain-language term definitions across 165 slides’ speaker notes</strong>, including rendering passes, rasterization, culling, shadow caches, material compilation, texture residency and compute dispatch. Open PowerPoint’s <strong>Notes</strong> pane in editing view, or use <strong>View &gt; Notes Page</strong>, to read them beside each slide. They expand acronyms, connect the process to Unreal and explain measurement limits. Existing narration, measured examples and source credits are retained.</p>
+<p>Slide <strong>7</strong> defines A/B testing: A is the baseline, and B changes one selected factor. Use it to test a performance hypothesis while checking image quality and interaction. Slide <strong>150</strong> gives the detailed setup. Preserve A, duplicate it for B, state the expected timing change and visual requirement, and hold the workload, machine, build and settings constant. Warm both versions for a steady test, repeat unchanged A/A runs to estimate variation, and compare repeated equal-length A–B–B–A captures. Disable diagnostics and return to Lit before timing. Keep inconclusive results and inspect the relevant pass as well as total frame time.</p>
+<p>Rendering and measurement terms are defined locally in the deck’s speaker notes. Open PowerPoint’s <strong>Notes</strong> pane or <strong>View &gt; Notes Page</strong> to read them beside each slide. The 106-term foundation is retained and extended with the new texture, lightmap, culling and submission clarifications.</p>
 <h2 id="the-decision-process">The decision process</h2>
 <p>Write a quality requirement first. Capture a representative workload. Identify the limiting work. Predict what one change should affect, repeat under matching conditions, and decide using both the image and the timings. A memory reduction, fewer draw calls and a faster frame are different results.</p>
 <p>Keep output resolution, screen percentage, scalability, camera, workload, renderer, machine and build comparable. Warm shaders and content before a steady test. Record caps. Capture motion when a still misses pop-in, shimmer, contact or responsiveness. If repeats vary as much as the proposed saving, report an inconclusive result.</p>
 <h2 id="visual-texture-definitions">Visual texture definitions</h2>
-<p>Open the <a href="../Simon-Field-Guide/index.html">texture and geometry field guide</a> for nine full-size source illustrations, definitions and Unreal inspection tasks. New lecture slides <strong>82–84</strong> explain compression, padding and texel density after the mip controls. Mipmap storage/residency and Clamp/Wrap are clarified in the guide and notes. Source examples are credited to Simon schreibt and kept separate from current UE measurements.</p>
+<p>Open the <a href="../Optimization-Field-Guide/index.html">texture and geometry field guide</a> for nine full-size source illustrations, definitions and Unreal inspection tasks. New lecture slides <strong>87–89</strong> explain compression, padding and texel density after the mip controls. Mipmap storage/residency and Clamp/Wrap are clarified in the guide and notes. Source examples are credited to Simon schreibt and kept separate from current UE measurements.</p>
 <h2 id="asset-data-from-maya-to-unreal">Asset data from Maya to Unreal</h2>
 <p>Choose a pivot that supports placement and grid snapping. Export only the intended assets with stable names, units and normals. Keep triangulation consistent with baked normals. After importing, check scale, pivot, UVs, vertex colors and collision; repeat after reimport. Import settings may differ between the FBX and Interchange workflows.</p>
 <p>In the legacy FBX workflow, vertex-color <strong>Replace</strong> imports source data, <strong>Ignore</strong> preserves existing data and <strong>Override</strong> supplies a uniform override. Check the current importer before relying on those names. Protect vertex colors painted in Unreal.</p>
@@ -311,7 +311,7 @@
 <p>The 5 November live walkthrough found that the earlier lounge timing launches used DX12 <strong>SM5</strong>, as recorded in their raw startup logs. Nanite was therefore using fallback rendering, and those runs do not validate the intended SM6 Nanite/VSM path. Keep the earlier fill-shadow numbers as historical evidence of that SM5 configuration only; the cache experiment does not establish VSM-cache performance. Do not compare those numbers directly with the new SM6 images/trace.</p>
 <p>The current lab explicitly requests DX12 with PCD3D_SM6 in DefaultEngine.ini. Restart the editor after changing shader formats and verify the startup log says SM6 before demonstrating Nanite or VSM. The live SM6 walkthrough also reports a VSM local-light overflow and translucent material assignments on a Nanite window mesh. These are real inspection leads in the intentionally inefficient scene, not instructions to increase a budget or globally remove glass. Inspect relevant lights and split/use appropriate mesh representations before retesting image quality. The new screenshots/trace demonstrate tools, not a controlled performance improvement.</p>
 <h2 id="gnomon-part-04-material-workflow-checks">Gnomon Part 04: material workflow checks</h2>
-<p>The current deck places materials/textures/shader logic at 71–110. Use the packed-mask example at 88, actual glass graph at 93, source stats snapshots at 94 and instance-override example at 104 with the existing runnable experiments. The main furnished-lounge lab is 128. These follow-ups do not add requirements inside its thirty-minute block.</p>
+<p>The current deck places materials/textures/shader logic at 75–116. Use the packed-mask example at 94, actual glass graph at 99, source stats snapshots at 100 and instance-override example at 110 with the existing runnable experiments. The main furnished-lounge lab is 134. These follow-ups do not add requirements inside its thirty-minute block.</p>
 <p>An unchecked material-instance override inherits the parent value. To remove a compiled feature, inspect its static-switch branch and target variant. A runtime scalar zero can change the image while retaining work, and a shared packed texture may still supply roughness or occlusion after emissive work disappears. Keep the channel layout, mip behavior, color interpretation and compression compatible when swapping packed maps. Group related parameters so another artist can use the instance correctly.</p>
 <p>Record target, pass and feature state with compiled statistics. Several edits separate the workshop&#39;s 117- and 131-instruction snapshots; they are not a matched timing comparison or proof of one node&#39;s cost. Sampler denominators depend on the target/path. A constant Power expression may already simplify, while Fully Rough, blend mode, Unlit or domain changes can alter required appearance. Verify target code and the image before accepting a rewrite.</p>
 <p><code>r.Streaming.PoolSize</code> controls a runtime memory budget. It does not resize source or cooked texture files. <code>stat streaming</code> reports distinct categories including wanted mips, residency and NonStreaming Mips; the latter is not every texture in use. Check the texture&#39;s built format/mips, actual pool pressure, scalability/device policy and target memory before changing a budget. Restore the previous value after a diagnostic experiment.</p>
@@ -337,167 +337,273 @@
 <td><a href="https://www.advances.realtimerendering.com/s2016/Siggraph2016_idTech6.pdf">Developer breakdown</a> — PDF pages 4–9: Data Structure for Lighting &amp; Shading / Preparing Clustered Structure</td>
 </tr>
 <tr>
-<td>55</td>
+<td>57</td>
 <td>Fortnite: replace distant groups with a proxy</td>
 <td><a href="https://www.unrealengine.com/tech-blog/unreal-engine-improvements-for-fortnite-battle-royale">Developer breakdown</a> — Building and Rendering a Large Map, HLOD/Simplygon and overnight commandlet paragraphs</td>
 </tr>
 <tr>
-<td>70</td>
+<td>74</td>
 <td>Fortnite: more leaf geometry can cost less</td>
 <td><a href="https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4">Developer breakdown</a> — Trees — Construction; images show final foliage and its triangle visualization</td>
 </tr>
 <tr>
-<td>96</td>
+<td>102</td>
 <td>Horizon: spend samples where clouds exist</td>
 <td><a href="https://www.advances.realtimerendering.com/s2017/Nubis%20-%20Authoring%20Realtime%20Volumetric%20Cloudscapes%20with%20the%20Decima%20Engine%20-%20Final%20.pdf">Developer breakdown</a> — PDF pages 97–98, printed slides 99–100: Ray-March Optimizations</td>
 </tr>
 <tr>
-<td>102</td>
+<td>108</td>
 <td>Tsushima: let many systems share one wind</td>
 <td><a href="https://blog.playstation.com/2021/01/12/how-stunning-visual-effects-bring-ghost-of-tsushima-to-life/">Developer breakdown</a> — Wind, paragraphs beginning ‘The grass and pampas fields’ through local displacement</td>
 </tr>
 <tr>
-<td>113</td>
+<td>119</td>
 <td>Fortnite: bake branch motion into a texture</td>
 <td><a href="https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4">Developer breakdown</a> — Trees — Wind animation / Distance culling</td>
 </tr>
 <tr>
-<td>118</td>
+<td>124</td>
 <td>Uncharted 4: make the card fit each frame</td>
 <td><a href="https://www.advances.realtimerendering.com/other/2016/naughty_dog/NaughtyDog_TechArt_Final.pdf">Developer breakdown</a> — PDF pages 124–127, especially 127: Particle Optimizations</td>
 </tr>
 <tr>
-<td>133</td>
+<td>139</td>
 <td>Fortnite: move first-use work into loading</td>
 <td><a href="https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem">Developer breakdown</a> — PSO precaching / The driver cache</td>
 </tr>
 </tbody></table>
 <p>For each case: identify the repeated or unnecessary work, the replacement representation, the cost moved elsewhere, and one test that could reject it. The class projects demonstrate their documented techniques; they do not implement every production feature above. The Uncharted bounds-aware flipbook and Fortnite branch-transform bake are references, while the supplied debris demo uses per-vertex VAT offsets and a fixed flipbook card.</p>
+<h2 id="gnomon-0508-choose-a-diagnostic-then-test">Gnomon 05–08: choose a diagnostic, then test</h2>
+<p>The workshop’s source UI and measurements belong to its project. Our lab targets <strong>UE 5.7 / DX12 / SM6</strong>. Use the <a href="../Optimization-Field-Guide/index.html">optimization field guide</a> for the selected source figures, definitions and practical inspection questions. The main lounge activity remains thirty minutes; these are explanations and optional follow-ups.</p>
+<table>
+<thead>
+<tr>
+<th>Current slide</th>
+<th>Definition / decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>12</td>
+<td>Console commands answer different questions. Counts, elapsed time and memory are different evidence.</td>
+</tr>
+<tr>
+<td>53</td>
+<td>LOD coloration identifies the conventional level selected; screen-size policy determines transitions.</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Grouping changes editor selection; instancing reuses geometry; merging builds a new asset.</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Lightmap density is baked-lighting texels per world-space area. UV packing and actual bake resolution are separate controls.</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Cull Distance Volumes match eligible component bounds to distance limits.</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Particle spawn rate, lifetime, coverage and overlapping translucent layers affect different work.</td>
+</tr>
+<tr>
+<td>93</td>
+<td>Alpha-channel memory depends on the target format and unique resource residency.</td>
+</tr>
+</tbody></table>
+<p><strong>Lightmaps:</strong> Min Lightmap Resolution guides UV-chart padding during generation/repacking. Lightmap Resolution and a component override control bake size. Light Map Coordinate Index chooses the UV channel. Read the density legend; a blue object is not automatically good. Preview/Production bake quality does not simply replace authored texture dimensions. Rebuild the intended precomputed state before comparing a compatible baked map. The Lumen lounge is not a completed baked-lighting counterpart.</p>
+<p><strong>LOD and UV data:</strong> a conventional LOD is a simpler representation selected by projected size. Restore Auto after forcing a preview. For an ordinary descending threshold chain, a larger transition threshold can choose a coarser level while the object is larger on screen. Test the route rather than copying a source value. Nanite has a separate detail-selection path. A UV channel can also carry wind/VAT or other data. Audit nested functions, instances, LODs and static variants before deleting it; removal can renumber later channels. One unchanged preview is insufficient evidence.</p>
+<p><strong>Merging and culling:</strong> test a duplicate, keep source/control maps, inspect pivot, transforms, material sections, collision and LODs, and ensure both treatments are not rendered together. One actor is not necessarily one draw. Larger merged bounds or sections can keep more work eligible. Cull Distance Volumes are a conventional distance policy; in the installed UE 5.7 source, eligible components require Static mobility and volume support. Matching uses bounds-sphere diameter and component location. Inspect Current Max Draw Distance and the actual rendering path, then test pop boundaries and important cues. Game View is an editor display mode, not a standalone benchmark.</p>
+<p><strong>Texture and reflection resources:</strong> BC1 and BC3 encode 4×4 blocks in 8 and 16 bytes; that does not make alpha removal a universal 50% saving. Confirm target format, mip policy and signal use. Repeated meshes can share one texture, so memory does not automatically multiply once per actor. Reflection captures store cubemaps; Lumen uses a different configured reflection path. Inspect probe count/resolution, coverage, visible contribution and actual resources. The workshop’s crash anecdote does not prove overlap alone caused a failure.</p>
+<h3 id="console-reference-and-recovery">Console reference and recovery</h3>
+<p>Open the console using the project’s configured Console Keys binding (often the tilde/backtick key on US layouts), or use the editor Output Log command field for editor diagnostics. Keyboard bindings and command availability can differ; use the class’s Development/Standalone workflow rather than assuming Shipping exposes the same controls.</p>
+<table>
+<thead>
+<tr>
+<th>Command / control</th>
+<th>What it means</th>
+<th>Recovery / interpretation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>stat FPS</code></td>
+<td>Quick frame-rate display</td>
+<td>Repeat to hide it; use ms for budget comparisons.</td>
+</tr>
+<tr>
+<td><code>stat unit</code></td>
+<td>Frame / Game / Draw / RHIT / GPU estimates</td>
+<td>Repeat to hide; tracks overlap and can include waits.</td>
+</tr>
+<tr>
+<td><code>stat gpu</code></td>
+<td>Grouped GPU rendering work</td>
+<td>Repeat to hide; expand a matched trace for dependencies.</td>
+</tr>
+<tr>
+<td><code>stat RHI</code>, <code>stat scenerendering</code></td>
+<td>Backend/resource/submission statistics</td>
+<td>Toggle each group again. Counters depend on path; actors and draws differ.</td>
+</tr>
+<tr>
+<td><code>stat initviews</code></td>
+<td>Conventional visibility CPU work/candidates</td>
+<td>Toggle again. Use Nanite diagnostics for Nanite work.</td>
+</tr>
+<tr>
+<td><code>r.MeshDrawCommands.DynamicInstancing</code></td>
+<td>Compatible conventional draw-command instancing policy</td>
+<td>Record the current value before changing it; restore that value after the test. A source default is not the live state.</td>
+</tr>
+<tr>
+<td><code>ShowFlag.StaticMeshes</code>, <code>ShowFlag.Particles</code></td>
+<td>Rendering visibility feature controls</td>
+<td>Record and restore the original values. Hiding drawing does not prove simulation stopped.</td>
+</tr>
+<tr>
+<td><code>FreezeRendering</code></td>
+<td>Diagnostic visibility freeze toggle</td>
+<td>Enter it again to restore. Disable diagnostics before timing.</td>
+</tr>
+<tr>
+<td><code>G</code> in the viewport</td>
+<td>Editor Game View</td>
+<td>Toggle again; this does not start gameplay.</td>
+</tr>
+</tbody></table>
+<p>Use the supplied Insights capture workflow for the current GPU timeline. The workshop’s classic GPU Visualizer window/shortcut is historical. Diagnostic overlays and editor windows have overhead; use a matched minimal timing run after diagnosis. These new recipes were checked against documentation/source registration but were not rehearsed live in the editor.</p>
 <h2 id="complete-source-index">Complete source index</h2>
-<p>82 individual sources and collections. Tom Looman remains the recommended starting point. Numbers identify current lecture references; an unnumbered source is a collection or optional reading.</p>
+<p>86 references and collections. Start with Tom Looman. Slide numbers refer to the current 170-slide deck; unnumbered items are collections or optional reading.</p>
 <h3 id="tom-looman-start-here">Tom Looman — start here</h3>
 <ul>
 <li><a href="https://tomlooman.com/courses/unrealengine-optimization/">Complete Game Optimization for Unreal Engine 5 — course (paid)</a>.</li>
 <li><a href="https://tomlooman.com/categories/#performance-optimization">Performance &amp; Optimization — free article index</a>.</li>
 <li><a href="https://tomlooman.com/unreal-engine-5-5-performance-highlights/">Unreal engine 5 5 performance highlights</a>.</li>
 <li><a href="https://tomlooman.com/unreal-engine-5-6-performance-highlights/">Unreal engine 5 6 performance highlights</a>.</li>
-<li><a href="https://tomlooman.com/unreal-engine-5-7-performance-highlights/">Unreal engine 5 7 performance highlights</a> — slides 106.</li>
+<li><a href="https://tomlooman.com/unreal-engine-5-7-performance-highlights/">Unreal engine 5 7 performance highlights</a> — slides 112.</li>
 <li><a href="https://tomlooman.com/unreal-engine-5-8-performance-highlights/">Unreal engine 5 8 performance highlights</a>.</li>
-<li><a href="https://tomlooman.com/unreal-engine-optimal-graphics-settings/">Unreal engine optimal graphics settings</a> — slides 136.</li>
-<li><a href="https://tomlooman.com/unreal-engine-optimization-farfarwest/">Unreal engine optimization farfarwest</a> — slides 69, 78, 136, 142.</li>
-<li><a href="https://tomlooman.com/unreal-engine-optimization-talk/">Unreal engine optimization talk</a> — slides 22, 23, 58, 142.</li>
-<li><a href="https://tomlooman.com/unreal-engine-optimize-shader-compile-time/">Unreal engine optimize shader compile time</a> — slides 106.</li>
+<li><a href="https://tomlooman.com/unreal-engine-optimal-graphics-settings/">Unreal engine optimal graphics settings</a> — slides 142.</li>
+<li><a href="https://tomlooman.com/unreal-engine-optimization-farfarwest/">Unreal engine optimization farfarwest</a> — slides 73, 83, 142, 148.</li>
+<li><a href="https://tomlooman.com/unreal-engine-optimization-talk/">Unreal engine optimization talk</a> — slides 22, 23, 61, 148.</li>
+<li><a href="https://tomlooman.com/unreal-engine-optimize-shader-compile-time/">Unreal engine optimize shader compile time</a> — slides 112.</li>
 <li><a href="https://tomlooman.com/unreal-engine-profiling-stat-commands/">Unreal engine profiling stat commands</a> — slides 22.</li>
-<li><a href="https://tomlooman.com/unreal-engine-psocaching/">Unreal engine psocaching</a> — slides 28, 132.</li>
+<li><a href="https://tomlooman.com/unreal-engine-psocaching/">Unreal engine psocaching</a> — slides 28, 138.</li>
 </ul>
 <h3 id="gnomon-workshop-rodrigo-brea">Gnomon Workshop / Rodrigo Brea</h3>
 <ul>
-<li><a href="https://www.thegnomonworkshop.com/workshops/optimization-for-games-settings-materials-textures-commands">Optimization for Games: Settings, Materials, Textures &amp; Commands — supplied Parts 01–04 (subscription workshop)</a>.</li>
+<li><a href="https://www.thegnomonworkshop.com/workshops/optimization-for-games-settings-materials-textures-commands">Optimization for Games: Settings, Materials, Textures &amp; Commands — supplied Parts 01–08 (subscription workshop)</a> — slides 53, 56, 60, 63, 80, 93.</li>
 </ul>
 <h3 id="epic-games-engine-documentation">Epic Games — engine documentation</h3>
 <ul>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/customized-uvs-in-unreal-engine-materials">Customized uvs in unreal engine materials</a> — slides 99, 107, 118.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/customized-uvs-in-unreal-engine-materials">Customized uvs in unreal engine materials</a> — slides 105, 113, 124.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine?application_version=5.7">Fbx static mesh pipeline in unreal engine — UE 5.7</a> — slides 50.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-create-a-gpu-sprite-effect-in-niagara-for-unreal-engine">How to create a gpu sprite effect in niagara for unreal engine</a> — slides 165.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-create-a-gpu-sprite-effect-in-niagara-for-unreal-engine">How to create a gpu sprite effect in niagara for unreal engine</a> — slides 166.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine">Lumen global illumination and reflections in unreal engine</a> — slides 19, 32, 36, 37, 38.</li>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/material-parameter-expressions-in-unreal-engine">Material parameter expressions in unreal engine</a> — slides 5, 71, 91, 92, 93, 94, 97, 98, 103, 104, 105, 106, 107, 109, 164.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine?application_version=5.7">Material parameter expressions in unreal engine — UE 5.7</a> — slides 98, 103, 105.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-technical-details?application_version=5.7">Nanite technical details — UE 5.7</a> — slides 62, 65, 66.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine?application_version=5.7">Nanite virtualized geometry in unreal engine — UE 5.7</a> — slides 18, 56, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 73, 101, 110.</li>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/performance-guidelines-for-artists-and-designers?application_version=4.27">Performance guidelines for artists and designers — UE 4.27</a> — slides 91, 95, 97.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/material-parameter-expressions-in-unreal-engine">Material parameter expressions in unreal engine</a> — slides 5, 75, 97, 98, 99, 100, 103, 104, 109, 110, 111, 112, 113, 115, 165.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine?application_version=5.7">Material parameter expressions in unreal engine — UE 5.7</a> — slides 5, 75, 97, 98, 99, 100, 103, 104, 109, 110, 111, 112, 113, 115, 165.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-technical-details?application_version=5.7">Nanite technical details — UE 5.7</a> — slides 66, 69, 70.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine?application_version=5.7">Nanite virtualized geometry in unreal engine — UE 5.7</a> — slides 18, 58, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 77, 107, 116.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/performance-guidelines-for-artists-and-designers?application_version=4.27">Performance guidelines for artists and designers — UE 4.27</a> — slides 97, 101, 103.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/render-resource-viewer-in-unreal-engine">Render resource viewer in unreal engine</a> — slides 30.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine?application_version=5.7">Stat commands in unreal engine — UE 5.7</a> — slides 10, 79.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine?application_version=5.7">Stat commands in unreal engine — UE 5.7</a> — slides 10, 12, 84.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/static-light-mobility-in-unreal-engine?application_version=5.7">Static light mobility in unreal engine — UE 5.7</a> — slides 34, 35, 38.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/stationary-light-mobility-in-unreal-engine?application_version=5.7">Stationary light mobility in unreal engine — UE 5.7</a> — slides 34, 36.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-configuration-in-unreal-engine">Texture streaming configuration in unreal engine</a> — slides 80.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-metrics-in-unreal-engine">Texture streaming metrics in unreal engine</a> — slides 80.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-configuration-in-unreal-engine">Texture streaming configuration in unreal engine</a> — slides 85.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-metrics-in-unreal-engine">Texture streaming metrics in unreal engine</a> — slides 85.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/timing-insights-in-unreal-engine-5?application_version=5.7">Timing insights in unreal engine 5 — UE 5.7</a> — slides 27.</li>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-material-analyzer-tool">Unreal engine material analyzer tool</a> — slides 103.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-editor-ui">Unreal engine material editor ui</a> — slides 92, 95, 97, 105.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-properties">Unreal engine material properties</a> — slides 105.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-material-analyzer-tool">Unreal engine material analyzer tool</a> — slides 109.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-editor-ui">Unreal engine material editor ui</a> — slides 98, 101, 103, 111.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-properties">Unreal engine material properties</a> — slides 111.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5?application_version=5.7">Unreal insights reference in unreal engine 5 — UE 5.7</a> — slides 14.</li>
 <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-light-mixer-in-unreal-engine?application_version=5.7">Using the light mixer in unreal engine — UE 5.7</a> — slides 39.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine">Using transparency in unreal engine</a> — slides 100.</li>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/viewport-modes-in-unreal-engine">Viewport modes in unreal engine</a> — slides 92, 100.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-modes-in-unreal-engine?application_version=5.7">Viewport modes in unreal engine — UE 5.7</a> — slides 33, 72, 73, 75.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/virtual-shadow-maps-in-unreal-engine?application_version=5.7">Virtual shadow maps in unreal engine — UE 5.7</a> — slides 3, 18, 32, 33, 34, 36, 37, 38, 42, 44, 45, 46, 47, 59, 101.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine">Using transparency in unreal engine</a> — slides 106.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/viewport-modes-in-unreal-engine">Viewport modes in unreal engine</a> — slides 33, 76, 77, 79, 98, 106.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-modes-in-unreal-engine?application_version=5.7">Viewport modes in unreal engine — UE 5.7</a> — slides 33, 76, 77, 79, 98, 106.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/virtual-shadow-maps-in-unreal-engine?application_version=5.7">Virtual shadow maps in unreal engine — UE 5.7</a> — slides 3, 18, 32, 33, 34, 36, 37, 38, 42, 44, 45, 46, 47, 62, 107.</li>
 </ul>
 <h3 id="tool-and-platform-references">Tool and platform references</h3>
 <ul>
-<li><a href="https://www.sidefx.com/docs/houdini/nodes/out/labs--vertex_animation_textures-3.0.html">Labs vertex animation textures 3.0.html</a> — slides 112.</li>
-<li><a href="https://documentation.simplygon.com/SimplygonSDK_10.4.169.0/ue5/">Ue5</a> — slides 53, 54.</li>
+<li><a href="https://www.sidefx.com/docs/houdini/nodes/out/labs--vertex_animation_textures-3.0.html">Labs vertex animation textures 3.0.html</a> — slides 118.</li>
+<li><a href="https://documentation.simplygon.com/SimplygonSDK_10.4.169.0/ue5/">Ue5</a> — slides 54, 55.</li>
 <li><a href="https://gpuopen.com/learn/unreal-engine-performance-guide/">Unreal engine performance guide</a> — slides 20.</li>
 </ul>
 <h3 id="shipped-game-developer-publications">Shipped-game developer publications</h3>
 <ul>
 <li><a href="https://www.advances.realtimerendering.com/s2016/Siggraph2016_idTech6.pdf">DOOM (2016) — PDF pages 4–9: Data Structure for Lighting &amp; Shading / Preparing Clustered Structure</a> — slides 42.</li>
 <li><a href="https://www.factorio.com/blog/post/fff-323">Factorio — Water animation — Game integration, paragraphs on prepare render and per-chunk draw orders</a> — slides 17.</li>
-<li><a href="https://www.unrealengine.com/tech-blog/unreal-engine-improvements-for-fortnite-battle-royale">Fortnite Battle Royale — Building and Rendering a Large Map, HLOD/Simplygon and overnight commandlet paragraphs</a> — slides 55.</li>
-<li><a href="https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem">Fortnite Battle Royale — PSO precaching / The driver cache</a> — slides 133.</li>
-<li><a href="https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4">Fortnite Chapter 4 — Trees — Wind animation / Distance culling</a> — slides 70, 113.</li>
-<li><a href="https://blog.playstation.com/2021/01/12/how-stunning-visual-effects-bring-ghost-of-tsushima-to-life/">Ghost of Tsushima — Wind, paragraphs beginning ‘The grass and pampas fields’ through local displacement</a> — slides 102.</li>
-<li><a href="https://www.advances.realtimerendering.com/s2017/Nubis%20-%20Authoring%20Realtime%20Volumetric%20Cloudscapes%20with%20the%20Decima%20Engine%20-%20Final%20.pdf">Horizon Zero Dawn — PDF pages 97–98, printed slides 99–100: Ray-March Optimizations</a> — slides 96.</li>
-<li><a href="https://www.advances.realtimerendering.com/other/2016/naughty_dog/NaughtyDog_TechArt_Final.pdf">Uncharted 4 — PDF pages 124–127, especially 127: Particle Optimizations</a> — slides 118.</li>
+<li><a href="https://www.unrealengine.com/tech-blog/unreal-engine-improvements-for-fortnite-battle-royale">Fortnite Battle Royale — Building and Rendering a Large Map, HLOD/Simplygon and overnight commandlet paragraphs</a> — slides 57.</li>
+<li><a href="https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem">Fortnite Battle Royale — PSO precaching / The driver cache</a> — slides 139.</li>
+<li><a href="https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4">Fortnite Chapter 4 — Trees — Wind animation / Distance culling</a> — slides 74, 119.</li>
+<li><a href="https://blog.playstation.com/2021/01/12/how-stunning-visual-effects-bring-ghost-of-tsushima-to-life/">Ghost of Tsushima — Wind, paragraphs beginning ‘The grass and pampas fields’ through local displacement</a> — slides 108.</li>
+<li><a href="https://www.advances.realtimerendering.com/s2017/Nubis%20-%20Authoring%20Realtime%20Volumetric%20Cloudscapes%20with%20the%20Decima%20Engine%20-%20Final%20.pdf">Horizon Zero Dawn — PDF pages 97–98, printed slides 99–100: Ray-March Optimizations</a> — slides 102.</li>
+<li><a href="https://www.advances.realtimerendering.com/other/2016/naughty_dog/NaughtyDog_TechArt_Final.pdf">Uncharted 4 — PDF pages 124–127, especially 127: Particle Optimizations</a> — slides 124.</li>
 </ul>
 <h3 id="video-sources-cited-in-the-lecture">Video sources cited in the lecture</h3>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=vnbARZHccpQ">Lecture video cited on slides 16</a> — slides 16.</li>
-<li><a href="https://www.youtube.com/watch?v=c2MH20OPSw0">Lecture video cited on slides 24, 26, 43, 44, 45, 47, 57, 58, 64, 112, 129, 135</a> — slides 24, 26, 43, 44, 45, 47, 60, 61, 67, 119, 136, 142.</li>
-<li><a href="https://www.youtube.com/watch?v=1uFR9lXrpyQ">Lecture video cited on slides 40, 43, 45</a> — slides 40, 43, 45.</li>
+<li><a href="https://www.youtube.com/watch?v=vnbARZHccpQ">Lecture video cited on slides 16</a> — slides 16, 24, 26, 40, 43, 44, 45, 47, 58, 64, 65, 71, 116, 125, 142, 148.</li>
+<li><a href="https://www.youtube.com/watch?v=c2MH20OPSw0">Lecture video cited on slides 24, 26, 43, 44, 45, 47, 57, 58, 64, 112, 129, 135</a> — slides 16, 24, 26, 40, 43, 44, 45, 47, 58, 64, 65, 71, 116, 125, 142, 148.</li>
+<li><a href="https://www.youtube.com/watch?v=1uFR9lXrpyQ">Lecture video cited on slides 40, 43, 45</a> — slides 16, 24, 26, 40, 43, 44, 45, 47, 58, 64, 65, 71, 116, 125, 142, 148.</li>
 </ul>
 <h3 id="lab-environment-and-course-evidence">Lab environment and course evidence</h3>
 <ul>
-<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios — Cigar Room Environment (Fab source for our furnished lounge)</a> — slides 3, 4, 5, 14, 15, 16, 30, 39, 41, 46, 49, 63, 64, 68, 74, 75, 76, 77, 93, 125, 126, 128.</li>
+<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios — Cigar Room Environment (Fab source for our furnished lounge)</a> — slides 3, 4, 5, 14, 15, 16, 30, 39, 41, 46, 49, 67, 68, 72, 78, 79, 81, 82, 99, 131, 132, 134.</li>
 </ul>
 <h3 id="visual-credits-original-media">Visual credits — original media</h3>
 <ul>
-<li><a href="https://blog.playstation.com/tachyon/2021/01/Ghost-VFX-FI.jpg?resize=1088%2C612&crop_strategy=smart">Source image: Ghost-VFX-FI.jpg</a> — slides 102.</li>
-<li><a href="https://cdn2.unrealengine.com/Unreal+Engine%2FblogAssets%2F2017%2FOCTOBER+2017%2FFortnite+Battle+Royale+UE+Improvements%2FFNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg">Source image: Unreal+Engine/blogAssets/2017/OCTOBER+2017/Fortnite+Battle+Royale+UE+Improvements/FNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg</a> — slides 55.</li>
+<li><a href="https://blog.playstation.com/tachyon/2021/01/Ghost-VFX-FI.jpg?resize=1088%2C612&crop_strategy=smart">Source image: Ghost-VFX-FI.jpg</a> — slides 108.</li>
+<li><a href="https://cdn2.unrealengine.com/Unreal+Engine%2FblogAssets%2F2017%2FOCTOBER+2017%2FFortnite+Battle+Royale+UE+Improvements%2FFNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg">Source image: Unreal+Engine/blogAssets/2017/OCTOBER+2017/Fortnite+Battle+Royale+UE+Improvements/FNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg</a> — slides 57.</li>
 <li><a href="https://cdn.factorio.com/assets/img/blog/fff-323-noise.png">Source image: fff-323-noise.png</a> — slides 17.</li>
-<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png</a> — slides 113.</li>
-<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg</a> — slides 70.</li>
-<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg</a> — slides 70.</li>
+<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png</a> — slides 119.</li>
+<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg</a> — slides 74.</li>
+<li><a href="https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg?resize=1&w=1920">Source image: nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg</a> — slides 74.</li>
 </ul>
 <h3 id="epic-games-engine-documentation">Epic Games — engine documentation</h3>
 <ul>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7">Grouping Actors</a> — slides 55.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7">Merging Actors: Merge, Simplify, Batch and Approximate</a> — slides 55.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7">InstancedStaticMeshComponent — UE 5.7 API</a> — slides 55.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7">Grouping Actors</a> — slides 57.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7">Merging Actors: Merge, Simplify, Batch and Approximate</a> — slides 56, 57.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7">InstancedStaticMeshComponent — UE 5.7 API</a> — slides 57.</li>
 </ul>
 <h3 id="latest-supplied-talk-references">Latest supplied talk references</h3>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=CYvLn-tYRag">Profiling with Pirates — Ari Arnbjornsson and Matt Oztalay, Unreal Fest Chicago 2026</a> — slides 110.</li>
-<li><a href="https://www.youtube.com/watch?v=VoXLoRFRDvY">LEGO Horizon Adventures: Procedural Optimization — Simon Verstraete, Studio Gobo, EPC 2025 HIVE</a> — slides 56.</li>
+<li><a href="https://www.youtube.com/watch?v=CYvLn-tYRag">Profiling with Pirates — Ari Arnbjornsson and Matt Oztalay, Unreal Fest Chicago 2026</a> — slides 16, 24, 26, 40, 43, 44, 45, 47, 58, 64, 65, 71, 116, 125, 142, 148.</li>
+<li><a href="https://www.youtube.com/watch?v=VoXLoRFRDvY">LEGO Horizon Adventures: Procedural Optimization — Simon Verstraete, Studio Gobo, EPC 2025 HIVE</a> — slides 16, 24, 26, 40, 43, 44, 45, 47, 58, 64, 65, 71, 116, 125, 142, 148.</li>
 <li><a href="https://www.sidefx.com/learn/talks/lego-horizon-adventures-procedural-optimization/">LEGO Horizon Adventures — official SideFX talk page</a>.</li>
 <li><a href="https://dev.epicgames.com/community/learning/tutorials/pYx6/unreal-engine-profiling-with-pirates-performance-plundered-from-a-real-game">Profiling with Pirates — official Epic session page</a>.</li>
-<li><a href="https://www.naughtydog.com/blog/naughty_dog_gdc_2017">Naughty Dog at GDC 2017 — session schedule and descriptions</a> — slides 99.</li>
-<li><a href="https://www.gdcvault.com/play/1024103">Technical Art Techniques of Naughty Dog: Vertex Shaders and Beyond — GDC 2017 session abstract</a> — slides 99.</li>
+<li><a href="https://www.naughtydog.com/blog/naughty_dog_gdc_2017">Naughty Dog at GDC 2017 — session schedule and descriptions</a> — slides 105.</li>
+<li><a href="https://www.gdcvault.com/play/1024103">Technical Art Techniques of Naughty Dog: Vertex Shaders and Beyond — GDC 2017 session abstract</a> — slides 105.</li>
 </ul>
 <h3 id="simon-schreibt-teaching-source-and-verification">Simon schreibt teaching source and verification</h3>
 <ul>
-<li><a href="https://simonschreibt.de/gat/tech-art-course/">Simon’s Tech Art Learning Materials — teaching source and reuse context</a> — slides 51, 79, 81, 82, 83, 84, 95.</li>
+<li><a href="https://simonschreibt.de/gat/tech-art-course/">Simon’s Tech Art Learning Materials — teaching source and reuse context</a> — slides 51, 87, 88, 89.</li>
 <li><a href="https://docs.google.com/document/d/1yas3_SnxndxK2FaEsmwl89pVV2nKPxJWaX2zuHlM8N8/edit">Tech Art Documentation — original Google Doc</a>.</li>
 <li><a href="https://docs.google.com/presentation/d/1O8EUWOguP0YocAmGd-TT-qwLdl-mkEq8XtbURnkK6cI/edit">Geometry on HDD — linked source slide collection</a>.</li>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/visibility-and-occlusion-culling-in-unreal-engine">Epic — Visibility and Occlusion Culling</a> — slides 59.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/visibility-and-occlusion-culling-in-unreal-engine">Epic — Visibility and Occlusion Culling</a> — slides 62.</li>
 <li><a href="https://docs.unity.com/en-us/engine/6000.0/manual/analysis/profiler/markers">Unity — Profiler markers (cross-engine reference)</a> — slides 15.</li>
-<li><a href="https://docs.unity.com/en-us/engine/6000.0/manual/analysis/graphics-performance-profiling/reduce-draw-calls/draw-call-batching/draw-call-batching">Unity — Batching meshes (cross-engine reference)</a> — slides 55.</li>
+<li><a href="https://docs.unity.com/en-us/engine/6000.0/manual/analysis/graphics-performance-profiling/reduce-draw-calls/draw-call-batching/draw-call-batching">Unity — Batching meshes (cross-engine reference)</a> — slides 57.</li>
 </ul>
 <h3 id="rendering-terminology-and-clarification-references">Rendering terminology and clarification references</h3>
 <ul>
-<li><a href="https://dev.epicgames.com/documentation/unreal-engine/graphics-programming-overview-for-unreal-engine">Epic — Graphics Programming Overview</a> — slides 11, 12, 14, 16, 18, 19, 20, 31, 48, 49, 62, 64, 68, 76, 78, 99, 143, 146, 150.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine">Epic — Mesh Drawing Pipeline</a> — slides 17, 49, 55, 56, 103, 104, 108, 110, 116, 122, 146, 163.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-overview-for-unreal-engine">Epic — Texture Streaming Overview</a> — slides 11, 27, 29, 30, 31, 35, 79, 80, 81, 85, 90, 95, 154, 155, 168.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine">Epic — PSO Precaching</a> — slides 27, 28, 106, 132, 133.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/view-modes-in-unreal-engine">Epic — View Modes</a> — slides 41, 70, 72, 73, 74, 75, 92, 118, 147, 152.</li>
+<li><a href="https://dev.epicgames.com/documentation/unreal-engine/graphics-programming-overview-for-unreal-engine">Epic — Graphics Programming Overview</a> — slides 11, 14, 16, 18, 19, 20, 31, 48, 49, 66, 68, 72, 81, 83, 105, 149, 151.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine">Epic — Mesh Drawing Pipeline</a> — slides 12, 17, 49, 57, 58, 109, 110, 114, 116, 122, 128, 164.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-overview-for-unreal-engine">Epic — Texture Streaming Overview</a> — slides 11, 27, 29, 30, 31, 35, 84, 85, 86, 90, 96, 101, 155, 156, 169.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine">Epic — PSO Precaching</a> — slides 27, 28, 112, 138, 139.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/view-modes-in-unreal-engine">Epic — View Modes</a> — slides 41, 74, 76, 77, 78, 79, 80, 98, 124, 153.</li>
 </ul>
 <h3 id="texture-concepts-primary-clarification-references">Texture concepts — primary clarification references</h3>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression">Microsoft — BC1–BC5 block compression</a> — slides 82.</li>
-<li><a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-resources-textures-intro">Microsoft — Textures, texels and mip levels</a> — slides 79, 81, 83, 84.</li>
-<li><a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ne-d3d11-d3d11_texture_address_mode">Microsoft — Texture sampler address modes</a> — slides 95.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression">Microsoft — BC1–BC5 block compression</a> — slides 87, 93.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-resources-textures-intro">Microsoft — Textures, texels and mip levels</a> — slides 88.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/api/d3d11/ne-d3d11-d3d11_texture_address_mode">Microsoft — Texture sampler address modes</a>.</li>
+</ul>
+<h3 id="gnomon-0508-primary-verification">Gnomon 05–08 — primary verification</h3>
+<ul>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/creating-and-using-lods-in-unreal-engine">Epic — Creating and Using LODs</a> — slides 53.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/generating-lightmap-uvs-in-unreal-engine">Epic — Generating Lightmap UVs</a> — slides 60.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/cull-distance-volumes-in-unreal-engine">Epic — Cull Distance Volumes</a> — slides 63.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/reflections-captures-in-unreal-engine">Epic — Reflection Captures</a> — slides 19.</li>
 </ul>
 <h2 id="grouping-instancing-merging-and-hlod">Grouping, instancing, merging and HLOD</h2>
-<p>Slide 55 distinguishes these related choices after the LOD recipe and before lightmap/collision requirements.</p>
+<p>Slide 57 distinguishes these related choices after the LOD recipe and before lightmap/collision requirements.</p>
 <table>
 <thead>
 <tr>
@@ -535,25 +641,25 @@
 <p>For repeated chairs, investigate instancing. For a static shelf assembly seen together, investigate merging. For distant building clusters, investigate HLOD. These are predictions to test, not guarantees of fewer milliseconds. Avoid combining the entire room indiscriminately: visibility, streaming and editing granularity can worsen. In a duplicate test map, select a small static set and use <strong>Actor &gt; Merge Actors &gt; Merge Actor Settings</strong>; preserve the originals. Compare open and partially occluded views, material sections, CPU submission and relevant GPU passes. Grouping with Ctrl+G alone is an editing convenience.</p>
 <h3 id="additional-primary-references">Additional primary references</h3>
 <ul>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7">Grouping Actors</a> — slide 54.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7">Merging Actors: Merge, Simplify, Batch and Approximate</a> — slide 54.</li>
-<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7">InstancedStaticMeshComponent — UE 5.7 API</a> — slide 54.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7">Grouping Actors</a> — slide 55.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7">Merging Actors: Merge, Simplify, Batch and Approximate</a> — slide 55.</li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7">InstancedStaticMeshComponent — UE 5.7 API</a> — slide 55.</li>
 </ul>
 <h2 id="latest-talk-study-paths">Latest talk study paths</h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=CYvLn-tYRag">Profiling with Pirates — Ari Arnbjornsson and Matt Oztalay, Unreal Fest Chicago 2026</a> — slide 113.</li>
-<li><a href="https://www.youtube.com/watch?v=VoXLoRFRDvY">LEGO Horizon Adventures: Procedural Optimization — Simon Verstraete, Studio Gobo, EPC 2025 HIVE</a> — slide 56.</li>
-<li><a href="https://www.sidefx.com/learn/talks/lego-horizon-adventures-procedural-optimization/">LEGO Horizon Adventures — official SideFX talk page</a> — slide 56.</li>
-<li><a href="https://dev.epicgames.com/community/learning/tutorials/pYx6/unreal-engine-profiling-with-pirates-performance-plundered-from-a-real-game">Profiling with Pirates — official Epic session page</a> — slide 113.</li>
-<li><a href="https://www.naughtydog.com/blog/naughty_dog_gdc_2017">Naughty Dog at GDC 2017 — session schedule and descriptions</a> — slide 102.</li>
-<li><a href="https://www.gdcvault.com/play/1024103">Technical Art Techniques of Naughty Dog: Vertex Shaders and Beyond — GDC 2017 session abstract</a> — slide 102.</li>
+<li><a href="https://www.youtube.com/watch?v=CYvLn-tYRag">Profiling with Pirates — Ari Arnbjornsson and Matt Oztalay, Unreal Fest Chicago 2026</a> — slide 119.</li>
+<li><a href="https://www.youtube.com/watch?v=VoXLoRFRDvY">LEGO Horizon Adventures: Procedural Optimization — Simon Verstraete, Studio Gobo, EPC 2025 HIVE</a> — slide 58.</li>
+<li><a href="https://www.sidefx.com/learn/talks/lego-horizon-adventures-procedural-optimization/">LEGO Horizon Adventures — official SideFX talk page</a> — slide 58.</li>
+<li><a href="https://dev.epicgames.com/community/learning/tutorials/pYx6/unreal-engine-profiling-with-pirates-performance-plundered-from-a-real-game">Profiling with Pirates — official Epic session page</a> — slide 119.</li>
+<li><a href="https://www.naughtydog.com/blog/naughty_dog_gdc_2017">Naughty Dog at GDC 2017 — session schedule and descriptions</a> — slide 108.</li>
+<li><a href="https://www.gdcvault.com/play/1024103">Technical Art Techniques of Naughty Dog: Vertex Shaders and Beyond — GDC 2017 session abstract</a> — slide 108.</li>
 </ul>
 <p><strong>LEGO / geometry:</strong> watch 23:12–27:47 and 29:15–33:20. The production pipeline makes different platform meshes, removes hidden/internal faces, validates missed triangles and preserves UV/vertex data through LODs. Stud instancing is a platform choice. A ray miss is a sampling result, not proof that a triangle can never be seen. Check alternate/cutscene views, shadows, collision and shading. The source geometry counts describe one example, not universal budgets. No LEGO source assets or proprietary pipeline are included in our lab.</p>
 <p><strong>Pirates / profiling:</strong> watch 06:27–16:50 for capture channels and dependency loading, 19:49–27:15 for object/physics investigation, and 32:00–37:36 for instrumentation overhead and material diversity. Start with a question, capture the necessary channels, inspect dependencies/counters and then retest with a lighter timing configuration. Material-instance reuse can matter beyond instruction counts. <code>obj.TraceSnapshot</code> is presented as new in UE 5.8; it is not a required command for our UE 5.7 lab. Core limits change CPU scheduling pressure; they do not recreate console hardware. Use object counts to investigate measured collection cost rather than treating a speaker’s thresholds as universal limits. Remove collision only where interaction, navigation, queries and gameplay permit it.</p>
 <p><strong>Naughty Dog / vertex work:</strong> the linked 2017 page is a schedule, not a transcript or slide deck. Its most relevant session is Andrew Maximov’s vertex-shader talk; the public session abstract was verified. A 2017 transcript/PDF was not retrieved. For the source actually illustrated in this lecture, use the separately cited 2016 SIGGRAPH PDF, especially pages 124–127 on keyframed shader animation and particle optimization. Do not label those 2016 figures as 2017 slides. Our affine-UV and VAT examples are independently runnable course demonstrations, not reproductions of Naughty Dog’s implementation.</p>
 <p>Two YouTube auto-caption tracks were parsed locally and focused technical sections were assessed alongside eighteen captured frames. Auto-captions contain recognition errors; commands, exact names and numerical claims require the corresponding visual or primary documentation. Full transcripts/videos remain instructor preparation sources and are not redistributed in the student repository.</p>
 <h2 id="simon-schreibt-geometry-and-profiling-experiments">Simon schreibt: geometry and profiling experiments</h2>
-<p>The supplied document identifies its source as Simon schreibt, rather than SimonDev. We use its exercise ideas with attribution and update their interpretation for our UE 5.7 lab. The two new teaching slides are <strong>51 (render vertices)</strong> and <strong>59 (culling)</strong>.</p>
+<p>The supplied document credits Simon schreibt. Its geometry exercise informs slide 51; the culling explanation is at 62. The optimization field guide includes the selected texture figures and clarifications.</p>
 <ul>
 <li><a href="https://simonschreibt.de/gat/tech-art-course/">Simon’s Tech Art Learning Materials — teaching source and reuse context</a> — 51, 59.</li>
 <li><a href="https://docs.google.com/document/d/1yas3_SnxndxK2FaEsmwl89pVV2nKPxJWaX2zuHlM8N8/edit">Tech Art Documentation — original Google Doc</a> — 51, 59.</li>

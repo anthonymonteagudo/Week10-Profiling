@@ -2,7 +2,7 @@
 
 ## Start here
 
-[Download the complete teaching kit](https://github.com/anthonymonteagudo/Week10-Profiling/releases/download/week10-teaching-materials-v1/Week10-Teaching-Kit.zip), extract it, and open **START-HERE.html**. It includes the deck with notes, printable handouts, visual guides and course tools. UE/Fab content and comparison projects are separate downloads listed below.
+[Download the complete teaching kit](https://github.com/anthonymonteagudo/Week10-Profiling/releases/download/week10-teaching-materials-v2/Week10-Teaching-Kit.zip), extract it, and open **START-HERE.html**. It includes the deck with notes, printable handouts, visual guides and course tools. UE/Fab content and comparison projects are separate downloads listed below.
 
 To keep a Git checkout: `git clone https://github.com/anthonymonteagudo/Week10-Profiling.git`, then `git pull --ff-only` for updates. The generated HTML pages open locally without installing Node or Python. Python is needed only for the optional Python tools.
 
@@ -31,18 +31,25 @@ The deck now includes the shader-cost sequence at 91–110. The [study guide](Op
 
 Browse the [material lab source and experiment instructions](MaterialCostLab/README.md). Generated material assets are supplied in the v2 comparison release.
 
-The consolidated deck has 169 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 128.
+The consolidated deck has 170 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 134.
 
 ## Demo captures
 
 [Open the 28-capture gallery](Media/Optimization-Demo/index.html) or [download the screenshot pack](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-demo-captures-v1). It covers the furnished room, Light Mixer, Timing Insights, stat unit/GPU, material buffers, Nanite, VSM cache, GPU resources and the custom audit. Each image includes its question, live steps and interpretation limits. The v4 lab explicitly uses DX12 SM6; earlier lounge timing results used SM5 fallback rendering.
 
-The 28 captures are embedded directly in the deck. The main sequence runs through 142; reference comparisons and the complete numbered walkthroughs are 143–169. Materials/textures/shader logic occupy 71–110, and the custom audit appears before the break and lab.
+The 28 captures are embedded directly in the deck. The main sequence runs through 148; the walkthrough guide is 149 and the complete numbered walkthroughs are 150–169. Materials/textures/shader logic occupy 75–116, and the custom audit appears before the break and lab.
 
-The final slide (169) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 82 article, video, documentation and media links, with relevant slide numbers.
+The final slide (170) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 86 article, video, documentation and media links, with relevant slide numbers.
 
-Slide 7 introduces A/B testing; 149 supplies the detailed setup. Open the PowerPoint Notes pane for local definitions and clarifications on 165 slides (106 core terms plus the new texture clarifications). The slide order, measured sequences and thirty-minute lab at 128 are preserved.
+Slide 7 introduces A/B testing; 150 supplies the detailed setup. Open the Notes pane for local definitions of rendering and measurement terms. The full measured sequences and thirty-minute lab at 134 are preserved.
 
 ## Visual definitions
 
-Open the [texture and geometry field guide](Media/Simon-Field-Guide/index.html). Slides 82–84 use six of its source illustrations; the guide includes nine images across compression, padding, texel density, mip levels and Clamp/Wrap. Read the Notes pane for the full classroom explanations. The current deck has 169 slides, break 127, lab 128 and sources 169.
+Open the [optimization field guide](Media/Optimization-Field-Guide/index.html) for the Simon and Gnomon source figures, definitions, console/recovery reference and Unreal inspection tasks. New Gnomon visuals are at 53, 56, 60, 63, 80 and 93. The deck has 170 slides; break 133, lab 134, final sources 170.
+
+Gnomon Parts 05–08 are assessed and integrated with source/context qualifications. Five duplicate showroom-reference slides are archived; the full twenty-step walkthrough and furnished-lounge activity remain. The visual theme now follows Week 9. UE/Fab projects remain separate linked downloads.
+
+
+## Core teaching path
+
+The canonical deck has **73 visible teaching slides and 97 hidden reference slides** (170 total). Use the normal slide show from slide 1; optional detail is preserved with native PowerPoint Hide Slide flags. Numbers remain stable: break 133, lounge lab 134, sources 170. The twenty walkthroughs (150–169) are available as hidden reference; choose a specific walkthrough only when needed.

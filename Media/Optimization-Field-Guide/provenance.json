@@ -1,0 +1,468 @@
+{
+  "credit": "Simon schreibt, Tech Art Documentation",
+  "source_pdf_name": "Tech Art Summary (1).pdf",
+  "source_pdf_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+  "assets": [
+    {
+      "asset": "compression-ramp.png",
+      "page": 7,
+      "page_bbox": [
+        73.5,
+        189.75,
+        525.0,
+        309.75
+      ],
+      "size": [
+        1240,
+        328
+      ],
+      "sha256": "68cd9c9f9056f3bb770c05c950f31359ebec09cc52a8f462354d7913c4ccd65d",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "BC1/DXT1 source comparison",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "compression-boost.png",
+      "page": 7,
+      "page_bbox": [
+        94.01278686523438,
+        316.5,
+        501.2627868652344,
+        518.25
+      ],
+      "size": [
+        543,
+        269
+      ],
+      "sha256": "dcc0f137f5e7fd36e11776705864ed3005923361a99f0bb96961876bcef34901",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Amplified compression error",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "mip-levels.png",
+      "page": 9,
+      "page_bbox": [
+        109.5,
+        91.5,
+        561.0,
+        317.25
+      ],
+      "size": [
+        1023,
+        512
+      ],
+      "sha256": "7e5a0dac0c954acf8bd2be639a64ee8866d1a96b195434593b0bc4621ef0207e",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source demonstration of manually edited stored mip levels",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "bleeding-scene.png",
+      "page": 22,
+      "page_bbox": [
+        73.5,
+        176.25,
+        525.0,
+        405.0
+      ],
+      "size": [
+        865,
+        439
+      ],
+      "sha256": "4ce57f49a8f04e8b0d9c72c608d1304472bab8cfab244905a802370b29faab8c",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Filtering artifact in source foliage scene",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "bleeding-texture.png",
+      "page": 23,
+      "page_bbox": [
+        73.5,
+        73.5,
+        243.0,
+        444.75
+      ],
+      "size": [
+        315,
+        690
+      ],
+      "sha256": "ce72b9a671430fefce4b2b8ecb50533baa446f668b4fa11412d7e55395a6d27d",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source foliage texture viewer",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "density-scene.png",
+      "page": 24,
+      "page_bbox": [
+        73.5,
+        104.25,
+        525.0,
+        359.25
+      ],
+      "size": [
+        1303,
+        737
+      ],
+      "sha256": "815061e791abc334595f3d21245f63076f0b9068ebbe9366323d1c37de68f2c0",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Inconsistent density and brick scale",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "density-reference.png",
+      "page": 25,
+      "page_bbox": [
+        73.5,
+        91.5,
+        480.75,
+        245.25
+      ],
+      "size": [
+        543,
+        205
+      ],
+      "sha256": "093d816effeaf37943a93e9e3ef3d1a6bd255058259e01ef6a3c8f8cf50e2910",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source brick-width reference",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "clamp-before.png",
+      "page": 29,
+      "page_bbox": [
+        73.5,
+        104.25,
+        525.0,
+        300.0
+      ],
+      "size": [
+        806,
+        349
+      ],
+      "sha256": "8e8c34d892009228131dbffacb7f908918d285e3c4a1e20708a173d431a96a5b",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source drawing before edge extension",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "clamp-after.png",
+      "page": 30,
+      "page_bbox": [
+        73.5,
+        73.50001525878906,
+        525.0,
+        287.25
+      ],
+      "size": [
+        1069,
+        507
+      ],
+      "sha256": "065981040646a314bee3d0d2e067b0137887f31c12e8a9fe63057cec1b420083",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source clamp result",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    }
+  ],
+  "additional_sources": [
+    {
+      "asset": "lod-colors.png",
+      "source_sha256": "ed25c48b631efa4b02b5811e85f59dbfe3e8974b5f172b76dbbe4480ba16ca84",
+      "crop": [
+        0,
+        0,
+        811,
+        616
+      ],
+      "size": [
+        811,
+        616
+      ],
+      "sha256": "2165244e4874be2ebfae28b5b46a25268c78c7873035d90e1f1e44047cdc07bc",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105134545.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "lod-settings.png",
+      "source_sha256": "5556accb505e5221e7f1d1cf6ee0de0051cb9327f19cf11d83490a918db41afc",
+      "crop": [
+        1920,
+        270,
+        2761,
+        730
+      ],
+      "size": [
+        841,
+        460
+      ],
+      "sha256": "976be0411b78d59418114de6a0547f9a3c699718c2ea0620287bc6146470361d",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105134228.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "merge-selection.png",
+      "source_sha256": "8e980accd2219f3d0f7998f080ad8b89e81a160109dff52ac7d9b420cc6cc174",
+      "crop": [
+        0,
+        0,
+        2754,
+        1164
+      ],
+      "size": [
+        2754,
+        1164
+      ],
+      "sha256": "f5fd5796b596da95973d43a80d5e7e011d781ac2ea838545a546a4824d7641ae",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105143718.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "lightmap-density.png",
+      "source_sha256": "cf3f7281f7acac94f58d31a86fd8d4078a6bdf9f67f20448c1c9120a49b3b25d",
+      "crop": [
+        0,
+        0,
+        1929,
+        963
+      ],
+      "size": [
+        1929,
+        963
+      ],
+      "sha256": "764bb44781f4cc3a0ac403bb834f11a51fa4076e94fdd9b9c0683fe42ae8acf2",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105123727.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "lightmap-packing.png",
+      "source_sha256": "62f23cbb0edc0c38cbdb9f2f7b5ad52dd7e19b94b929a2a4997c8068257368a6",
+      "crop": [
+        0,
+        43,
+        810,
+        92
+      ],
+      "size": [
+        810,
+        49
+      ],
+      "sha256": "d2c4f58482b79452b015979a76f4cc9b650f76a98fd77e97a7f918f3faa63dc4",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105124524.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "lightmap-resolution.png",
+      "source_sha256": "b14f52f575da48d3561f2615bea267f83b569ce2bc43d598ba2b85aac283e724",
+      "crop": [
+        0,
+        105,
+        820,
+        155
+      ],
+      "size": [
+        820,
+        50
+      ],
+      "sha256": "1a8677bc6cd2e5340c96c800f1198a85ea2fc7692d2ab17ec7773cd27277d752",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105124544.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "particles-high.png",
+      "source_sha256": "ae07910467a569cae9ef7f67187c2fc533c00d08cb9a24b960ebd762911f9ab5",
+      "crop": [
+        0,
+        0,
+        2335,
+        1162
+      ],
+      "size": [
+        2335,
+        1162
+      ],
+      "sha256": "5c02cf65ec7cb134cfeff0a099bf8e43fdbe72769d57cf83160abd3e7fecb637",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105130733.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "particles-low.png",
+      "source_sha256": "cfa46f379bb80f5bd8616377d4131468b2a434b5af5ae2c3f3ed775713822c50",
+      "crop": [
+        0,
+        0,
+        1717,
+        826
+      ],
+      "size": [
+        1717,
+        826
+      ],
+      "sha256": "558ba142967e4a27d39696cd033a78bdf0adb10fe98f7d1d6ea46b336230e4bb",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105130945.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "alpha-format.png",
+      "source_sha256": "df89f0be8a28a76ba6f064df6319dcce6cc32a06ab1e87c26b6e92f6ad42378b",
+      "crop": [
+        1740,
+        125,
+        2617,
+        340
+      ],
+      "size": [
+        877,
+        215
+      ],
+      "sha256": "b8f48070c782ce6ea1dd3877ffa8dbe613bfd0f70a0059881ab2f6378cc498c4",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105115508.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "alpha-settings.png",
+      "source_sha256": "df89f0be8a28a76ba6f064df6319dcce6cc32a06ab1e87c26b6e92f6ad42378b",
+      "crop": [
+        1740,
+        375,
+        2617,
+        575
+      ],
+      "size": [
+        877,
+        200
+      ],
+      "sha256": "ffcadefabbb471f376d3887935935f3e83b7e11a948013b6a2b4cdb0e02c13be",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105115508.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "uv-function.png",
+      "source_sha256": "b7ac5b04f01d6ac8ba28748682eba5257d22a4c1d7f79a4fb7be3100c3bd577e",
+      "crop": [
+        0,
+        0,
+        1561,
+        766
+      ],
+      "size": [
+        1561,
+        766
+      ],
+      "sha256": "0663adf14af06b6aa8e416b96e75ca862bc776b889cb1c0d1a0887f8db0d46af",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105132859.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "uv-channels.png",
+      "source_sha256": "0f9fa605364699459225cd7d8ab04d8d47c8426168ff664c0a6c614a85c2ea69",
+      "crop": [
+        0,
+        0,
+        2112,
+        1744
+      ],
+      "size": [
+        2112,
+        1744
+      ],
+      "sha256": "d54e3d92e2b4251a51fb349ca652538a268f04ddb98222a90b74b056954673cc",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105132429.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "reflections.png",
+      "source_sha256": "462303e242d161661076ad629cc9f650c20998e974d7f1118a83111eed82547f",
+      "crop": [
+        0,
+        0,
+        2334,
+        1167
+      ],
+      "size": [
+        2334,
+        1167
+      ],
+      "sha256": "dfdac4172e04dfaa0a49d0bf14e15ac6798ba4520a55b113ccc1bb31d20a9907",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105123119.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "buffer-overview.png",
+      "source_sha256": "c609995d071ec84032bdd6ed22f45ece0e3221edad5a025f02c990d131073b91",
+      "crop": [
+        0,
+        0,
+        2335,
+        1171
+      ],
+      "size": [
+        2335,
+        1171
+      ],
+      "sha256": "f659877dbc91e2333da6ba492ef467031cb9e90731b905978f2871b4b457cdd3",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, supplied teaching captures",
+      "source_file": "Pasted image 20261105142915.png",
+      "source": "Gnomon supplied teaching capture"
+    },
+    {
+      "asset": "cull-pairs.png",
+      "source_sha256": "059e3ea03429d8c97c100f2211a9edf9fbd5a41307c257bc86db09bc60796a1f",
+      "crop": [
+        0,
+        0,
+        422,
+        249
+      ],
+      "size": [
+        422,
+        249
+      ],
+      "sha256": "4c9ca42bc3a1b4bca35571a31f08ca0208511845633771dac0dd9ecdb2243a74",
+      "credit": "Epic Games, Unreal Engine Cull Distance Volumes documentation",
+      "source_file": "Cull-Distance-Pairs.png",
+      "source": "Epic Cull Distance Volumes documentation"
+    }
+  ]
+}
