@@ -519,3 +519,8 @@ Reducing screen percentage is a diagnostic perturbation. At 25% of each dimensio
 
 The PDF’s “Crash the Engine” exercise and its old limits/timings are historical teaching examples, not instructions or current engine budgets. For any later workload sweep, use small capped increments in a disposable scene, save first, record the changed count and stop while the editor stays responsive. No crashing, mass duplication or project-setting changes were performed for this integration. These optional investigations add no requirement inside the thirty-minute lounge lab.
 
+
+
+### Latest Part 08 visual follow-through
+
+The updated visual guide adds the source actor-selection pair, merged material slots, placement, Minimum LOD and frozen-rendering/bounds examples. Use these with slides 56 and 62. The Outliner shows 31 selected actors before and one merged actor selected after; it does not establish 31-to-1 draw submissions or a frame-time saving. On a duplicate map, inspect sections, pivot, UVs, LOD/collision and bounds, keep only one version active, and compare matching camera captures. A green Shader Complexity view cannot establish that duplicate opaque geometry is absent. Toggle FreezeRendering off before timing. These are optional inspection prompts, with no extra slides or lab requirements.

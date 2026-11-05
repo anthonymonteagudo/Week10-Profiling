@@ -464,5 +464,77 @@
       "source_file": "Cull-Distance-Pairs.png",
       "source": "Epic Cull Distance Volumes documentation"
     }
+  ],
+  "latest_part08_assets": [
+    {
+      "asset": "merge-before-selection.png",
+      "source_file": "Pasted image 20261105151124.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "abcc21f9ab676362aee92a2cad441f0ca8b5642480826834a5198d3db132a491",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "Before: World Outliner shows 31 selected actors.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "merge-after-selection.png",
+      "source_file": "Pasted image 20261105151157.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "5147caaac5d94a23ec5a16ae0df8e1e62f3659d34c7b35b8d476bb984bab2ff4",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "After: one merged tent actor is selected. The different total actor counts also show these are not a controlled performance comparison.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "merged-tent-materials.png",
+      "source_file": "Pasted image 20261105150657.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "f55f83af37e12684904a5a477b4efc60289ed76934588212e2cb3a417bba0c47",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "The merged tent retains two material slots. One actor can still require multiple section/pass submissions.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "merge-placement.png",
+      "source_file": "Pasted image 20261105150212.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "7d704cf56c93f9539f98dd8b8cb407c07347f15d0890d5eca6a0ae67cc6f4315",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "World-origin pivot workflow: reset Location only when that origin-based merge and intended placement make it appropriate; do not apply this to arbitrary assets.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "merged-minimum-lod.png",
+      "source_file": "Pasted image 20261105151023.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "a92afe2721687fe28292ab7ad81671df81caca8d0422c6d751fe3285adec4cfd",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "Minimum LOD is set to 2 in this source example. Validate silhouette, UVs, collision and target-platform behavior; this is not a universal setting.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "freeze-rendering-command.png",
+      "source_file": "Pasted image 20261105151632.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "058547a7803df913c081d22ede54cf215beb2c78f9ef8ac1a81c79ccecf6b632",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "FreezeRendering freezes visibility for inspection. Toggle it again to restore normal rendering before measurement.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    },
+    {
+      "asset": "frozen-rock-bounds.png",
+      "source_file": "Pasted image 20261105151727.png",
+      "source_note": "08 Merging & Culling.md",
+      "sha256": "4fb43804d6ffaccb8300bdc4a1344a27d9fe7829f23f7ad0ca493e5f7ae04595",
+      "credit": "Rodrigo Brea / The Gnomon Workshop, Optimization for Games, Part 08",
+      "use": "The source points to a large rock retained in a frozen view. Inspect its bounds against the captured frustum before assigning a cause.",
+      "transformation": "Original source image, unchanged",
+      "rights": "Selected attributed teaching excerpt; full paid material not redistributed"
+    }
   ]
 }
