@@ -1,0 +1,196 @@
+{
+  "credit": "Simon schreibt, Tech Art Documentation",
+  "source_pdf_name": "Tech Art Summary (1).pdf",
+  "source_pdf_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+  "assets": [
+    {
+      "asset": "compression-ramp.png",
+      "page": 7,
+      "page_bbox": [
+        73.5,
+        189.75,
+        525.0,
+        309.75
+      ],
+      "size": [
+        1240,
+        328
+      ],
+      "sha256": "68cd9c9f9056f3bb770c05c950f31359ebec09cc52a8f462354d7913c4ccd65d",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "BC1/DXT1 source comparison",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "compression-boost.png",
+      "page": 7,
+      "page_bbox": [
+        94.01278686523438,
+        316.5,
+        501.2627868652344,
+        518.25
+      ],
+      "size": [
+        543,
+        269
+      ],
+      "sha256": "dcc0f137f5e7fd36e11776705864ed3005923361a99f0bb96961876bcef34901",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Amplified compression error",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "mip-levels.png",
+      "page": 9,
+      "page_bbox": [
+        109.5,
+        91.5,
+        561.0,
+        317.25
+      ],
+      "size": [
+        1023,
+        512
+      ],
+      "sha256": "7e5a0dac0c954acf8bd2be639a64ee8866d1a96b195434593b0bc4621ef0207e",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source demonstration of manually edited stored mip levels",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "bleeding-scene.png",
+      "page": 22,
+      "page_bbox": [
+        73.5,
+        176.25,
+        525.0,
+        405.0
+      ],
+      "size": [
+        865,
+        439
+      ],
+      "sha256": "4ce57f49a8f04e8b0d9c72c608d1304472bab8cfab244905a802370b29faab8c",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Filtering artifact in source foliage scene",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "bleeding-texture.png",
+      "page": 23,
+      "page_bbox": [
+        73.5,
+        73.5,
+        243.0,
+        444.75
+      ],
+      "size": [
+        315,
+        690
+      ],
+      "sha256": "ce72b9a671430fefce4b2b8ecb50533baa446f668b4fa11412d7e55395a6d27d",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source foliage texture viewer",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "density-scene.png",
+      "page": 24,
+      "page_bbox": [
+        73.5,
+        104.25,
+        525.0,
+        359.25
+      ],
+      "size": [
+        1303,
+        737
+      ],
+      "sha256": "815061e791abc334595f3d21245f63076f0b9068ebbe9366323d1c37de68f2c0",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Inconsistent density and brick scale",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "density-reference.png",
+      "page": 25,
+      "page_bbox": [
+        73.5,
+        91.5,
+        480.75,
+        245.25
+      ],
+      "size": [
+        543,
+        205
+      ],
+      "sha256": "093d816effeaf37943a93e9e3ef3d1a6bd255058259e01ef6a3c8f8cf50e2910",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source brick-width reference",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "clamp-before.png",
+      "page": 29,
+      "page_bbox": [
+        73.5,
+        104.25,
+        525.0,
+        300.0
+      ],
+      "size": [
+        806,
+        349
+      ],
+      "sha256": "8e8c34d892009228131dbffacb7f908918d285e3c4a1e20708a173d431a96a5b",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source drawing before edge extension",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    },
+    {
+      "asset": "clamp-after.png",
+      "page": 30,
+      "page_bbox": [
+        73.5,
+        73.50001525878906,
+        525.0,
+        287.25
+      ],
+      "size": [
+        1069,
+        507
+      ],
+      "sha256": "065981040646a314bee3d0d2e067b0137887f31c12e8a9fe63057cec1b420083",
+      "source_sha256": "e152830256a9d0e61c3d854aeb147fc725fb06bcb38e07e01028d71baaa32b42",
+      "credit": "Simon schreibt, Tech Art Documentation, supplied PDF",
+      "use": "Source clamp result",
+      "transformation": "Decoded embedded image; no crop, retouching or generative enhancement",
+      "rights": "Selected attributed teaching excerpt; publisher offers materials for teaching. No new license claimed.",
+      "source": "https://simonschreibt.de/gat/tech-art-course/"
+    }
+  ]
+}

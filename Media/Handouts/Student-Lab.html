@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Optimization lab: furnished lounge</title><style>body{overflow-wrap:anywhere;font:18px/1.65 system-ui;max-width:1100px;margin:32px auto;padding:26px;color:#162d3c;background:#f6f9fb}a{color:#006578}h1,h2,h3{line-height:1.25}h2{margin-top:2em}img{max-width:100%;height:auto}pre{overflow-x:auto;background:#e6eef1;padding:18px;white-space:pre-wrap}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid #bdced7;padding:10px;text-align:left;overflow-wrap:anywhere}nav{border-bottom:1px solid #bdced7;padding-bottom:15px}nav a{margin-right:15px}@media(max-width:650px){body{padding:12px;font-size:17px}table{display:block;overflow-x:auto}}@media print{body{background:white;color:black;font-size:10pt;max-width:none}nav{display:none}pre,table{break-inside:auto}h2,h3{break-after:avoid}a{color:black}img{max-height:300px;object-fit:contain}}</style><nav><a href="../../START-HERE.html">Start Here</a><a href="../../Week10-Slides.pptx">Deck with notes</a><a href="Student-Lab.html">Lab worksheet</a><a href="Study-Guide.html">Study guide</a><a href="../Simon-Field-Guide/index.html">Visual definitions</a></nav><p>Offline course handout · Print from your browser · <a href="../../Student-Lab.md">Editable Markdown source</a></p><main><h1 id="optimization-lab-furnished-lounge">Optimization lab: furnished lounge</h1>
+<p>Investigate a real furnished environment for a <strong>60 FPS target (16.67 ms per frame)</strong>. Find one cost, test one change, and recommend whether to keep it. Preserve the warm interior lighting, furniture layout, readable books and reflective/translucent glass.</p>
+<h2 id="before-class">Before class</h2>
+<p>Use Unreal Engine <strong>5.7</strong>. Follow the <a href="Unreal-Setup.html">project setup</a> or open the complete classroom project supplied by your instructor. The public starter requires the free Fab Cigar Room Environment. Allow time for first-launch shader compilation. No C++ build is required for this lab.</p>
+<h2 id="08-minutes-establish-a-baseline">0–8 minutes: establish a baseline</h2>
+<ol>
+<li>Open <strong>Lounge_Unoptimized</strong> under Content &gt; OptimizationLab. Duplicate it for your edits. Keep the original and <strong>Lounge_Reference</strong> unchanged. Reference preserves the source treatment; it is not a certified optimized answer.</li>
+<li>Explore in the editor. Use <strong>Play &gt; Standalone Game</strong> for timing. Audit Camera selects a fixed view. In game, <code>ToggleDebugCamera</code> enables exploration; toggle it off and relaunch before matched captures.</li>
+<li>Choose 1280×720 or another resolution your machine supports. Record resolution, scalability, screen percentage, RHI, hardware and warm-up. Use <code>r.SetRes 1280x720w</code>, <code>r.ScreenPercentage 100</code>, <code>r.VSync 0</code> and <code>t.MaxFPS 0</code>. Wait for shaders and streaming to settle.</li>
+<li>In Lit, use <code>stat unit</code> and record three readings of Frame, Game, Draw and GPU. If GPU tracks Frame, inspect <code>stat gpu</code>. If CPU tracks Frame, investigate the corresponding thread or wait in Unreal Insights. A cap or an unstable capture must be resolved before interpreting savings.</li>
+</ol>
+<p>Three readings are a spot check. For a stronger comparison, the supplied Capture-Lounge script makes three independent CSV launches. Its analysis window is rows 300–849 inclusive. See project setup for the command. Use matched launches rather than pooling all frames.</p>
+<h2 id="822-minutes-diagnose-and-test">8–22 minutes: diagnose and test</h2>
+<p>Use <strong>Tools &gt; Week 10 Optimization &gt; Validate and Generate Dashboard</strong>. It reports loaded editor content and candidates, not GPU milliseconds. Use the custom optimization overlay, Light Complexity, Shader Complexity, Wireframe or the relevant shadow visualization to inspect a specific lead. Debug views change rendering: return to Lit and disable the overlay before timing.</p>
+<p>Write a hypothesis before editing:</p>
+<blockquote>
+<p>If we change ___, we expect ___ to fall because ___. We will check that ___ remains correct in both the fixed view and a second angle.</p>
+</blockquote>
+<p>Test one reversible change in your duplicate. Inspect the actual actor/component properties and the relevant render path. Save the map, relaunch Standalone and repeat the same conditions. Do not remove the room or hide quality regressions to meet budget. An empty dashboard is not proof that the level is optimized.</p>
+<h2 id="2230-minutes-retest-and-recommend">22–30 minutes: retest and recommend</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Your team</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hardware, engine/build, RHI, map, resolution, quality, warm-up and capture window</td>
+<td></td>
+</tr>
+<tr>
+<td>Required visual quality and second viewpoint</td>
+<td></td>
+</tr>
+<tr>
+<td>Baseline Frame / Game / Draw / GPU readings in ms</td>
+<td></td>
+</tr>
+<tr>
+<td>Supporting GPU pass or CPU track; exact actor/component</td>
+<td></td>
+</tr>
+<tr>
+<td>Hypothesis and single change</td>
+<td></td>
+</tr>
+<tr>
+<td>Retest readings in ms; per-launch median and p95 if CSVs are available</td>
+<td></td>
+</tr>
+<tr>
+<td>Difference in median Frame and headroom against 16.67 ms</td>
+<td></td>
+</tr>
+<tr>
+<td>Same-view before/after screenshots; second-view quality check</td>
+<td></td>
+</tr>
+<tr>
+<td>Keep, revise or reject; uncertainty and the next discriminating test</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>A difference within observed launch variation is inconclusive. Explain what the experiment supports. Report recovered headroom separately from whether the frame meets budget. A valid failed hypothesis is useful evidence.</p>
+<h2 id="debrief-questions">Debrief questions</h2>
+<ol>
+<li>A 21.0 ms frame must recover how much time to reach 60 FPS?</li>
+<li>GPU falls from 20.0 to 15.0 ms while Frame stays at 17.4 ms. What would you inspect next?</li>
+<li>Why can a light with no authored distance cutoff still be culled? Why is a large radius only a lead?</li>
+<li>How does Lumen affect a proposed switch to Static lighting? What must be true before a baked comparison is valid?</li>
+<li>Why might changing Forced LOD have no useful effect on a Nanite mesh with only one conventional LOD?</li>
+<li>Your audit flags a property but timing does not change. What conclusion is supported, and what would you measure next?</li>
+</ol>
+<p>Use the <a href="../../Week10-Slides.pptx">single Week 10 deck</a> and <a href="Study-Guide.html">optimization study guide</a> for profiler, view mode, lighting, Nanite, material, Niagara and asset workflow references. The material, debris and Niagara comparison projects are separate demonstrations; their historical timings are not this lounge&#39;s baseline.</p>
+<h2 id="follow-up-material-logic">Follow-up: material logic</h2>
+<p>Use the <a href="Study-Guide.html#material-and-shader-logic">shader practice section</a> for two controlled experiments: runtime-zero versus static-disabled logic, and pixel versus vertex UV math. Record compiled stats, repeated timing and image agreement before transferring a change to a duplicate lounge material. This is a follow-up, not an extra requirement inside the 30-minute triage block.</p>
+<h2 id="optional-article-investigation">Optional article investigation</h2>
+<p>After the main lab, choose one follow-up: Nanite pixel error versus silhouette quality; a material path versus shadow invalidation; a first-use hitch versus a warm route; or shader variant/cook growth versus runtime cost. Use the <a href="Study-Guide.html#looman-articles-and-04-investigations">study guide</a> for the procedure and version limits. Packaged PSO work is an advanced separate investigation, not a requirement inside the lounge session.</p>
+<p>Add to your conditions: engine/RHI/build type, output size, internal scene percentage, upscaler, dynamic-resolution policy, quality groups, Detail Mode, Nanite MaxPixelsPerEdge and whether this is a first encounter or a repeated route. Save the audit JSON for editor provenance, then verify the actual capture&#39;s effective settings separately. State the quantity/event/pass your evidence measures and a visual failure condition. Report an inconclusive result when variation exceeds the apparent improvement.</p>
+</main></html>

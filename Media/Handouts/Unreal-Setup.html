@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 10 Unreal optimization lab</title><style>body{overflow-wrap:anywhere;font:18px/1.65 system-ui;max-width:1100px;margin:32px auto;padding:26px;color:#162d3c;background:#f6f9fb}a{color:#006578}h1,h2,h3{line-height:1.25}h2{margin-top:2em}img{max-width:100%;height:auto}pre{overflow-x:auto;background:#e6eef1;padding:18px;white-space:pre-wrap}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid #bdced7;padding:10px;text-align:left;overflow-wrap:anywhere}nav{border-bottom:1px solid #bdced7;padding-bottom:15px}nav a{margin-right:15px}@media(max-width:650px){body{padding:12px;font-size:17px}table{display:block;overflow-x:auto}}@media print{body{background:white;color:black;font-size:10pt;max-width:none}nav{display:none}pre,table{break-inside:auto}h2,h3{break-after:avoid}a{color:black}img{max-height:300px;object-fit:contain}}</style><nav><a href="../../START-HERE.html">Start Here</a><a href="../../Week10-Slides.pptx">Deck with notes</a><a href="Student-Lab.html">Lab worksheet</a><a href="Study-Guide.html">Study guide</a><a href="../Simon-Field-Guide/index.html">Visual definitions</a></nav><p>Offline course handout · Print from your browser · <a href="../../Unreal/README.md">Editable Markdown source</a></p><main><h1 id="week-10-unreal-optimization-lab">Week 10 Unreal optimization lab</h1>
+<p>Requires Unreal Engine 5.7 on Windows. This content-only project needs no C++ compile. Allow several minutes for initial shader compilation.</p>
+<h2 id="one-time-setup">One-time setup</h2>
+<ol>
+<li>Obtain the free <a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Cigar Room Environment by Hane Studios</a> in your Fab library.</li>
+<li>Add it to <code>Week10Assessment.uproject</code> through the Epic Games Launcher/Fab workflow. Keep its original <code>Content/Cigar_room</code> path.</li>
+<li>Close this project in Unreal. In PowerShell from this folder run <code>.\Setup-Lab.ps1</code>. Use <code>-Engine &#39;D:/Epic/UE_5.7&#39;</code> if needed. If you already have the Fab pack in another project, use <code>-FabProject &#39;D:/MyProject/MyProject.uproject&#39;</code> instead of adding it again.</li>
+<li>Open <code>Week10Assessment.uproject</code>. It now opens <strong>Lounge_Unoptimized</strong>. The setup creates its own maps and materials, preserves the source Fab map, and refuses to overwrite an existing lab.</li>
+</ol>
+<p>The public starter contains course-authored scripts, configuration and the editor plugin. Fab assets are acquired separately. Do not move their folder or commit it to a public repository.</p>
+<h2 id="in-class">In class</h2>
+<p>Read <a href="Lab-Project-Handout.html">the student lab</a>, duplicate Lounge_Unoptimized, and write a hypothesis before editing. In Standalone Game, Audit Camera supplies the matched view. Use editor navigation to inspect another angle; in game <code>ToggleDebugCamera</code> enables exploration and toggling it again returns to the comparison view. Keep the furniture, warm lighting, readable books and glass.</p>
+<p><strong>Tools &gt; Week 10 Optimization</strong> generates a dashboard at <code>Saved/Week10Optimization/index.html</code> or toggles candidate bounds. Enable editor Realtime for the overlay; disable the overlay before timing. Findings are inspection leads rather than measured savings. The generated local dashboard is current; the lecture&#39;s hosted dashboard is a historical snapshot.</p>
+<p>For a longer capture, run from this folder:</p>
+<pre><code class="language-powershell">.\Tools\Capture-Lounge.ps1 -OutputDirectory Saved/Baseline-01
+</code></pre>
+<p>It makes three separate 1280×720 standalone launches with screenshots disabled. Use a fresh output directory for each treatment. Close other capture scripts first. Frame analysis uses rows 300–849 inclusive. From the repository root, compare a matched pair with:</p>
+<pre><code class="language-powershell">python Tools/compare_captures.py Unreal/Saved/Baseline-01/run-1.csv Unreal/Saved/Retest-01/run-1.csv --start 300 --stop 850
+</code></pre>
+<p>Pass <code>-Map &#39;/Game/OptimizationLab/YourDuplicate&#39;</code> to capture an edited duplicate. Record machine, quality settings, RHI and any changes in the conditions table in the handout. Repeat the comparison for each launch rather than combining all frames and hiding variation.</p>
+<h2 id="if-something-fails">If something fails</h2>
+<ul>
+<li>Missing Cigar_room map: add the Fab content to this project at its original path, then run setup.</li>
+<li>Script execution blocked: invoke <code>powershell -ExecutionPolicy Bypass -File .\Setup-Lab.ps1</code> for this reviewed script only; this does not change the machine policy.</li>
+<li>Wrong engine: use UE 5.7 and supply its installation path; older engines cannot read newer saved assets.</li>
+<li>Existing lab: open it. Use a fresh starter copy to rebuild; do not delete a student&#39;s working maps.</li>
+<li>Checkerboard material: wait for shaders, then inspect the actual material slot. Two empty source wine-bottle slots are documented source data, not a download failure.</li>
+<li>Unexpected camera: stop debug camera or piloting, close/relaunch Standalone, and verify Audit Camera.</li>
+<li>Near-identical timing: report the variation and collect a longer or more targeted trace. An inconclusive treatment is valid evidence.</li>
+</ul>
+<p>The audit JSON records global editor console settings and active/disabled light counts for provenance. Verify the effective settings in your actual capture separately; defaults and per-view overrides can differ. See the study guide in the repository root for interpretation.</p>
+<p>Use DX12 with Shader Model 6 for this Nanite/VSM lab. The supplied configuration explicitly targets PCD3D_SM6. Restart after changing shader formats and confirm SM6 in the startup log; SM5 fallback rendering is a different workload.</p>
+</main></html>

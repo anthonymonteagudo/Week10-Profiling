@@ -23,7 +23,7 @@ From the project folder:
 python Tools/summarize_comparison.py Saved/MaterialTiming-01
 ```
 
-Use fresh output directories. The timing runner rotates treatment order and records three launches for each mode without screenshots. Summaries use Unreal CSV rows 192â€“575 per launch. The test uses Standalone at 2560 Ã— 1440, uncapped with VSync off. Raw captures are local.
+Use fresh output directories. The timing runner rotates treatment order and records three launches for each mode without screenshots. Summaries use Unreal CSV rows 192–575 per launch. The test uses Standalone at 2560 × 1440, uncapped with VSync off. Raw captures are local.
 
 
 ## Material and shader logic experiments

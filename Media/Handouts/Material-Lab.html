@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 10 Â· Material cost lab</title><style>body{overflow-wrap:anywhere;font:18px/1.65 system-ui;max-width:1100px;margin:32px auto;padding:26px;color:#162d3c;background:#f6f9fb}a{color:#006578}h1,h2,h3{line-height:1.25}h2{margin-top:2em}img{max-width:100%;height:auto}pre{overflow-x:auto;background:#e6eef1;padding:18px;white-space:pre-wrap}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:16px}th,td{border:1px solid #bdced7;padding:10px;text-align:left;overflow-wrap:anywhere}nav{border-bottom:1px solid #bdced7;padding-bottom:15px}nav a{margin-right:15px}@media(max-width:650px){body{padding:12px;font-size:17px}table{display:block;overflow-x:auto}}@media print{body{background:white;color:black;font-size:10pt;max-width:none}nav{display:none}pre,table{break-inside:auto}h2,h3{break-after:avoid}a{color:black}img{max-height:300px;object-fit:contain}}</style><nav><a href="../../START-HERE.html">Start Here</a><a href="../../Week10-Slides.pptx">Deck with notes</a><a href="Student-Lab.html">Lab worksheet</a><a href="Study-Guide.html">Study guide</a><a href="../Simon-Field-Guide/index.html">Visual definitions</a></nav><p>Offline course handout · Print from your browser · <a href="../../MaterialCostLab/README.md">Editable Markdown source</a></p><main><h1 id="week-10-â-material-cost-lab">Week 10 Â· Material cost lab</h1>
+<p>This isolated UE 5.7 C++ project creates a test scene at runtime. Build MaterialCostLabEditor for Win64 Development using the Visual Studio C++ toolchain. The project contains the material assets. Tools/build_materials.py can regenerate them using the Editor Python startup script.</p>
+<pre><code class="language-powershell">$ue = &#39;C:/Program Files/Epic Games/UE_5.7/Engine/Binaries/Win64/UnrealEditor.exe&#39;
+$project = (Resolve-Path ./MaterialCostLab.uproject).Path
+&amp; $ue $project -game -MaterialMode=CPD
+</code></pre>
+<p>Use MID, Lean, MasterOff or MasterOn in place of CPD to select a different treatment.</p>
+<h2 id="match-the-tests">Match the tests</h2>
+<ul>
+<li>CPD and MID use the same 336 cubes, same camera, same scalar sequence and same color formula. CPD writes the scalar to index 0 per primitive and shares a material. MID creates one dynamic material instance per mesh component and writes the scalar as a material parameter. Dynamic instancing is enabled for both treatments.</li>
+<li>Lean, MasterOff and MasterOn render the same unlit plane with the same framing. Lean emits a constant. MasterOff uses a static switch to select the same constant and compile out the optional ripple. MasterOn uses the same graph design with the switch default enabled. The ripple performs deliberately expensive pixel math for teaching. This test does not measure shader compile time or package size.</li>
+</ul>
+<p>From the project folder:</p>
+<pre><code class="language-powershell">.\Tools\Capture-Comparison.ps1 -Kind Visual -OutputDirectory Saved/MaterialVisual-01
+.\Tools\Capture-Comparison.ps1 -Kind Timing -OutputDirectory Saved/MaterialTiming-01
+python Tools/summarize_comparison.py Saved/MaterialTiming-01
+</code></pre>
+<p>Use fresh output directories. The timing runner rotates treatment order and records three launches for each mode without screenshots. Summaries use Unreal CSV rows 192–575 per launch. The test uses Standalone at 2560 × 1440, uncapped with VSync off. Raw captures are local.</p>
+<h2 id="material-and-shader-logic-experiments">Material and shader logic experiments</h2>
+<p>The expanded project also accepts <code>-MaterialMode=DynamicZero</code>, <code>UVPixel</code> and <code>UVVertex</code>. No C++ change or rebuild is needed to add these modes: the existing runtime loader selects their material assets.</p>
+<ul>
+<li><strong>Feature removal:</strong> DynamicZero uses a runtime scalar RippleWeight = 0 to blend the procedural ripple out. MasterOff compiles the feature branch out with a Static Switch. Both intend the same flat color. Inspect target Platform Stats and compare the actual output and GPU timing. A zero scalar is not a compile-time promise that the feature was removed.</li>
+<li><strong>Stage placement:</strong> UVPixel transforms UVs by <code>UV * 8 + (0.23, 0.17)</code> before the texture sample in the pixel graph. UVVertex passes the same affine transform through a Vertex Interpolator before sampling. The same checker, plane and camera make alignment differences visible. Interpolators/vertex work cost something; a tiny UV operation may show no meaningful frame saving. Nonlinear operations need a separate tessellation/quality test.</li>
+</ul>
+<p>Run a visual check and a separate repeated timing capture with fresh output directories:</p>
+<pre><code class="language-powershell">.\Tools\Capture-Shader-Logic.ps1 -Kind Visual -Experiment Feature -OutputDirectory Saved/Shader-Feature-Visual
+.\Tools\Capture-Shader-Logic.ps1 -Kind Timing -Experiment Feature -OutputDirectory Saved/Shader-Feature-Timing
+.\Tools\Capture-Shader-Logic.ps1 -Kind Visual -Experiment UV -OutputDirectory Saved/Shader-UV-Visual
+.\Tools\Capture-Shader-Logic.ps1 -Kind Timing -Experiment UV -OutputDirectory Saved/Shader-UV-Timing
+</code></pre>
+<p>Each timing experiment launches A, B, B, A, A, B at 2560×1440. Analyze rows 192–575 inclusive, separately per launch, and record quality/API settings. Timing runs do not take screenshots. The original Capture-Comparison and its five-mode summary are unchanged.</p>
+<p>Open <code>/Game/Lab/M_DynamicZero</code>, <code>M_MasterOff</code>, <code>M_UVPixel</code> and <code>M_UVVertex</code> in the Material Editor for Stats, Platform Stats and generated code. Match feature level, pass and quality. Run <code>Tools/build_shader_experiments.py</code> via Unreal Editor Python to regenerate the added graphs and owned checker texture. It leaves the original five graphs intact and uses their shared generator helpers; use a copy before editing examples.</p>
+<p>The <a href="https://github.com/anthonymonteagudo/Week10-Profiling/blob/main/Optimization-Study-Guide.md#material-and-shader-logic">student study guide</a> supplies the worksheet, optimization checklist and image-quality tests. This unlit conventional-material lab isolates concepts; it does not certify Substrate, mobile or Nanite shader performance.</p>
+</main></html>
