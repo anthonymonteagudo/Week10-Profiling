@@ -252,7 +252,7 @@ The current lab explicitly requests DX12 with PCD3D_SM6 in DefaultEngine.ini. Re
 
 ## Gnomon Part 04: material workflow checks
 
-The current deck places materials/textures/shader logic at 64–97. Use the packed-mask example at 78, actual glass graph at 83, source stats snapshots at 84 and instance-override example at 92 with the existing runnable experiments. The main furnished-lounge lab is 113. These follow-ups do not add requirements inside its thirty-minute block.
+The current deck places materials/textures/shader logic at 68–103. Use the packed-mask example at 82, actual glass graph at 87, source stats snapshots at 88 and instance-override example at 98 with the existing runnable experiments. The main furnished-lounge lab is 121. These follow-ups do not add requirements inside its thirty-minute block.
 
 An unchecked material-instance override inherits the parent value. To remove a compiled feature, inspect its static-switch branch and target variant. A runtime scalar zero can change the image while retaining work, and a shared packed texture may still supply roughness or occlusion after emissive work disappears. Keep the channel layout, mip behavior, color interpretation and compression compatible when swapping packed maps. Group related parameters so another artist can use the instance correctly.
 
@@ -261,3 +261,22 @@ Record target, pass and feature state with compiled statistics. Several edits se
 `r.Streaming.PoolSize` controls a runtime memory budget. It does not resize source or cooked texture files. `stat streaming` reports distinct categories including wanted mips, residency and NonStreaming Mips; the latter is not every texture in use. Check the texture's built format/mips, actual pool pressure, scalability/device policy and target memory before changing a budget. Restore the previous value after a diagnostic experiment.
 
 References: [Epic material parameters](https://dev.epicgames.com/documentation/unreal-engine/material-parameter-expressions-in-unreal-engine), [material properties](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-properties), [streaming configuration](https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-configuration-in-unreal-engine), [streaming metrics](https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-metrics-in-unreal-engine). Source frames are credited in the presentation notes.
+
+
+## Shipped-game optimization examples
+
+These nine examples appear beside the corresponding concepts in the single deck. Developer results belong to their stated engine, content and hardware. Each case is an idea to test, with a quality or interaction requirement to preserve.
+
+| Slide | Game and technique | Developer source / reading pointer |
+|---|---|---|
+| 17 | Factorio: cache the work that stays valid | [Developer breakdown](https://www.factorio.com/blog/post/fff-323) — Water animation — Game integration, paragraphs on prepare render and per-chunk draw orders |
+| 42 | DOOM: narrow each surface’s light list | [Developer breakdown](https://www.advances.realtimerendering.com/s2016/Siggraph2016_idTech6.pdf) — PDF pages 4–9: Data Structure for Lighting & Shading / Preparing Clustered Structure |
+| 54 | Fortnite: replace distant groups with a proxy | [Developer breakdown](https://www.unrealengine.com/tech-blog/unreal-engine-improvements-for-fortnite-battle-royale) — Building and Rendering a Large Map, HLOD/Simplygon and overnight commandlet paragraphs |
+| 67 | Fortnite: more leaf geometry can cost less | [Developer breakdown](https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4) — Trees — Construction; images show final foliage and its triangle visualization |
+| 90 | Horizon: spend samples where clouds exist | [Developer breakdown](https://www.advances.realtimerendering.com/s2017/Nubis%20-%20Authoring%20Realtime%20Volumetric%20Cloudscapes%20with%20the%20Decima%20Engine%20-%20Final%20.pdf) — PDF pages 97–98, printed slides 99–100: Ray-March Optimizations |
+| 96 | Tsushima: let many systems share one wind | [Developer breakdown](https://blog.playstation.com/2021/01/12/how-stunning-visual-effects-bring-ghost-of-tsushima-to-life/) — Wind, paragraphs beginning ‘The grass and pampas fields’ through local displacement |
+| 106 | Fortnite: bake branch motion into a texture | [Developer breakdown](https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4) — Trees — Wind animation / Distance culling |
+| 111 | Uncharted 4: make the card fit each frame | [Developer breakdown](https://www.advances.realtimerendering.com/other/2016/naughty_dog/NaughtyDog_TechArt_Final.pdf) — PDF pages 124–127, especially 127: Particle Optimizations |
+| 126 | Fortnite: move first-use work into loading | [Developer breakdown](https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem) — PSO precaching / The driver cache |
+
+For each case: identify the repeated or unnecessary work, the replacement representation, the cost moved elsewhere, and one test that could reject it. The class projects demonstrate their documented techniques; they do not implement every production feature above. The Uncharted bounds-aware flipbook and Fortnite branch-transform bake are references, while the supplied debris demo uses per-vertex VAT offsets and a fixed flipbook card.
