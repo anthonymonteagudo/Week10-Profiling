@@ -34,4 +34,4 @@ The consolidated deck has 162 slides. Optional article/04 investigations cover f
 
 The 28 captures are embedded directly in the deck. The main sequence runs through 135; reference comparisons and the complete numbered walkthroughs are 136–162. Materials/textures/shader logic occupy 68–103, and the custom audit appears before the break and lab.
 
-The final slide (162) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 59 article, video, documentation and media links, with relevant slide numbers.
+The final slide (162) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 62 article, video, documentation and media links, with relevant slide numbers.

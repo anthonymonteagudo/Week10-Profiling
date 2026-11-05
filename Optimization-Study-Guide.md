@@ -309,6 +309,9 @@ This index consolidates the deck’s cited links, the assessed Looman companion 
 
 ### Epic Games — engine documentation
 
+- [Grouping Actors](https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7) — Slide 54.
+- [Merging Actors: Merge, Simplify, Batch and Approximate](https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7) — Slide 54.
+- [InstancedStaticMeshComponent — UE 5.7 API](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7) — Slide 54.
 - [Customized uvs in unreal engine materials](https://dev.epicgames.com/documentation/unreal-engine/customized-uvs-in-unreal-engine-materials) — Slides 93.
 - [Fbx static mesh pipeline in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine?application_version=5.7) — Slides 50.
 - [How to create a gpu sprite effect in niagara for unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-create-a-gpu-sprite-effect-in-niagara-for-unreal-engine) — Slides 158.
@@ -374,3 +377,24 @@ This index consolidates the deck’s cited links, the assessed Looman companion 
 ### Course experiments and captures
 
 The Week 10 material/CPD, shader logic, Live/VAT/Flipbook debris and Niagara comparisons, the custom overlay/dashboard and native lounge captures are course-authored evidence. Use the [project README](README.md), [lab worksheet](Student-Lab.md), [capture gallery](Media/Optimization-Demo/index.html), and [comparison project releases](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-comparison-demos-v2). Their results retain the stated launch conditions; third-party game results are not performance guarantees for this lab.
+
+
+## Grouping, instancing, merging and HLOD
+
+Slide 54 distinguishes these related choices after the LOD recipe and before lightmap/collision requirements.
+
+| Technique | What changes | Useful check |
+|---|---|---|
+| Editor grouping | Selection/transforms are managed together; rendering is not automatically batched. | Check actor/component and draw statistics before claiming savings. |
+| ISM / HISM | Repeated copies share a mesh through instanced components; hierarchy and culling behavior depend on representation/path. | Test material compatibility, movement, per-instance variation and target rendering cost. |
+| Mesh merging / aggregation | A static set becomes combined geometry; material sections may remain. | Review section count, baked materials/UVs, collision, bounds and occlusion. |
+| HLOD | Distant groups switch to proxies; nearby assets retain their detailed representation. | Test transition quality and streaming/visibility granularity. |
+| Per-asset LOD | One asset changes geometric detail with distance or projected size. | Inspect silhouette and material/lightmap behavior at the switch. |
+
+For repeated chairs, investigate instancing. For a static shelf assembly seen together, investigate merging. For distant building clusters, investigate HLOD. These are predictions to test, not guarantees of fewer milliseconds. Avoid combining the entire room indiscriminately: visibility, streaming and editing granularity can worsen. In a duplicate test map, select a small static set and use **Actor > Merge Actors > Merge Actor Settings**; preserve the originals. Compare open and partially occluded views, material sections, CPU submission and relevant GPU passes. Grouping with Ctrl+G alone is an editing convenience.
+
+### Additional primary references
+
+- [Grouping Actors](https://dev.epicgames.com/documentation/en-us/unreal-engine/grouping-actors-in-unreal-engine?application_version=5.7) — slide 54.
+- [Merging Actors: Merge, Simplify, Batch and Approximate](https://dev.epicgames.com/documentation/en-us/unreal-engine/merging-actors-in-unreal-engine?application_version=5.7) — slide 54.
+- [InstancedStaticMeshComponent — UE 5.7 API](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/InstancedStaticMeshComponent?application_version=5.7) — slide 54.
