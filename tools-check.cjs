@@ -1,13 +1,7 @@
-const fs = require('node:fs');
-const assert = require('node:assert/strict');
-
-for (const file of ['README.md', 'Student-Lab.md']) {
-  const content = fs.readFileSync(file, 'utf8');
-  for (const [, target] of content.matchAll(/\]\(([^)]+)\)/g)) {
-    if (!/^(https?:|#)/.test(target)) {
-      assert.ok(fs.existsSync(target), `Missing ${target} in ${file}`);
-    }
-  }
-}
-assert.equal(fs.readFileSync('Week10-Slides.pptx').subarray(0, 4).toString('hex'), '504b0304');
-console.log('Handout links and PowerPoint package verified.');
+const fs=require('node:fs');const path=require('node:path');const assert=require('node:assert/strict');
+function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.name.startsWith('.')||['Saved','Intermediate','node_modules','__pycache__'].includes(e.name)?[]:e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);}
+const files=walk('.');for(const file of files.filter(f=>f.endsWith('.md'))){const content=fs.readFileSync(file,'utf8');for(const [,raw]of content.matchAll(/\]\(([^)]+)\)/g)){if(/^(https?:|#)/.test(raw))continue;const target=raw.split('#')[0];assert.ok(fs.existsSync(path.resolve(path.dirname(file),decodeURI(target))),`Missing ${raw} in ${file}`);}}
+assert.equal(fs.readFileSync('Week10-Slides.pptx').subarray(0,4).toString('hex'),'504b0304');
+assert.ok(fs.existsSync('Unreal/Setup-Lab.ps1'));assert.ok(fs.existsSync('Unreal/Plugins/Week10Optimization/Content/Python/init_unreal.py'));
+for(const f of files){assert.ok(!/Instructor-Lab-Key|Fault-Key|Rehearsal|Lounge_(Cache|Fill)Retest\.umap/.test(f),`Instructor-only file: ${f}`);assert.ok(!/\.(uasset|umap|ubulk|uexp|zip)$/i.test(f),`Raw assets/archive in public tree: ${f}`);if(/\.(ini|json|ps1|py|md|cjs)$/.test(f))assert.ok(!/SecurityToken\s*=|gh[pousr]_[A-Za-z0-9]{20}/.test(fs.readFileSync(f,'utf8')),`Credential-like config: ${f}`);}
+console.log(`PASS: Markdown links, deck package, starter/plugin and public distribution boundary (${files.length} files).`);

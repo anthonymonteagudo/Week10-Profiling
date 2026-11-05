@@ -1,0 +1,7 @@
+Unreal/Content/
+Unreal/Saved/
+Unreal/Intermediate/
+Unreal/DerivedDataCache/
+Unreal/Binaries/
+__pycache__/
+*.pyc

@@ -1,0 +1,2 @@
+import week10_optimization
+week10_optimization.register_menu()

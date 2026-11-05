@@ -1,0 +1,8 @@
+{
+  "light_radius_cm": 500.0,
+  "mesh_lod0_triangles": 50000,
+  "fallback_triangles": 50000,
+  "translucent_actor_warning_count": 4,
+  "overlay_max_actors": 100,
+  "description": "Teaching investigation thresholds, not universal performance budgets. Set per project. OptAudit.Ignore.RULE_ID actor tags document explicit exceptions."
+}

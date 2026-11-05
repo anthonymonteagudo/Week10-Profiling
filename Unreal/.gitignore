@@ -1,0 +1,9 @@
+/Content/
+Saved/
+Intermediate/
+DerivedDataCache/
+Binaries/
+.vs/
+*.sln
+__pycache__/
+*.pyc

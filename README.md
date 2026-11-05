@@ -1,23 +1,21 @@
-# Week 10 · Unreal performance profiling
+# Week 10: profiling and optimization
 
-- [Download the editable Unreal 5.7 texture demos](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-texture-demos-v1)
-- [Student lab](Student-Lab.md)
-- [Lecture slides](Week10-Slides.pptx)
-- [Capture comparison](Tools/compare_captures.py)
-- [Frame-budget report](Tools/report_perf_budget.py)
-- [Texture mask packer](Tools/pack_masks.py) and [practice inputs](Tools/DemoInputs)
+## Start here
 
-For the texture demos, extract the release ZIP and open Week10ProfilingLab.uproject. The project opens ArrayDemo. Use Unreal Engine 5.7 for the assessment lab. Ask your instructor for the separate Week10Assessment project and your assigned Lighting or Glass map. Make a writable copy before editing. Launch Standalone Game and use Audit Camera.
+1. [Set up the UE 5.7 furnished lounge lab](Unreal/README.md). The [starter ZIP](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-optimization-lab-v2) contains our project tools and setup; obtain the free Fab environment separately.
+2. Follow the [student lab and evidence worksheet](Student-Lab.md).
+3. Use the [single Week 10 slide deck](Week10-Slides.pptx) and [optimization study guide](Optimization-Study-Guide.md).
 
-For an offline comparison of two matching Unreal CSV Profiler captures, run:
+The lab opens Lounge_Unoptimized, a furnished interior with deliberately introduced production mistakes. Keep its reference map unchanged and test one reversible change. The content-only editor plugin adds **Tools > Week 10 Optimization** for a custom viewport overlay and a searchable local dashboard. Disable the overlay before timing. Findings are candidates rather than proven savings.
 
-```powershell
-python Tools/compare_captures.py "<baseline.csv>" "<retest.csv>"
-```
+![The actual furnished lounge](Media/Lounge.png)
 
-The texture packer requires Python and Pillow. From the repository root, run:
+## Supporting tools and demonstrations
 
-```powershell
-python Tools/pack_masks.py Tools/DemoInputs/AO.png Tools/DemoInputs/Roughness.png Tools/DemoInputs/Metallic.png Packed_ORM.png
-```
+- [Capture comparison](Tools/compare_captures.py) and [frame-budget report](Tools/report_perf_budget.py) process Unreal CSVs. Run `python Tools/compare_captures.py --help` for options.
+- [Read-only inventory](Tools/audit_optimization_candidates.py) is an optional simple Python rule example; the lab plugin is the main audit workflow.
+- [Texture mask packer](Tools/pack_masks.py) and [practice inputs](Tools/DemoInputs) require Python and Pillow. Run `python Tools/pack_masks.py Tools/DemoInputs/AO.png Tools/DemoInputs/Roughness.png Tools/DemoInputs/Metallic.png Packed_ORM.png`.
+- [Material, debris and Niagara comparison projects](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-comparison-demos-v1): UE 5.7 Windows editor binaries and C++ source are supplied. Rebuild with the Windows C++ toolchain if your engine build does not match. These are separate instructor-led demonstrations.
+- [Editable texture demo release](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-texture-demos-v1) opens ArrayDemo and is separate from the optimization lab.
 
+Use the local dashboard generated from your own open map. The lecture's private hosted dashboard is a historical snapshot and is not a live view of your project. Instructor answer keys and the complete licensed classroom working copy are distributed separately.
