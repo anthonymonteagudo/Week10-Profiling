@@ -241,3 +241,10 @@ The inventory distinguishes lights with Affects World enabled from disabled comp
 ### When a promising number is inconclusive
 
 The 04 source's lens-flare A/B output reports about 16.03 versus 16.10 ms and explicitly flags a 27% chance of noise. That screenshot does not establish a saving. Repeat independent launches, inspect distributions and preserve the image requirement. Do not add together the video's separate experiments: several treatments are reset between tests.
+
+
+## Rendering configuration correction from the live capture rehearsal
+
+The 5 November live walkthrough found that the earlier lounge timing launches used DX12 **SM5**, as recorded in their raw startup logs. Nanite was therefore using fallback rendering, and those runs do not validate the intended SM6 Nanite/VSM path. Keep the earlier fill-shadow numbers as historical evidence of that SM5 configuration only; the cache experiment does not establish VSM-cache performance. Do not compare those numbers directly with the new SM6 images/trace.
+
+The current lab explicitly requests DX12 with PCD3D_SM6 in DefaultEngine.ini. Restart the editor after changing shader formats and verify the startup log says SM6 before demonstrating Nanite or VSM. The live SM6 walkthrough also reports a VSM local-light overflow and translucent material assignments on a Nanite window mesh. These are real inspection leads in the intentionally inefficient scene, not instructions to increase a budget or globally remove glass. Inspect relevant lights and split/use appropriate mesh representations before retesting image quality. The new screenshots/trace demonstrate tools, not a controlled performance improvement.

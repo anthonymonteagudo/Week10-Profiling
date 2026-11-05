@@ -42,3 +42,5 @@ Pass `-Map '/Game/OptimizationLab/YourDuplicate'` to capture an edited duplicate
 - Near-identical timing: report the variation and collect a longer or more targeted trace. An inconclusive treatment is valid evidence.
 
 The audit JSON records global editor console settings and active/disabled light counts for provenance. Verify the effective settings in your actual capture separately; defaults and per-view overrides can differ. See the study guide in the repository root for interpretation.
+
+Use DX12 with Shader Model 6 for this Nanite/VSM lab. The supplied configuration explicitly targets PCD3D_SM6. Restart after changing shader formats and confirm SM6 in the startup log; SM5 fallback rendering is a different workload.

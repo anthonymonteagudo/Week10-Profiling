@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 10 demo run sheet</title><style>body{max-width:1000px;margin:40px auto;padding:24px;background:#0b1420;color:#eaf2f7;font:19px/1.7 system-ui}a{color:#91e4f0}li{margin:14px 0}code{color:#bce7d7}@media print{body{background:white;color:black}}</style><a href="index.html">← Capture gallery</a><h1>Week 10: live optimization demonstration</h1>
+<p>Open the accompanying gallery for all 28 actual captures and their original PNGs. The room is Hane Studios&#39; furnished Cigar Room, with deliberately inefficient classroom settings. The project is UE 5.7.4, DX12 SM6. These are demonstration images, not a controlled before/after performance result.</p>
+<h2>Core demonstration order</h2>
+<ol>
+<li><strong>Lit room and second angle.</strong> Establish furniture, warm light, books, glass and close-up detail that must survive optimization. Confirm Lounge_Unoptimized and keep its reference unchanged.</li>
+<li><strong>stat unit → stat gpu.</strong> Start with frame/game/draw/RHI/GPU evidence and actual render resolution. Use <code>stats.MaxPerGroup 8</code> for a readable queue overview; restore 25 later. Identify the next question rather than declaring the largest label a fix.</li>
+<li><strong>Timing Insights.</strong> Open the included Lounge-SM6 trace in UE 5.7 Insights. Click a gameplay frame, drag a time-ruler interval, then press F. Show graphics/compute overlap and nested events. Hide GPU tracks and inspect CPU idle/waits. The capture uses t.MaxFPS 60, so pacing waits are expected. Its inclusive totals are not a serial frame sum.</li>
+<li><strong>Light Mixer.</strong> Window → Light Mixer; inspect the 33 lights, their radii and intensities. Search Interior Fill. Explain selection/solo/mute, then restore visibility before comparison. Change one candidate only in a duplicate map.</li>
+<li><strong>Light Complexity → VSM cache → Lit.</strong> Connect overlapping influence to the actual attenuation controls. Read the VSM legend instead of assigning generic good/bad colors. The SM6 run reports local-light overflow; investigate coverage and required lights before increasing limits. High-resolution debug captures also produced page-pool warnings; those allocations are not steady low-resolution benchmarks.</li>
+<li><strong>Nanite mask → clusters → triangles → overdraw.</strong> Confirm the path, inspect geometry and then check GPU work. Distinguish Nanite rendering, fallback meshes and collision. The source window mesh has translucent material assignments that produce native Nanite warnings: inspect representation compatibility rather than globally removing glass.</li>
+<li><strong>Material buffers and graph.</strong> Compare Unlit/Base Color, Detail Lighting, Roughness and World Normal with Lit. Use complexity views as inspection leads; their models are not timings. Open M_Glass, inspect the actual graph, then Stats/Platform Stats for the target and pass. The graph capture shows entry points, not a full target-statistics readout.</li>
+<li><strong>Render Resource Viewer.</strong> Inspect named allocations and filters. The captured filtered editor total is not all VRAM or packaged game memory.</li>
+<li><strong>Custom overlay → dashboard → overlay off.</strong> Follow a rule to an actor/property and state a falsifiable hypothesis. Show the 376 candidates as leads, then return to Lit, disable all diagnostic overlays and capture a matched baseline before editing.</li>
+</ol>
+<h2>Capture and reset notes</h2>
+<ul>
+<li>Clean viewport images are 1920×1080 at the recorded cameras. Native editor/Insights images retain their actual UI dimensions. The stat HUD shows an 866×550 editor render view. Do not compare these numbers directly.</li>
+<li>The real trace is a standalone editor runtime at 1280×720, 100% screen percentage, 60 FPS cap, 900 CSV frames, named events and CPU/GPU/frame/bookmark/loading/counter channels. It includes startup and ran alongside the editor, so use it for navigation and evidence interpretation. Record a separate minimal capture for timing claims.</li>
+<li>The full PNGs retain original pixels. The material graph has an explicitly recorded crop that excludes the clipped lower table/taskbar. No UI or data was generated to impersonate Unreal.</li>
+<li>The earlier lounge timing logs say SM5. Retain their numeric results only as historical SM5 fallback evidence; they do not validate the intended SM6 Nanite/VSM path. The current starter and complete lab explicitly request PCD3D_SM6. Restart after changing shader formats and verify the startup log.</li>
+<li>Capture scripts do not save assets/maps. Restore Audit Camera, Lit, Nanite/VSM visualizations off, the custom overlay off, <code>stat none</code>, and <code>stats.MaxPerGroup 25</code> before a timing run.</li>
+</ul>
+<h2>Primary references</h2>
+<ul>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-light-mixer-in-unreal-engine?application_version=5.7">Epic Light Mixer</a></li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-modes-in-unreal-engine?application_version=5.7">Epic viewport modes</a></li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5?application_version=5.7">Epic Timing Insights controls</a></li>
+<li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/virtual-shadow-maps-in-unreal-engine?application_version=5.7">Epic Virtual Shadow Maps</a></li>
+</ul>
+<p>Rendered environment imagery: Hane Studios Cigar Room, acquired through Fab. This capture pack distributes screenshots, not licensed source assets. The private full classroom project and raw trace remain separate from the public starter.</p>
+</html>
