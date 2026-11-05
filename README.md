@@ -34,4 +34,6 @@ The consolidated deck has 166 slides. Optional article/04 investigations cover f
 
 The 28 captures are embedded directly in the deck. The main sequence runs through 139; reference comparisons and the complete numbered walkthroughs are 140–166. Materials/textures/shader logic occupy 71–107, and the custom audit appears before the break and lab.
 
-The final slide (166) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 74 article, video, documentation and media links, with relevant slide numbers.
+The final slide (166) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 79 article, video, documentation and media links, with relevant slide numbers.
+
+Slide 7 introduces A/B testing; 146 supplies the detailed setup. Open the PowerPoint Notes pane for local definitions and clarifications on 162 slides (106 terms). The slide order, measured sequences and thirty-minute lab at 125 are preserved.

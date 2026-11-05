@@ -2,6 +2,12 @@
 
 Use **Week10-Slides.pptx** for the whole session. The lecture, measured examples and walkthrough appendix are all in that file. Use the existing Student Lab for the assessment activity and current Canvas instructions for formal requirements.
 
+## A/B testing and slide-note definitions
+
+Slide **7** defines A/B testing: A is the baseline, and B changes one selected factor. Use it to test a performance hypothesis while checking image quality and interaction. Slide **146** gives the detailed setup. Preserve A, duplicate it for B, state the expected timing change and visual requirement, and hold the workload, machine, build and settings constant. Warm both versions for a steady test, repeat unchanged A/A runs to estimate variation, and compare repeated equal-length A–B–B–A captures. Disable diagnostics and return to Lit before timing. Keep inconclusive results and inspect the relevant pass as well as total frame time.
+
+The same deck includes **106 plain-language term definitions across 162 slides’ speaker notes**, including rendering passes, rasterization, culling, shadow caches, material compilation, texture residency and compute dispatch. Open PowerPoint’s **Notes** pane in editing view, or use **View > Notes Page**, to read them beside each slide. They expand acronyms, connect the process to Unreal and explain measurement limits. Existing narration, measured examples and source credits are retained.
+
 ## The decision process
 
 Write a quality requirement first. Capture a representative workload. Identify the limiting work. Predict what one change should affect, repeat under matching conditions, and decide using both the image and the timings. A memory reduction, fewer draw calls and a faster frame are different results.
@@ -446,3 +452,11 @@ The source’s Unity lightmap example demonstrates that compatible state can mat
 Reducing screen percentage is a diagnostic perturbation. At 25% of each dimension, nominal pixel area is 1/16; this is not 25% of the pixel count. Faster rendering suggests resolution-sensitive work but does not identify one pass. Unchanged timing does not prove a CPU bottleneck: pacing, geometry, memory and fixed GPU work may dominate. A Present/wait marker alone likewise does not prove GPU saturation. Read the surrounding CPU/GPU timeline and frame-cap/VSync state.
 
 The PDF’s “Crash the Engine” exercise and its old limits/timings are historical teaching examples, not instructions or current engine budgets. For any later workload sweep, use small capped increments in a disposable scene, save first, record the changed count and stop while the editor stays responsive. No crashing, mass duplication or project-setting changes were performed for this integration. These optional investigations add no requirement inside the thirty-minute lounge lab.
+
+## Additional primary references for the slide-note definitions
+
+- [Epic — Graphics Programming Overview](https://dev.epicgames.com/documentation/unreal-engine/graphics-programming-overview-for-unreal-engine) — 11, 12, 14, 16, 18, 19, 20, 31, 48, 49, 62, 64, 68, 76, 78, 96, 140, 143, 147.
+- [Epic — Mesh Drawing Pipeline](https://dev.epicgames.com/documentation/en-us/unreal-engine/mesh-drawing-pipeline-in-unreal-engine) — 17, 49, 55, 56, 100, 101, 105, 107, 113, 119, 143, 160.
+- [Epic — Texture Streaming Overview](https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-overview-for-unreal-engine) — 11, 27, 29, 30, 31, 35, 79, 80, 81, 82, 87, 92, 151, 152, 165.
+- [Epic — PSO Precaching](https://dev.epicgames.com/documentation/en-us/unreal-engine/pso-precaching-for-unreal-engine) — 27, 28, 103, 129, 130.
+- [Epic — View Modes](https://dev.epicgames.com/documentation/en-us/unreal-engine/view-modes-in-unreal-engine) — 41, 70, 72, 73, 74, 75, 89, 115, 144, 149.
