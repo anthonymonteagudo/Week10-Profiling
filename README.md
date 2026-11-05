@@ -22,16 +22,16 @@ Use the local dashboard generated from your own open map. The lecture's private 
 
 ## Material and shader logic
 
-The deck now includes the shader-cost sequence at 86–105. The [study guide](Optimization-Study-Guide.md#material-and-shader-logic) supplies optimization decisions, graph recipes, two runnable experiments and a results worksheet. Use the updated comparison-project release for DynamicZero/MasterOff and UVPixel/UVVertex.
+The deck now includes the shader-cost sequence at 88–107. The [study guide](Optimization-Study-Guide.md#material-and-shader-logic) supplies optimization decisions, graph recipes, two runnable experiments and a results worksheet. Use the updated comparison-project release for DynamicZero/MasterOff and UVPixel/UVVertex.
 
 Browse the [material lab source and experiment instructions](MaterialCostLab/README.md). Generated material assets are supplied in the v2 comparison release.
 
-The consolidated deck has 164 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 123.
+The consolidated deck has 166 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 125.
 
 ## Demo captures
 
 [Open the 28-capture gallery](Media/Optimization-Demo/index.html) or [download the screenshot pack](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-demo-captures-v1). It covers the furnished room, Light Mixer, Timing Insights, stat unit/GPU, material buffers, Nanite, VSM cache, GPU resources and the custom audit. Each image includes its question, live steps and interpretation limits. The v4 lab explicitly uses DX12 SM6; earlier lounge timing results used SM5 fallback rendering.
 
-The 28 captures are embedded directly in the deck. The main sequence runs through 137; reference comparisons and the complete numbered walkthroughs are 138–164. Materials/textures/shader logic occupy 69–105, and the custom audit appears before the break and lab.
+The 28 captures are embedded directly in the deck. The main sequence runs through 139; reference comparisons and the complete numbered walkthroughs are 140–166. Materials/textures/shader logic occupy 71–107, and the custom audit appears before the break and lab.
 
-The final slide (164) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 68 article, video, documentation and media links, with relevant slide numbers.
+The final slide (166) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 74 article, video, documentation and media links, with relevant slide numbers.
