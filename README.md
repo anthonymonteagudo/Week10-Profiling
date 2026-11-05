@@ -15,7 +15,13 @@ The lab opens Lounge_Unoptimized, a furnished interior with deliberately introdu
 - [Capture comparison](Tools/compare_captures.py) and [frame-budget report](Tools/report_perf_budget.py) process Unreal CSVs. Run `python Tools/compare_captures.py --help` for options.
 - [Read-only inventory](Tools/audit_optimization_candidates.py) is an optional simple Python rule example; the lab plugin is the main audit workflow.
 - [Texture mask packer](Tools/pack_masks.py) and [practice inputs](Tools/DemoInputs) require Python and Pillow. Run `python Tools/pack_masks.py Tools/DemoInputs/AO.png Tools/DemoInputs/Roughness.png Tools/DemoInputs/Metallic.png Packed_ORM.png`.
-- [Material, debris and Niagara comparison projects](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-comparison-demos-v1): UE 5.7 Windows editor binaries and C++ source are supplied. Rebuild with the Windows C++ toolchain if your engine build does not match. These are separate instructor-led demonstrations.
+- [Material, debris and Niagara comparison projects](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-comparison-demos-v2): UE 5.7 Windows editor binaries and C++ source are supplied. Rebuild with the Windows C++ toolchain if your engine build does not match. These are separate instructor-led demonstrations.
 - [Editable texture demo release](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-texture-demos-v1) opens ArrayDemo and is separate from the optimization lab.
 
 Use the local dashboard generated from your own open map. The lecture's private hosted dashboard is a historical snapshot and is not a live view of your project. Instructor answer keys and the complete licensed classroom working copy are distributed separately.
+
+## Material and shader logic
+
+The deck now includes an 11-slide sequence at 54–64. The [study guide](Optimization-Study-Guide.md#material-and-shader-logic) supplies optimization decisions, graph recipes, two runnable experiments and a results worksheet. Use the updated comparison-project release for DynamicZero/MasterOff and UVPixel/UVVertex.
+
+Browse the [material lab source and experiment instructions](MaterialCostLab/README.md). Generated material assets are supplied in the v2 comparison release.
