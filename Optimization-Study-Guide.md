@@ -280,3 +280,97 @@ These nine examples appear beside the corresponding concepts in the single deck.
 | 126 | Fortnite: move first-use work into loading | [Developer breakdown](https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem) — PSO precaching / The driver cache |
 
 For each case: identify the repeated or unnecessary work, the replacement representation, the cost moved elsewhere, and one test that could reject it. The class projects demonstrate their documented techniques; they do not implement every production feature above. The Uncharted bounds-aware flipbook and Fortnite branch-transform bake are references, while the supplied debris demo uses per-vertex VAT offsets and a fixed flipbook card.
+
+
+## Complete source index
+
+Start with **Tom Looman**, Prof. Monteagudo’s recommended follow-up: the [free performance article index](https://tomlooman.com/categories/#performance-optimization) and [Complete Game Optimization course](https://tomlooman.com/courses/unrealengine-optimization/). The course is paid; the article index is freely readable. Gnomon workshop access is separate. These are references, not additional purchases required for the lab.
+
+This index consolidates the deck’s cited links, the assessed Looman companion reading, and visual credits. Slide numbers refer to this 162-slide revision. The lab uses UE 5.7; historical UE4/UE5.1 cases and newer-version articles retain their own context. Source observations are separate from our course measurements.
+
+### Tom Looman — start here
+
+- [Complete Game Optimization for Unreal Engine 5 — course (paid)](https://tomlooman.com/courses/unrealengine-optimization/) — Course/source collection or assessed companion reading.
+- [Performance & Optimization — free article index](https://tomlooman.com/categories/#performance-optimization) — Course/source collection or assessed companion reading.
+- [Unreal engine 5 5 performance highlights](https://tomlooman.com/unreal-engine-5-5-performance-highlights/) — Course/source collection or assessed companion reading.
+- [Unreal engine 5 6 performance highlights](https://tomlooman.com/unreal-engine-5-6-performance-highlights/) — Course/source collection or assessed companion reading.
+- [Unreal engine 5 7 performance highlights](https://tomlooman.com/unreal-engine-5-7-performance-highlights/) — Slides 100.
+- [Unreal engine 5 8 performance highlights](https://tomlooman.com/unreal-engine-5-8-performance-highlights/) — Course/source collection or assessed companion reading.
+- [Unreal engine optimal graphics settings](https://tomlooman.com/unreal-engine-optimal-graphics-settings/) — Slides 129.
+- [Unreal engine optimization farfarwest](https://tomlooman.com/unreal-engine-optimization-farfarwest/) — Slides 66, 75, 129, 135.
+- [Unreal engine optimization talk](https://tomlooman.com/unreal-engine-optimization-talk/) — Slides 22, 23, 56, 135.
+- [Unreal engine optimize shader compile time](https://tomlooman.com/unreal-engine-optimize-shader-compile-time/) — Slides 100.
+- [Unreal engine profiling stat commands](https://tomlooman.com/unreal-engine-profiling-stat-commands/) — Slides 22.
+- [Unreal engine psocaching](https://tomlooman.com/unreal-engine-psocaching/) — Slides 28, 125.
+
+### Gnomon Workshop / Rodrigo Brea
+
+- [Optimization for Games: Settings, Materials, Textures & Commands — supplied Parts 01–04 (subscription workshop)](https://www.thegnomonworkshop.com/workshops/optimization-for-games-settings-materials-textures-commands) — Course/source collection or assessed companion reading.
+
+### Epic Games — engine documentation
+
+- [Customized uvs in unreal engine materials](https://dev.epicgames.com/documentation/unreal-engine/customized-uvs-in-unreal-engine-materials) — Slides 93.
+- [Fbx static mesh pipeline in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-static-mesh-pipeline-in-unreal-engine?application_version=5.7) — Slides 50.
+- [How to create a gpu sprite effect in niagara for unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/how-to-create-a-gpu-sprite-effect-in-niagara-for-unreal-engine) — Slides 158.
+- [Lumen global illumination and reflections in unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine) — Slides 37, 38.
+- [Material parameter expressions in unreal engine](https://dev.epicgames.com/documentation/unreal-engine/material-parameter-expressions-in-unreal-engine) — Slides 98.
+- [Material parameter expressions in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine?application_version=5.7) — Slides 92, 97, 99.
+- [Nanite technical details — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-technical-details?application_version=5.7) — Slides 59, 62, 63.
+- [Nanite virtualized geometry in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine?application_version=5.7) — Slides 95.
+- [Performance guidelines for artists and designers — UE 4.27](https://dev.epicgames.com/documentation/unreal-engine/performance-guidelines-for-artists-and-designers?application_version=4.27) — Slides 85, 89, 91.
+- [Render resource viewer in unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/render-resource-viewer-in-unreal-engine) — Slides 30.
+- [Stat commands in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine?application_version=5.7) — Slides 10, 76.
+- [Static light mobility in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/static-light-mobility-in-unreal-engine?application_version=5.7) — Slides 34, 35, 38.
+- [Stationary light mobility in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/stationary-light-mobility-in-unreal-engine?application_version=5.7) — Slides 34, 36.
+- [Texture streaming configuration in unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-configuration-in-unreal-engine) — Slides 77.
+- [Texture streaming metrics in unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-streaming-metrics-in-unreal-engine) — Slides 77.
+- [Timing insights in unreal engine 5 — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/timing-insights-in-unreal-engine-5?application_version=5.7) — Slides 27.
+- [Unreal engine material analyzer tool](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-material-analyzer-tool) — Slides 97.
+- [Unreal engine material editor ui](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-editor-ui) — Slides 86, 89, 91, 99.
+- [Unreal engine material properties](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-material-properties) — Slides 99.
+- [Unreal insights reference in unreal engine 5 — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5?application_version=5.7) — Slides 14.
+- [Using the light mixer in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-light-mixer-in-unreal-engine?application_version=5.7) — Slides 39.
+- [Using transparency in unreal engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-transparency-in-unreal-engine) — Slides 94.
+- [Viewport modes in unreal engine](https://dev.epicgames.com/documentation/unreal-engine/viewport-modes-in-unreal-engine) — Slides 86, 94.
+- [Viewport modes in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/viewport-modes-in-unreal-engine?application_version=5.7) — Slides 33, 69, 70, 72.
+- [Virtual shadow maps in unreal engine — UE 5.7](https://dev.epicgames.com/documentation/en-us/unreal-engine/virtual-shadow-maps-in-unreal-engine?application_version=5.7) — Slides 34, 36, 37, 38, 44, 45, 46, 95.
+
+### Tool and platform references
+
+- [Labs vertex animation textures 3.0.html](https://www.sidefx.com/docs/houdini/nodes/out/labs--vertex_animation_textures-3.0.html) — Slides 105.
+- [Ue5](https://documentation.simplygon.com/SimplygonSDK_10.4.169.0/ue5/) — Slides 52, 53.
+- [Unreal engine performance guide](https://gpuopen.com/learn/unreal-engine-performance-guide/) — Slides 20.
+
+### Shipped-game developer publications
+
+- [DOOM (2016) — PDF pages 4–9: Data Structure for Lighting & Shading / Preparing Clustered Structure](https://www.advances.realtimerendering.com/s2016/Siggraph2016_idTech6.pdf) — Slides 42.
+- [Factorio — Water animation — Game integration, paragraphs on prepare render and per-chunk draw orders](https://www.factorio.com/blog/post/fff-323) — Slides 17.
+- [Fortnite Battle Royale — Building and Rendering a Large Map, HLOD/Simplygon and overnight commandlet paragraphs](https://www.unrealengine.com/tech-blog/unreal-engine-improvements-for-fortnite-battle-royale) — Slides 54.
+- [Fortnite Battle Royale — PSO precaching / The driver cache](https://www.unrealengine.com/tech-blog/game-engines-and-shader-stuttering-unreal-engines-solution-to-the-problem) — Slides 126.
+- [Fortnite Chapter 4 — Trees — Wind animation / Distance culling](https://www.unrealengine.com/tech-blog/bringing-nanite-to-fortnite-battle-royale-in-chapter-4) — Slides 67, 106.
+- [Ghost of Tsushima — Wind, paragraphs beginning ‘The grass and pampas fields’ through local displacement](https://blog.playstation.com/2021/01/12/how-stunning-visual-effects-bring-ghost-of-tsushima-to-life/) — Slides 96.
+- [Horizon Zero Dawn — PDF pages 97–98, printed slides 99–100: Ray-March Optimizations](https://www.advances.realtimerendering.com/s2017/Nubis%20-%20Authoring%20Realtime%20Volumetric%20Cloudscapes%20with%20the%20Decima%20Engine%20-%20Final%20.pdf) — Slides 90.
+- [Uncharted 4 — PDF pages 124–127, especially 127: Particle Optimizations](https://www.advances.realtimerendering.com/other/2016/naughty_dog/NaughtyDog_TechArt_Final.pdf) — Slides 111.
+
+### Video sources cited in the lecture
+
+- [Lecture video cited on slides 16](https://www.youtube.com/watch?v=vnbARZHccpQ) — Slides 16.
+- [Lecture video cited on slides 24, 26, 43, 44, 45, 47, 57, 58, 64, 112, 129, 135](https://www.youtube.com/watch?v=c2MH20OPSw0) — Slides 24, 26, 43, 44, 45, 47, 57, 58, 64, 112, 129, 135.
+- [Lecture video cited on slides 40, 43, 45](https://www.youtube.com/watch?v=1uFR9lXrpyQ) — Slides 40, 43, 45.
+
+### Lab environment and course evidence
+
+- [Hane Studios — Cigar Room Environment (Fab source for our furnished lounge)](https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4) — Slides 3, 4, 5, 14, 15, 16, 30, 39, 41, 46, 49, 60, 61, 65, 71, 72, 73, 74, 87, 118, 119, 121.
+
+### Visual credits — original media
+
+- [Source image: Ghost-VFX-FI.jpg](https://blog.playstation.com/tachyon/2021/01/Ghost-VFX-FI.jpg?resize=1088%2C612&crop_strategy=smart) — Slides 96.
+- [Source image: Unreal+Engine/blogAssets/2017/OCTOBER+2017/Fortnite+Battle+Royale+UE+Improvements/FNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg](https://cdn2.unrealengine.com/Unreal+Engine%2FblogAssets%2F2017%2FOCTOBER+2017%2FFortnite+Battle+Royale+UE+Improvements%2FFNBR_SocialRangerTower-770x433-a1b2112ca6bf4445b2c912c3036fff21ca8193cb.jpg) — Slides 54.
+- [Source image: fff-323-noise.png](https://cdn.factorio.com/assets/img/blog/fff-323-noise.png) — Slides 17.
+- [Source image: nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png](https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-tree-geometry-1920x1080-a3c53a79ee70.png?resize=1&w=1920) — Slides 106.
+- [Source image: nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg](https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-1920x1080-90a3059197d2.jpg?resize=1&w=1920) — Slides 67.
+- [Source image: nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg](https://cdn2.unrealengine.com/nanite-in-fortnite-chapter-4-triangle-counts-nanite-1920x1080-be5844e3497b.jpg?resize=1&w=1920) — Slides 67.
+
+### Course experiments and captures
+
+The Week 10 material/CPD, shader logic, Live/VAT/Flipbook debris and Niagara comparisons, the custom overlay/dashboard and native lounge captures are course-authored evidence. Use the [project README](README.md), [lab worksheet](Student-Lab.md), [capture gallery](Media/Optimization-Demo/index.html), and [comparison project releases](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-ue57-comparison-demos-v2). Their results retain the stated launch conditions; third-party game results are not performance guarantees for this lab.

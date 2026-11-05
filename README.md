@@ -26,10 +26,12 @@ The deck now includes the shader-cost sequence at 85–103. The [study guide](Op
 
 Browse the [material lab source and experiment instructions](MaterialCostLab/README.md). Generated material assets are supplied in the v2 comparison release.
 
-The consolidated deck has 161 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 121.
+The consolidated deck has 162 slides. Optional article/04 investigations cover first-use PSO hitches, Nanite/fallback/WPO checks, compile/cook budgets, trace counters and calibrated quality tiers. The main lounge activity is slide 121.
 
 ## Demo captures
 
 [Open the 28-capture gallery](Media/Optimization-Demo/index.html) or [download the screenshot pack](https://github.com/anthonymonteagudo/Week10-Profiling/releases/tag/week10-demo-captures-v1). It covers the furnished room, Light Mixer, Timing Insights, stat unit/GPU, material buffers, Nanite, VSM cache, GPU resources and the custom audit. Each image includes its question, live steps and interpretation limits. The v4 lab explicitly uses DX12 SM6; earlier lounge timing results used SM5 fallback rendering.
 
-The 28 captures are embedded directly in the deck. The main sequence runs through 135; reference comparisons and the complete numbered walkthroughs are 136–161. Materials/textures/shader logic occupy 68–103, and the custom audit appears before the break and lab.
+The 28 captures are embedded directly in the deck. The main sequence runs through 135; reference comparisons and the complete numbered walkthroughs are 136–162. Materials/textures/shader logic occupy 68–103, and the custom audit appears before the break and lab.
+
+The final slide (162) lists the source collections and features Tom Looman first. Open the [complete source index](Optimization-Study-Guide.md#complete-source-index) for all 59 article, video, documentation and media links, with relevant slide numbers.
