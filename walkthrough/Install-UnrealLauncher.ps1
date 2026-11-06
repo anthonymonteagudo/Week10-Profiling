@@ -24,32 +24,45 @@ foreach ($id in $names.Keys) {
 if ($selectedProjects.Count -eq 0) { throw 'No projects selected. Nothing registered.' }
 New-Item -ItemType Directory -Path $installDir -Force | Out-Null
 @{ projects = $selectedProjects; editor = (Resolve-Path -LiteralPath $Editor).Path } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $installDir 'projects.json') -Encoding UTF8
-$handler = @'
-param([string]$Uri)
-$ErrorActionPreference = 'Stop'
-Add-Type -AssemblyName System.Windows.Forms
-try {
-    if ($Uri -cnotmatch '^techart-ue://(lounge|materials|debris|niagara|week9)/?$') { throw 'Unknown project link.' }
-    $id = $Matches[1]
-    $config = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'projects.json') -Raw | ConvertFrom-Json
-    $project = $config.projects.$id
-    if (!$project -or [IO.Path]::GetExtension($project) -ne '.uproject' -or !(Test-Path -LiteralPath $project -PathType Leaf)) { throw 'Project is not configured or has moved. Re-run launcher setup.' }
-    # Open only a locally configured project in the configured editor.
-    # URI text is never executed, interpolated into a command, or passed as arguments.
-    if (!(Test-Path -LiteralPath $config.editor -PathType Leaf)) { throw 'Configured Unreal editor has moved. Re-run setup.' }
-    $process = Start-Process -FilePath $config.editor -ArgumentList ('"' + $project + '"') -PassThru
-    [pscustomobject]@{ time = (Get-Date).ToString('o'); project_id = $id; project = $project; process_id = $process.Id } | ConvertTo-Json -Compress | Add-Content -LiteralPath (Join-Path $PSScriptRoot 'launch-log.jsonl')
-} catch {
-    [System.Windows.Forms.MessageBox]::Show($_.Exception.Message,'Technical Art launcher','OK','Error') | Out-Null
+$launcherSource = @'
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+class Launcher {
+ [STAThread] static void Main(string[] args) {
+  try {
+   if(args.Length != 1) throw new Exception("Expected one project link.");
+   Match m=Regex.Match(args[0], @"\Atechart-ue://(lounge|materials|debris|niagara|week9)/?\z");
+   if(!m.Success) throw new Exception("Unknown project link.");
+   string dir=AppDomain.CurrentDomain.BaseDirectory;
+   var json=new JavaScriptSerializer();
+   var config=json.Deserialize<Dictionary<string,object>>(File.ReadAllText(Path.Combine(dir,"projects.json")));
+   var projects=(Dictionary<string,object>)config["projects"];
+   string id=m.Groups[1].Value;
+   if(!projects.ContainsKey(id)) throw new Exception("Project is not configured. Re-run setup.");
+   string project=(string)projects[id], editor=(string)config["editor"];
+   if(!File.Exists(project) || !project.EndsWith(".uproject",StringComparison.OrdinalIgnoreCase) || !File.Exists(editor)) throw new Exception("Configured project/editor has moved. Re-run setup.");
+   var start=new ProcessStartInfo(editor,"\""+project+"\""); start.UseShellExecute=false;
+   var process=Process.Start(start);
+   File.AppendAllText(Path.Combine(dir,"launch-log.jsonl"),json.Serialize(new {time=DateTimeOffset.Now.ToString("o"),project_id=id,project=project,process_id=process.Id})+Environment.NewLine);
+  } catch(Exception e) { MessageBox.Show(e.Message,"Technical Art launcher",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+ }
 }
 '@
-$handlerPath = Join-Path $installDir 'Open-UnrealProject.ps1'
-Set-Content -LiteralPath $handlerPath -Value $handler -Encoding UTF8
+$sourcePath = Join-Path $installDir 'UnrealProjectLauncher.cs'
+$launcherPath = Join-Path $installDir 'UnrealProjectLauncher.exe'
+Set-Content -LiteralPath $sourcePath -Value $launcherSource -Encoding UTF8
+$compiler = Join-Path $env:SystemRoot 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+& $compiler /nologo /target:winexe /reference:System.Web.Extensions.dll /reference:System.Windows.Forms.dll "/out:$launcherPath" $sourcePath
+if ($LASTEXITCODE -ne 0) { throw 'Launcher compile failed.' }
 New-Item -Path $registryPath -Force | Out-Null
 Set-Item -LiteralPath $registryPath -Value 'URL:Technical Art Unreal project'
 New-ItemProperty -LiteralPath $registryPath -Name 'URL Protocol' -Value '' -PropertyType String -Force | Out-Null
 New-Item -Path "$registryPath\shell\open\command" -Force | Out-Null
-$powershell = Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
-$command = '"{0}" -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "{1}" "%1"' -f $powershell,$handlerPath
+$command = '"{0}" "%1"' -f $launcherPath
 Set-Item -LiteralPath "$registryPath\shell\open\command" -Value $command
 Write-Host 'Installed for this Windows user. Return to the walkthrough and click Open project.'
