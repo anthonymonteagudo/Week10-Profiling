@@ -1,0 +1,1022 @@
+[
+  {
+    "slide": 1,
+    "title": "WEEK 10 / Profiling and",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 2,
+    "title": "AGENDA / Class plan \u00b7 core teaching path",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 3,
+    "title": "THE WORKLOAD / The furnished lounge",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 4,
+    "title": "THE WORKLOAD / Quality from more than one view",
+    "hidden": true,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 5,
+    "title": "LAB SETUP / The lab rendering path",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 6,
+    "title": "TECHNICAL JUDGMENT / A budget needs a workload",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 7,
+    "title": "TECHNICAL JUDGMENT / A/B testing",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 8,
+    "title": "PROFILING AND CAPTURE / Profiling and capture",
+    "hidden": true,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 9,
+    "title": "FRAME TIME AND BUDGETS / Frame time in milliseconds",
+    "hidden": false,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 10,
+    "title": "FRAME TIME AND BUDGETS / CPU and GPU overlap",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 11,
+    "title": "PROFILER BREAKDOWN / Start with the performance question",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 12,
+    "title": "PROFILING TOOLS / Console commands for a specific question",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 13,
+    "title": "PROFILER BREAKDOWN / Read stat unit",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 14,
+    "title": "PROFILER BREAKDOWN / Live frame and GPU statistics",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 15,
+    "title": "PROFILER BREAKDOWN / A CPU scope can include a wait",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 16,
+    "title": "PROFILER BREAKDOWN / Graphics and compute on the timeline",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 17,
+    "title": "PROFILING AND CAPTURE / Factorio: cache the work that stays valid",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 18,
+    "title": "GPU PASS BREAKDOWN / Geometry, surfaces and shadows",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 19,
+    "title": "GPU PASS BREAKDOWN / Lighting, effects and the final image",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 20,
+    "title": "PROFILER BREAKDOWN / From a pass to the exact draw",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 21,
+    "title": "PROFILER BREAKDOWN / Capture a repeatable trace",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 22,
+    "title": "PERFORMANCE INVESTIGATION / Give traces context and domain counters",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 23,
+    "title": "PROFILING CONDITIONS / Reproducible captures",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 24,
+    "title": "PERFORMANCE INVESTIGATION / Internal resolution and output quality",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 25,
+    "title": "PROFILER BREAKDOWN / Compare distributions and individual frames",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 26,
+    "title": "PERFORMANCE INVESTIGATION / A/B output can report noise",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 27,
+    "title": "FRAME TIME AND BUDGETS / Steady cost and hitches",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 28,
+    "title": "PERFORMANCE INVESTIGATION / Cold first use and warm steady state",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 29,
+    "title": "PROFILER BREAKDOWN / Memory, residency and loading",
+    "hidden": false,
+    "chapter": "profile"
+  },
+  {
+    "slide": 30,
+    "title": "MEMORY AND RESIDENCY / GPU resources and memory filters",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 31,
+    "title": "PROFILING TOOLS / Steady cost, hitches and memory",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 32,
+    "title": "LIGHTING AND SHADOWS / Lighting and shadows",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 33,
+    "title": "WHERE THE FRAME GOES / Lights and shadows",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 34,
+    "title": "LIGHTS AND SHADOWS / Static, Stationary and Movable lights",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 35,
+    "title": "LIGHTS AND SHADOWS / Baked lighting: costs and constraints",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 36,
+    "title": "LIGHTS AND SHADOWS / Stationary lighting: hybrid implications",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 37,
+    "title": "LIGHTS AND SHADOWS / Dynamic lighting, Lumen and shadows",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 38,
+    "title": "LIGHTS AND SHADOWS / Choose and test a lighting strategy",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 39,
+    "title": "LIGHTING TOOLS / Light Mixer in the furnished room",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 40,
+    "title": "LIGHTING COST / Light influence and attenuation",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 41,
+    "title": "LIGHTING DIAGNOSTICS / Light Complexity in the lounge",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 42,
+    "title": "LIGHTING AND SHADOWS / DOOM: narrow each surface\u2019s light list",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 43,
+    "title": "LIGHTING COST / Light fade and scalability",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 44,
+    "title": "SHADOW COST / Stationary objects can invalidate shadows",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 45,
+    "title": "SHADOW COST / Read the visualization legend",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 46,
+    "title": "SHADOW DIAGNOSTICS / Shadow-cache behavior in the room",
+    "hidden": false,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 47,
+    "title": "PERFORMANCE INVESTIGATION / Follow invalidation back to the material",
+    "hidden": true,
+    "chapter": "lighting-depth"
+  },
+  {
+    "slide": 48,
+    "title": "GEOMETRY AND REPRESENTATION / Geometry and representation",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 49,
+    "title": "GEOMETRY AND SUBMISSION / Meshes and submission",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 50,
+    "title": "ASSET PIPELINE / Maya to Unreal: verify the contract",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 51,
+    "title": "GEOMETRY AND REPRESENTATION / A corner can become several render vertices",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 52,
+    "title": "DEMO EXTENSIONS / Conventional LODs and Simplygon",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 53,
+    "title": "GEOMETRY AND REPRESENTATION / LOD coloration and screen-size thresholds",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 54,
+    "title": "SIMPLYGON / Reduction, remeshing and material baking",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 55,
+    "title": "SIMPLYGON / Build and validate an LOD recipe",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 56,
+    "title": "GEOMETRY AND REPRESENTATION / Grouping, instancing and merging",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 57,
+    "title": "GEOMETRY AND REPRESENTATION / Fortnite: replace distant groups with a proxy",
+    "hidden": false,
+    "chapter": "cases"
+  },
+  {
+    "slide": 58,
+    "title": "GEOMETRY AND REPRESENTATION / LEGO: build geometry for the target",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 59,
+    "title": "ASSET REPRESENTATION / Lightmap UVs and geometry LODs",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 60,
+    "title": "GEOMETRY AND REPRESENTATION / Lightmap density and bake resolution",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 61,
+    "title": "ASSET REPRESENTATION / Collision follows the interaction",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 62,
+    "title": "GEOMETRY AND REPRESENTATION / Outside the view and hidden behind a wall",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 63,
+    "title": "GEOMETRY AND REPRESENTATION / Cull Distance Volumes and actor bounds",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 64,
+    "title": "ASSET AUDIT / Render geometry, fallback and collision",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 65,
+    "title": "PERFORMANCE INVESTIGATION / A fallback is a separate representation",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 66,
+    "title": "NANITE GPU / Nanite work on the GPU",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 67,
+    "title": "NANITE GPU / Nanite coverage and material compatibility",
+    "hidden": false,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 68,
+    "title": "NANITE GPU / Nanite clusters and triangles",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 69,
+    "title": "NANITE GPU / Coverage, masking and deformation",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 70,
+    "title": "NANITE GPU / Test a Nanite hypothesis",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 71,
+    "title": "PERFORMANCE INVESTIGATION / Nanite pixel error as a quality budget",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 72,
+    "title": "NANITE GPU / Nanite overdraw",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 73,
+    "title": "NANITE MATERIALS / Foliage coverage and motion",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 74,
+    "title": "GEOMETRY AND REPRESENTATION / Fortnite: more leaf geometry can cost less",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 75,
+    "title": "MATERIALS, TEXTURES AND SHADER LOGIC / Materials, textures and shader logic",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 76,
+    "title": "WHERE THE FRAME GOES / Materials and screen coverage",
+    "hidden": false,
+    "chapter": "surface"
+  },
+  {
+    "slide": 77,
+    "title": "VIEW MODES / Lit, Unlit and neutral lighting",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 78,
+    "title": "VIEW MODES / Unlit and Detail Lighting",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 79,
+    "title": "VIEW MODES / Shader Complexity and Quad Overdraw",
+    "hidden": false,
+    "chapter": "surface"
+  },
+  {
+    "slide": 80,
+    "title": "MATERIALS AND SHADER LOGIC / Particle coverage and translucent layers",
+    "hidden": false,
+    "chapter": "surface"
+  },
+  {
+    "slide": 81,
+    "title": "MATERIAL BUFFERS / Base Color and Roughness",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 82,
+    "title": "MATERIAL BUFFERS / World Normal and surface detail",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 83,
+    "title": "SCREEN COVERAGE / Decal cost spans several passes",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 84,
+    "title": "FRAME TIME AND BUDGETS / Texture memory and streaming",
+    "hidden": false,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 85,
+    "title": "TEXTURE MEMORY / Streaming budget and packaged texture size",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 86,
+    "title": "TEXTURE BUDGET / Mips, padding and texture size",
+    "hidden": false,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 87,
+    "title": "TEXTURE DATA / Texture compression changes sampled values",
+    "hidden": false,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 88,
+    "title": "TEXTURE DATA / Padding protects filtered texture edges",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 89,
+    "title": "TEXTURE DATA / Texel density connects detail to world scale",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 90,
+    "title": "TEXTURE DATA / Normal detail and roughness stability",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 91,
+    "title": "DEMO EXTENSIONS / Automated texture packing",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 92,
+    "title": "TEXTURE DATA / Packed channels are a contract",
+    "hidden": false,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 93,
+    "title": "MATERIALS AND SHADER LOGIC / Unused alpha and texture resource cost",
+    "hidden": false,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 94,
+    "title": "MATERIAL GRAPH / A packed mask controls emissive color",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 95,
+    "title": "WEEK 9 GALLERY / Brick relief and sampling cost",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 96,
+    "title": "DEMO EXTENSIONS / Texture arrays",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 97,
+    "title": "MATERIAL AND SHADER LOGIC / What makes a material expensive?",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 98,
+    "title": "MATERIAL AND SHADER LOGIC / Measure the compiled material and the scene",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 99,
+    "title": "MATERIAL GRAPH / The lounge glass material",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 100,
+    "title": "MATERIAL STATS / Two compiled material snapshots",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 101,
+    "title": "MATERIAL AND SHADER LOGIC / Reduce texture sampling work",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 102,
+    "title": "MATERIALS AND SHADER LOGIC / Horizon: spend samples where clouds exist",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 103,
+    "title": "MATERIAL AND SHADER LOGIC / Simplify logic without changing the look",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 104,
+    "title": "MATERIAL AND SHADER LOGIC / Runtime zero is not a static feature switch",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 105,
+    "title": "MATERIAL AND SHADER LOGIC / Move suitable UV math to the vertex stage",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 106,
+    "title": "MATERIAL AND SHADER LOGIC / Blend mode, coverage and hidden work",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 107,
+    "title": "MATERIAL AND SHADER LOGIC / WPO, pixel depth and shadow implications",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 108,
+    "title": "MATERIALS AND SHADER LOGIC / Tsushima: let many systems share one wind",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 109,
+    "title": "MATERIAL AND SHADER LOGIC / Material instances and shader variants",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 110,
+    "title": "MATERIAL INSTANCES / Instance overrides and feature removal",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 111,
+    "title": "MATERIAL AND SHADER LOGIC / Quality tiers need explicit shader policies",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 112,
+    "title": "PERFORMANCE INVESTIGATION / Shader runtime, compile and cook budgets",
+    "hidden": false,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 113,
+    "title": "MATERIAL AND SHADER LOGIC / Shader logic experiments: predict, inspect, retest",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 114,
+    "title": "MATERIAL DATA / Same image, different parameter storage",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 115,
+    "title": "MATERIAL COST / Does a master material cost more?",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 116,
+    "title": "MATERIALS AND SHADER LOGIC / Nanite work also follows material diversity",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 117,
+    "title": "ANIMATION AND EFFECTS / Animation and effects",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 118,
+    "title": "ANIMATION AND VFX / Vertex animation textures",
+    "hidden": false,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 119,
+    "title": "ANIMATION AND EFFECTS / Fortnite: bake branch motion into a texture",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 120,
+    "title": "ANIMATION AND VFX / One debris burst, three treatments",
+    "hidden": false,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 121,
+    "title": "ANIMATION AND VFX / The same burst from two views",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 122,
+    "title": "ANIMATION AND VFX / CPU time fell. Frame time held.",
+    "hidden": false,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 123,
+    "title": "ANIMATION AND VFX / Which treatment fits the shot?",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 124,
+    "title": "ANIMATION AND EFFECTS / Uncharted 4: make the card fit each frame",
+    "hidden": false,
+    "chapter": "cases"
+  },
+  {
+    "slide": 125,
+    "title": "NIAGARA / Simulation target and effect policy",
+    "hidden": false,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 126,
+    "title": "GPU WORK / Niagara GPU simulation dispatch",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 127,
+    "title": "NIAGARA SIMULATION / Same effect, different simulation target",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 128,
+    "title": "NIAGARA SCALABILITY / A distance budget changes the workload",
+    "hidden": false,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 129,
+    "title": "PROJECT AUDIT AND LAB / Project audit and lab",
+    "hidden": true,
+    "chapter": "defend"
+  },
+  {
+    "slide": 130,
+    "title": "LAB / Read-only scene audit",
+    "hidden": false,
+    "chapter": "defend"
+  },
+  {
+    "slide": 131,
+    "title": "PROJECT TOOL / Custom Optimization View",
+    "hidden": false,
+    "chapter": "defend"
+  },
+  {
+    "slide": 132,
+    "title": "PROJECT TOOL / Validation to a web dashboard",
+    "hidden": false,
+    "chapter": "defend"
+  },
+  {
+    "slide": 133,
+    "title": "BREAK / 10-minute break",
+    "hidden": false,
+    "chapter": "break-note"
+  },
+  {
+    "slide": 134,
+    "title": "LAB / LAB: Optimize the furnished lounge",
+    "hidden": false,
+    "chapter": "lab-note"
+  },
+  {
+    "slide": 135,
+    "title": "WRAP-UP / Defending the tradeoff",
+    "hidden": false,
+    "chapter": "defend"
+  },
+  {
+    "slide": 136,
+    "title": "PACKAGED BUILDS AND REGRESSION CHECKS / Packaged builds and regression checks",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 137,
+    "title": "PERFORMANCE BUILDS / Packaged performance builds",
+    "hidden": false,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 138,
+    "title": "PERFORMANCE INVESTIGATION / PSO preparation needs a shipped-build test",
+    "hidden": false,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 139,
+    "title": "PACKAGED BUILDS AND REGRESSION CHECKS / Fortnite: move first-use work into loading",
+    "hidden": true,
+    "chapter": "cases"
+  },
+  {
+    "slide": 140,
+    "title": "PERFORMANCE BUILDS / What a perf bot runs",
+    "hidden": false,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 141,
+    "title": "PERFORMANCE BUILDS / Budgets and regressions",
+    "hidden": false,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 142,
+    "title": "PERFORMANCE INVESTIGATION / Calibrate quality tiers to the game",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 143,
+    "title": "PERFORMANCE BUILDS / Reading a bot result",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 144,
+    "title": "PERFORMANCE BUILDS / Three launches of the same build",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 145,
+    "title": "TRACE THE HITCH / A slow frame with a steady GPU",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 146,
+    "title": "TRACE THE HITCH / Follow the waits in Unreal Insights",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 147,
+    "title": "WRAP-UP / The next measurement",
+    "hidden": false,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 148,
+    "title": "EXPLORE FURTHER / Choose the next investigation",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 149,
+    "title": "FIELD GUIDE / Technique walkthroughs",
+    "hidden": true,
+    "chapter": "appendix"
+  },
+  {
+    "slide": 150,
+    "title": "01  SET UP / Prepare a matched A/B",
+    "hidden": true,
+    "chapter": "baseline"
+  },
+  {
+    "slide": 151,
+    "title": "02  CAPTURE / Read Unreal\u2019s live timings",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 152,
+    "title": "03  DIAGNOSE / From a CSV spike to Insights",
+    "hidden": true,
+    "chapter": "profile"
+  },
+  {
+    "slide": 153,
+    "title": "04  VERIFY / Read Shader Complexity",
+    "hidden": true,
+    "chapter": "surface"
+  },
+  {
+    "slide": 154,
+    "title": "05  MATERIALS / Test parallax step count",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 155,
+    "title": "06  MATERIALS / Pack masks and verify channels",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 156,
+    "title": "07  MATERIALS / Inspect a texture array",
+    "hidden": true,
+    "chapter": "texture-depth"
+  },
+  {
+    "slide": 157,
+    "title": "08  GEOMETRY / Build and review an LOD chain",
+    "hidden": true,
+    "chapter": "geometry-depth"
+  },
+  {
+    "slide": 158,
+    "title": "09  BAKED MOTION / Build the debris treatments",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 159,
+    "title": "10  CAPTURE / Capture the debris comparison",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 160,
+    "title": "11  REVIEW / Choose the treatment for the shot",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 161,
+    "title": "12  ASSESSMENT / Run the furnished lounge assessment",
+    "hidden": true,
+    "chapter": "defend"
+  },
+  {
+    "slide": 162,
+    "title": "13  AUTOMATE / From packaged build to perf bot",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 163,
+    "title": "14  HANDOFF / Review and report the result",
+    "hidden": true,
+    "chapter": "defend"
+  },
+  {
+    "slide": 164,
+    "title": "15  MATERIAL DATA / Build a matched CPD test",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 165,
+    "title": "16  MATERIAL COST / Test a master material in two steps",
+    "hidden": true,
+    "chapter": "material-depth"
+  },
+  {
+    "slide": 166,
+    "title": "17  COMPUTE / Trace a Niagara GPU emitter",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 167,
+    "title": "18  SCALABILITY / Test an Effect Type rule",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 168,
+    "title": "19  LIFECYCLE / Spawn and destroy versus pooling",
+    "hidden": true,
+    "chapter": "effects-depth"
+  },
+  {
+    "slide": 169,
+    "title": "20  WORLD LOAD / Measure a streaming transition",
+    "hidden": true,
+    "chapter": "shipping-depth"
+  },
+  {
+    "slide": 170,
+    "title": "AFTER CLASS / Sources & further learning",
+    "hidden": false,
+    "chapter": "sources"
+  }
+]

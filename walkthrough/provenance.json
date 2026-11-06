@@ -1,0 +1,505 @@
+{
+  "engine": "UE 5.7.4 / DX12 SM6 / RTX 5070 Ti",
+  "date": "2026-11-05",
+  "project": "Week10Assessment",
+  "map": "/Game/OptimizationLab/Lounge_Unoptimized",
+  "source_credit": "Hane Studios, Cigar Room Environment (Fab); course-authored deliberately inefficient lab variant and audit tools",
+  "asset_source": "https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4",
+  "capture_kind": "Actual Unreal editor / native Insights / locally generated audit dashboard screenshots. Not benchmark comparisons.",
+  "trace_conditions": {
+    "resolution": [
+      1280,
+      720
+    ],
+    "screen_percentage": 100,
+    "cap_fps": 60,
+    "csv_frames": 900,
+    "channels": "cpu,gpu,frame,bookmark,loadtime,counters",
+    "stat_named_events": true,
+    "concurrent_editor": true,
+    "scope": "Standalone editor runtime, not packaged build; includes startup/first encounter and steady segments"
+  },
+  "images": [
+    {
+      "id": 1,
+      "file": "Images/01-Lounge-Lit.png",
+      "title": "Furnished lounge: Audit Camera",
+      "group": "Scene",
+      "question": "What appearance must the optimized room preserve?",
+      "show": "Establish furniture, warm interior lighting, books, glass and the fixed comparison view.",
+      "limit": "Intentionally inefficient baseline; this is not the optimized answer.",
+      "route": "Open Lounge_Unoptimized in UE 5.7, then Audit Camera in Standalone.",
+      "source": "SM6/Viewport/01-Lounge-Lit.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "2fa1fa2ca2512b1f149732b1ee26d91e407a98428c8a12846e003ce0efcababf"
+    },
+    {
+      "id": 2,
+      "file": "Images/19-Reverse-Room.png",
+      "title": "Reverse angle through the seating area",
+      "group": "Scene",
+      "question": "Does a proposed change survive another viewpoint?",
+      "show": "Show the opposite seating, shelves and lighting coverage.",
+      "limit": "Different camera from Audit Camera; do not compare its timing as a matched pair.",
+      "route": "Editor camera: (15, -100, 280), looking at (180, 100, 230).",
+      "source": "SM6/Viewport/19-Reverse-Room.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "177bd59d1c51518c59e58bea7921a26effdf8ae23143512a3c328f95ce0131f3"
+    },
+    {
+      "id": 3,
+      "file": "Images/20-Table-Details.png",
+      "title": "Tabletop, bottles and small props",
+      "group": "Scene",
+      "question": "Which details and shadow cues matter up close?",
+      "show": "Inspect table contents, material variation and bright local illumination.",
+      "limit": "Close view, not an independent optimization treatment.",
+      "route": "Editor camera: (340, -50, 250), looking at (180, 45, 190).",
+      "source": "SM6/Viewport/20-Table-Details.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "a6dbd0f56a12d1a355183d8c743049f2e6eec4ab00865ab0cc865fd5d9c412f5"
+    },
+    {
+      "id": 4,
+      "file": "Images/07-Unit-and-GPU-Stats.png",
+      "title": "Frame triage and GPU queue statistics",
+      "group": "Profiling",
+      "question": "Which measurement should guide the next investigation?",
+      "show": "Point to Frame, Game, Draw, RHIT, GPU and render resolution; then graphics, compute and copy queues.",
+      "limit": "Editor HUD at 866\u00d7550, with diagnostic/logging overhead. It is not a controlled baseline or a serial sum of queues.",
+      "route": "Console: stat unit; stat gpu; stats.MaxPerGroup 8. Restore row limit 25 and stat none afterward.",
+      "source": "UI/07-Unit-and-GPU-Stats.png",
+      "source_size": [
+        1286,
+        726
+      ],
+      "crop": null,
+      "sha256": "6e16e8bbccf4d3f632ddd11790c84dc62387a7bdae31c888456c39279177e240"
+    },
+    {
+      "id": 5,
+      "file": "Images/03-Insights-GPU-Queues.png",
+      "title": "Timing Insights: graphics and compute",
+      "group": "Profiling",
+      "question": "Which passes overlap and which work extends the frame?",
+      "show": "Read nested GPU events, queue overlap and the selected time interval together.",
+      "limit": "Inclusive totals overlap. The diagnostic trace was capped at 60 and recorded alongside the editor; it is not a performance claim.",
+      "route": "Open Lounge-SM6.utrace in UE 5.7 UnrealInsights. Timing Insights \u2192 click a frame \u2192 drag the time ruler \u2192 F.",
+      "source": "UI/03-Insights-GPU-Queues.png",
+      "source_size": [
+        1286,
+        760
+      ],
+      "crop": null,
+      "sha256": "7ce6923863e420e1390a11f294414a2a9e6825dd0dc91232344f0c5d82ac6daa"
+    },
+    {
+      "id": 6,
+      "file": "Images/04-Insights-CPU-Waits.png",
+      "title": "Timing Insights: CPU waits and idle",
+      "group": "Profiling",
+      "question": "Is this long CPU scope executing work or waiting?",
+      "show": "The selected Game thread idle time scope is inside the frame/tick-rate wait. Follow callers and callees.",
+      "limit": "t.MaxFPS 60 intentionally introduces pacing; do not diagnose that idle scope as expensive gameplay.",
+      "route": "Timing Insights \u2192 CPU/GPU menu \u2192 hide GPU tracks \u2192 select Game thread idle time.",
+      "source": "UI/04-Insights-CPU-Waits.png",
+      "source_size": [
+        1286,
+        760
+      ],
+      "crop": null,
+      "sha256": "c273e7854072210f5f3ae3f7c3e7474e044077b9c977e40d641e6e24a049daf7"
+    },
+    {
+      "id": 7,
+      "file": "Images/02-Light-Mixer.png",
+      "title": "Light Mixer: all 33 scene lights",
+      "group": "Lighting",
+      "question": "Which lights have oversized influence and which group should we inspect?",
+      "show": "Read attenuation radius and intensity for Fill Lights and the source blueprint lights. Show search, selection and the solo/mute controls.",
+      "limit": "An editing interface, not a GPU cost ranking. Restore solo/visibility after inspection; avoid bulk edits during a measured comparison.",
+      "route": "Window \u2192 Light Mixer. Search Interior Fill; inspect a single light before editing a duplicate map.",
+      "source": "UI/02-Light-Mixer.png",
+      "source_size": [
+        1006,
+        606
+      ],
+      "crop": null,
+      "sha256": "ea71349011168a94e1878f729115f8eed0cbba62f82c99866bfd313274ef19ca"
+    },
+    {
+      "id": 8,
+      "file": "Images/04-Light-Complexity.png",
+      "title": "Light Complexity",
+      "group": "Lighting",
+      "question": "Where do multiple non-static lights influence the visible scene?",
+      "show": "Use the legend and broad saturated coverage as an inspection lead, then inspect the actual light radii.",
+      "limit": "A diagnostic count/color model, not milliseconds. Renderer/material paths affect what is represented.",
+      "route": "Viewport View Mode \u2192 Optimization Viewmodes \u2192 Light Complexity. Return to Lit for timing.",
+      "source": "SM6/Viewport/04-Light-Complexity.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "7216f0c5c10fd8b2f9e957cc0fd8b91f4742d18b02a1fd80fe0a081af9196a30"
+    },
+    {
+      "id": 9,
+      "file": "Images/11-VSM-Cache.png",
+      "title": "Virtual Shadow Map cache visualization",
+      "group": "Lighting",
+      "question": "Which visible areas show invalidated shadow data?",
+      "show": "Read the actual on-screen cache legend: all invalidated, dynamic invalidated and force cached.",
+      "limit": "This image shows the deliberately faulty map; it does not demonstrate a measured saving from changing invalidation policy.",
+      "route": "View Mode \u2192 Virtual Shadow Map Visualization \u2192 cache. Return to Lit afterward.",
+      "source": "SM6/Viewport/11-VSM-Cache.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "ba46e1c9a603866029051e8220e154a1df60735f999afa73324409d7ee891432"
+    },
+    {
+      "id": 10,
+      "file": "Images/02-Unlit.png",
+      "title": "Unlit",
+      "group": "Materials",
+      "question": "Does the base surface already explain the visible difference?",
+      "show": "Separate surface color/material appearance from the lit result at the same camera.",
+      "limit": "Unlit is not an optimization treatment or a physically equivalent final image.",
+      "route": "View Mode \u2192 Unlit; compare with the Audit Camera Lit capture.",
+      "source": "SM6/Viewport/02-Unlit.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "190a3f2f8077a0fcbe52701c1f25a9f78842b49603ba2e17bb2e234306c0cd7c"
+    },
+    {
+      "id": 11,
+      "file": "Images/03-Detail-Lighting.png",
+      "title": "Detail Lighting",
+      "group": "Materials",
+      "question": "Is a problem in lighting/normal detail rather than surface color?",
+      "show": "Inspect neutral material lighting and retained normal detail on the same room.",
+      "limit": "This changes the diagnostic representation; do not time it as the shipping image.",
+      "route": "View Mode \u2192 Detail Lighting.",
+      "source": "SM6/Viewport/03-Detail-Lighting.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "9ec37e8ee5ee9dae3b1b3470bbf43f3e35647f915135abcf963a1f7ffcabef76"
+    },
+    {
+      "id": 12,
+      "file": "Images/05-Shader-Complexity.png",
+      "title": "Shader Complexity",
+      "group": "Materials",
+      "question": "Where should material and coverage work be investigated?",
+      "show": "Read the legend, isolate a candidate material, then inspect target shader stats and relevant GPU passes.",
+      "limit": "An estimate based on the diagnostic model. Instruction counts, texture latency and Nanite rendering paths do not translate directly into frame milliseconds.",
+      "route": "View Mode \u2192 Optimization Viewmodes \u2192 Shader Complexity.",
+      "source": "SM6/Viewport/05-Shader-Complexity.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "c77676a46ef6871d8f58674f47a08df28fcee173aae3c14d98a13cf43e02b890"
+    },
+    {
+      "id": 13,
+      "file": "Images/06-Quad-Overdraw.png",
+      "title": "Quad Overdraw",
+      "group": "Materials",
+      "question": "Where can coverage and small triangles waste pixel work?",
+      "show": "Compare coverage regions with actual material blend modes and the camera distance.",
+      "limit": "This is not a universal Nanite cost map or a direct timing measurement. Pair it with Nanite overdraw and pass evidence.",
+      "route": "View Mode \u2192 Optimization Viewmodes \u2192 Quad Overdraw.",
+      "source": "SM6/Viewport/06-Quad-Overdraw.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "33682f089e06954329611c63e5f2d5bb3f4028c8d2c9de4d42aa806ace30401d"
+    },
+    {
+      "id": 14,
+      "file": "Images/13-Base-Color.png",
+      "title": "Buffer Visualization: Base Color",
+      "group": "Materials",
+      "question": "Are the albedo inputs plausible without final lighting?",
+      "show": "Compare the furnished room base color with Lit before blaming the light rig.",
+      "limit": "G-buffer/visualization coverage depends on material path; translucent surfaces are separate.",
+      "route": "View Mode \u2192 Buffer Visualization \u2192 Base Color.",
+      "source": "SM6/Viewport/13-Base-Color.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "3f41d3c25893fe93a1f6116096d43e4f34e5a6a2c980a204bdf917e9bdaf493e"
+    },
+    {
+      "id": 15,
+      "file": "Images/14-Roughness.png",
+      "title": "Buffer Visualization: Roughness",
+      "group": "Materials",
+      "question": "What roughness values drive these highlights?",
+      "show": "Follow grayscale roughness across leather, wood, metal and other surfaces.",
+      "limit": "Not a cost map, and not every material path writes the same G-buffer data.",
+      "route": "View Mode \u2192 Buffer Visualization \u2192 Roughness.",
+      "source": "SM6/Viewport/14-Roughness.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "859f837e39913be73692cbeb78b2e62e602a203b71ecda078b58da6074ff0fd7"
+    },
+    {
+      "id": 16,
+      "file": "Images/15-World-Normal.png",
+      "title": "Buffer Visualization: World Normal",
+      "group": "Materials",
+      "question": "Are the shading normals producing the intended surface detail?",
+      "show": "Inspect orientation changes and compare them with the Lit highlights.",
+      "limit": "Color represents vector direction; brightness is not material expense.",
+      "route": "View Mode \u2192 Buffer Visualization \u2192 World Normal.",
+      "source": "SM6/Viewport/15-World-Normal.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "2b331ef97f375603d1bb18ced1b027e24fe06fffcc6a19f218a7feb02afaf115"
+    },
+    {
+      "id": 17,
+      "file": "Images/06-Glass-Material-Graph.png",
+      "title": "Glass material and stats entry points",
+      "group": "Materials",
+      "question": "What does this actual glass shader do, and where do we inspect its compiled variants?",
+      "show": "Trace texture channels into Base Color, Roughness, Normal and Opacity. Identify Stats and Platform Stats.",
+      "limit": "Graph recognition capture; the lower statistics table is not shown in full. Do not infer a measured saving or target instruction total from this image.",
+      "route": "Open /Game/Cigar_room/Materials/M_Glass. Use Stats and Platform Stats, choose the target and pass, then compare variants.",
+      "source": "UI/06-Glass-Material-Graph.png",
+      "source_size": [
+        1374,
+        1319
+      ],
+      "crop": [
+        0,
+        0,
+        1374,
+        1220
+      ],
+      "sha256": "4edb61ed80fb0ab25af74c09c2c880add7247250eb4b8e6cd519adf8d9d554af"
+    },
+    {
+      "id": 18,
+      "file": "Images/07-Wireframe.png",
+      "title": "Wireframe",
+      "group": "Geometry",
+      "question": "What geometry is present in this view?",
+      "show": "Locate dense conventional/fallback representations and compare them with the Nanite diagnostics.",
+      "limit": "Visible wireframe is not a direct count of submitted Nanite clusters or final GPU cost.",
+      "route": "View Mode \u2192 Wireframe.",
+      "source": "SM6/Viewport/07-Wireframe.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "f0b74d6269c3f86998484e33ee11b7b2e66d12e0c681ae9c3e7061a34d4f42f8"
+    },
+    {
+      "id": 19,
+      "file": "Images/08-Nanite-Clusters.png",
+      "title": "Nanite: clusters",
+      "group": "Geometry",
+      "question": "How is the visible geometry grouped?",
+      "show": "Inspect cluster boundaries on furniture and architectural details.",
+      "limit": "More or fewer colors alone does not establish cost or image quality.",
+      "route": "View Mode \u2192 Nanite Visualization \u2192 Clusters.",
+      "source": "SM6/Viewport/08-Nanite-Clusters.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "c878e0877244dad1bf5c563b9881232261df89fefdd55cfaac4877b49dfe6732"
+    },
+    {
+      "id": 20,
+      "file": "Images/09-Nanite-Triangles.png",
+      "title": "Nanite: triangles",
+      "group": "Geometry",
+      "question": "Which geometric detail survives at this camera distance?",
+      "show": "Compare the same assets with Lit and the cluster view.",
+      "limit": "This is the Nanite representation, distinct from fallback geometry and collision consumers.",
+      "route": "View Mode \u2192 Nanite Visualization \u2192 Triangles.",
+      "source": "SM6/Viewport/09-Nanite-Triangles.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "81c45ac253ce0a6f4a9c8929bf0cae01f8051299e8877d417936bb63b0f5de1c"
+    },
+    {
+      "id": 21,
+      "file": "Images/10-Nanite-Mask.png",
+      "title": "Nanite: mask",
+      "group": "Geometry",
+      "question": "Which visible surfaces are using the Nanite path?",
+      "show": "Compare green Nanite coverage with the non-Nanite window regions and inspect their material assignments.",
+      "limit": "A non-Nanite surface may be intentional; translucent glass requires an appropriate representation.",
+      "route": "View Mode \u2192 Nanite Visualization \u2192 Mask.",
+      "source": "SM6/Viewport/10-Nanite-Mask.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "fbf54e7434eadc9a6d7446f35ae8baa628037e7d4a67bb83e4fba941f571357e"
+    },
+    {
+      "id": 22,
+      "file": "Images/18-Nanite-Overdraw.png",
+      "title": "Nanite: overdraw",
+      "group": "Geometry",
+      "question": "Where does overlapping Nanite geometry need investigation?",
+      "show": "Inspect the actual Nanite overdraw visualization, then check relevant GPU work and image requirements.",
+      "limit": "Different geometry/cost diagnostic from conventional Quad Overdraw; do not treat their colors as the same scale.",
+      "route": "View Mode \u2192 Nanite Visualization \u2192 Overdraw. This capture uses the recorded alternate look-at direction.",
+      "source": "SM6/Viewport/18-Nanite-Overdraw.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "ebc9e887e5f858a2d1133eec2970446a2fb694d384726b17e95f2d203d27ca44"
+    },
+    {
+      "id": 23,
+      "file": "Images/05-Render-Resource-Viewer.png",
+      "title": "Render Resource Viewer",
+      "group": "Memory",
+      "question": "Which GPU resource allocations deserve investigation?",
+      "show": "Inspect named Nanite, VSM, distance-field and Lumen resources; explain the active Resident/Transient filters.",
+      "limit": "The displayed 2747 MB is a filtered editor snapshot, not total device VRAM usage, packaged memory or project asset size.",
+      "route": "Tools \u2192 Render Resource Viewer. Refresh, inspect filters, then search resource names/owners.",
+      "source": "UI/05-Render-Resource-Viewer.png",
+      "source_size": [
+        1006,
+        606
+      ],
+      "crop": null,
+      "sha256": "529f0c2db14377f8e5ed1bbaf30482d95afa07c6c2c7570c9b00f3e5a4b37a77"
+    },
+    {
+      "id": 24,
+      "file": "Images/16-Custom-Optimization-Overlay.png",
+      "title": "Custom optimization overlay",
+      "group": "Audit",
+      "question": "Which authored conditions warrant a closer look?",
+      "show": "Show candidate bounds on the furnished scene, then identify the rule and observed property in the dashboard.",
+      "limit": "Candidate bounds are neither shaded-pixel counts nor proven savings. The overlay itself adds diagnostic work.",
+      "route": "Tools \u2192 Week 10 Optimization \u2192 Toggle Custom Optimization View.",
+      "source": "SM6/Viewport/16-Custom-Optimization-Overlay.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "d73398cbedbd10d01adf564a9f12a212fb78e09592e90ddecd116d4aadc928c9"
+    },
+    {
+      "id": 25,
+      "file": "Images/17-Custom-Overlay-Off.png",
+      "title": "Overlay disabled: timing state",
+      "group": "Audit",
+      "question": "Have we restored the scene for a fair measurement?",
+      "show": "Show the same Audit Camera without candidate bounds.",
+      "limit": "This is a reset state, not an optimized treatment.",
+      "route": "Toggle the overlay off, restore Lit and match capture settings before timing.",
+      "source": "SM6/Viewport/17-Custom-Overlay-Off.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "dab710ef33ffd76a1e069235ae6dd1b8d778434017d54fc37db8be932c260873"
+    },
+    {
+      "id": 26,
+      "file": "Images/08-Custom-Audit-Dashboard.png",
+      "title": "Custom validation dashboard",
+      "group": "Audit",
+      "question": "Can we trace a warning to a specific actor, property and next test?",
+      "show": "Use the generated 376-candidate report, filter rules and inspect the observation/policy/next-check fields.",
+      "limit": "Snapshot of the loaded editor world. A finding is not a measured runtime cost, and unloaded/runtime-spawned content is outside this scan.",
+      "route": "Tools \u2192 Week 10 Optimization \u2192 Validate and Generate Dashboard. Open Saved/Week10Optimization/index.html.",
+      "source": "UI/08-Custom-Audit-Dashboard.png",
+      "source_size": [
+        1600,
+        1000
+      ],
+      "crop": null,
+      "sha256": "0b03ac51b03ee4fd14934e0eb769b772d463b783814dadc88aae62d31d3fe473"
+    },
+    {
+      "id": 27,
+      "file": "Images/01-Lounge-Editor.png",
+      "title": "Editor context and source level",
+      "group": "Scene",
+      "question": "Are we in the correct furnished map?",
+      "show": "Confirm Lounge_Unoptimized, 222 actors and the actual room before the session.",
+      "limit": "UI layout is illustrative; the clean PNGs are better for projection.",
+      "route": "Open Week10Assessment.uproject; verify DX12 SM6 in the startup log.",
+      "source": "UI/01-Lounge-Editor.png",
+      "source_size": [
+        1286,
+        726
+      ],
+      "crop": null,
+      "sha256": "d185266bf3085af427e914171a889e5c304f1e40e1e82400067375d2f5173796"
+    },
+    {
+      "id": 28,
+      "file": "Images/12-Lit-Clean.png",
+      "title": "Return to the original Lit view",
+      "group": "Scene",
+      "question": "Have diagnostic modes been restored?",
+      "show": "End the demonstration with the original room and a clear one-change investigation.",
+      "limit": "No optimization treatment was applied or saved during these captures.",
+      "route": "Restore Lit, clear Nanite/VSM visualizations, disable the overlay and keep the reference unchanged.",
+      "source": "SM6/Viewport/12-Lit-Clean.png",
+      "source_size": [
+        1920,
+        1080
+      ],
+      "crop": null,
+      "sha256": "25f93b2f2dc23b74b42eb9fd6c00f357133149afcfe21d80265c50f05d38c841"
+    }
+  ]
+}
