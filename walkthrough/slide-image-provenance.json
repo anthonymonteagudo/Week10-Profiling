@@ -1,26 +1,5 @@
 [
   {
-    "slide": 104,
-    "chapter": "shader",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-104-1.png",
-    "context": "MATERIAL AND SHADER LOGIC / Runtime zero is not a static feature switch"
-  },
-  {
-    "slide": 105,
-    "chapter": "shader",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-105-1.png",
-    "context": "MATERIAL AND SHADER LOGIC / Move suitable UV math to the vertex stage"
-  },
-  {
-    "slide": 114,
-    "chapter": "shader",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-114-1.png",
-    "context": "MATERIAL DATA / Same image, different parameter storage"
-  },
-  {
     "slide": 114,
     "chapter": "shader",
     "deck_media": "ppt/media/image102.png",
@@ -30,30 +9,9 @@
   {
     "slide": 115,
     "chapter": "shader",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-115-1.png",
-    "context": "MATERIAL COST / Does a master material cost more?"
-  },
-  {
-    "slide": 115,
-    "chapter": "shader",
     "deck_media": "ppt/media/image104.png",
     "file": "slide-115-2.png",
     "context": "MATERIAL COST / Does a master material cost more?"
-  },
-  {
-    "slide": 120,
-    "chapter": "effects",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-120-1.png",
-    "context": "ANIMATION AND VFX / One debris burst, three treatments"
-  },
-  {
-    "slide": 121,
-    "chapter": "effects",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-121-1.png",
-    "context": "ANIMATION AND VFX / The same burst from two views"
   },
   {
     "slide": 121,
@@ -61,20 +19,6 @@
     "deck_media": "ppt/media/image108.png",
     "file": "slide-121-2.png",
     "context": "ANIMATION AND VFX / The same burst from two views"
-  },
-  {
-    "slide": 122,
-    "chapter": "effects",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-122-1.png",
-    "context": "ANIMATION AND VFX / CPU time fell. Frame time held."
-  },
-  {
-    "slide": 125,
-    "chapter": "effects",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-125-1.png",
-    "context": "NIAGARA / Simulation target and effect policy"
   },
   {
     "slide": 125,
@@ -86,23 +30,9 @@
   {
     "slide": 128,
     "chapter": "effects",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-128-1.png",
-    "context": "NIAGARA SCALABILITY / A distance budget changes the workload"
-  },
-  {
-    "slide": 128,
-    "chapter": "effects",
     "deck_media": "ppt/media/image116.png",
     "file": "slide-128-2.png",
     "context": "NIAGARA SCALABILITY / A distance budget changes the workload"
-  },
-  {
-    "slide": 52,
-    "chapter": "geometry",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-052-1.png",
-    "context": "DEMO EXTENSIONS / Conventional LODs and Simplygon"
   },
   {
     "slide": 56,
@@ -112,39 +42,11 @@
     "context": "GEOMETRY AND REPRESENTATION / Grouping, instancing and merging"
   },
   {
-    "slide": 56,
-    "chapter": "geometry",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-056-2.png",
-    "context": "GEOMETRY AND REPRESENTATION / Grouping, instancing and merging"
-  },
-  {
-    "slide": 60,
-    "chapter": "geometry",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-060-1.png",
-    "context": "GEOMETRY AND REPRESENTATION / Lightmap density and bake resolution"
-  },
-  {
     "slide": 60,
     "chapter": "geometry",
     "deck_media": "ppt/media/image39.png",
     "file": "slide-060-2.png",
     "context": "GEOMETRY AND REPRESENTATION / Lightmap density and bake resolution"
-  },
-  {
-    "slide": 63,
-    "chapter": "geometry",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-063-1.png",
-    "context": "GEOMETRY AND REPRESENTATION / Cull Distance Volumes and actor bounds"
-  },
-  {
-    "slide": 87,
-    "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-087-1.png",
-    "context": "TEXTURE DATA / Texture compression changes sampled values"
   },
   {
     "slide": 87,
@@ -156,13 +58,6 @@
   {
     "slide": 88,
     "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-088-1.png",
-    "context": "TEXTURE DATA / Padding protects filtered texture edges"
-  },
-  {
-    "slide": 88,
-    "chapter": "texture-depth",
     "deck_media": "ppt/media/image76.png",
     "file": "slide-088-2.png",
     "context": "TEXTURE DATA / Padding protects filtered texture edges"
@@ -170,30 +65,9 @@
   {
     "slide": 89,
     "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-089-1.png",
-    "context": "TEXTURE DATA / Texel density connects detail to world scale"
-  },
-  {
-    "slide": 89,
-    "chapter": "texture-depth",
     "deck_media": "ppt/media/image78.png",
     "file": "slide-089-2.png",
     "context": "TEXTURE DATA / Texel density connects detail to world scale"
-  },
-  {
-    "slide": 91,
-    "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-091-1.png",
-    "context": "DEMO EXTENSIONS / Automated texture packing"
-  },
-  {
-    "slide": 93,
-    "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-093-1.png",
-    "context": "MATERIALS AND SHADER LOGIC / Unused alpha and texture resource cost"
   },
   {
     "slide": 93,
@@ -205,13 +79,6 @@
   {
     "slide": 95,
     "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-095-1.png",
-    "context": "WEEK 9 GALLERY / Brick relief and sampling cost"
-  },
-  {
-    "slide": 95,
-    "chapter": "texture-depth",
     "deck_media": "ppt/media/image91.png",
     "file": "slide-095-2.png",
     "context": "WEEK 9 GALLERY / Brick relief and sampling cost"
@@ -219,37 +86,9 @@
   {
     "slide": 96,
     "chapter": "texture-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-096-1.png",
-    "context": "DEMO EXTENSIONS / Texture arrays"
-  },
-  {
-    "slide": 96,
-    "chapter": "texture-depth",
     "deck_media": "ppt/media/image93.png",
     "file": "slide-096-2.png",
     "context": "DEMO EXTENSIONS / Texture arrays"
-  },
-  {
-    "slide": 104,
-    "chapter": "material-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-104-1.png",
-    "context": "MATERIAL AND SHADER LOGIC / Runtime zero is not a static feature switch"
-  },
-  {
-    "slide": 105,
-    "chapter": "material-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-105-1.png",
-    "context": "MATERIAL AND SHADER LOGIC / Move suitable UV math to the vertex stage"
-  },
-  {
-    "slide": 110,
-    "chapter": "material-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-110-1.png",
-    "context": "MATERIAL INSTANCES / Instance overrides and feature removal"
   },
   {
     "slide": 110,
@@ -261,13 +100,6 @@
   {
     "slide": 114,
     "chapter": "material-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-114-1.png",
-    "context": "MATERIAL DATA / Same image, different parameter storage"
-  },
-  {
-    "slide": 114,
-    "chapter": "material-depth",
     "deck_media": "ppt/media/image102.png",
     "file": "slide-114-2.png",
     "context": "MATERIAL DATA / Same image, different parameter storage"
@@ -275,37 +107,9 @@
   {
     "slide": 115,
     "chapter": "material-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-115-1.png",
-    "context": "MATERIAL COST / Does a master material cost more?"
-  },
-  {
-    "slide": 115,
-    "chapter": "material-depth",
     "deck_media": "ppt/media/image104.png",
     "file": "slide-115-2.png",
     "context": "MATERIAL COST / Does a master material cost more?"
-  },
-  {
-    "slide": 118,
-    "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-118-1.png",
-    "context": "ANIMATION AND VFX / Vertex animation textures"
-  },
-  {
-    "slide": 120,
-    "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-120-1.png",
-    "context": "ANIMATION AND VFX / One debris burst, three treatments"
-  },
-  {
-    "slide": 121,
-    "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-121-1.png",
-    "context": "ANIMATION AND VFX / The same burst from two views"
   },
   {
     "slide": 121,
@@ -317,23 +121,9 @@
   {
     "slide": 124,
     "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-124-1.png",
-    "context": "ANIMATION AND EFFECTS / Uncharted 4: make the card fit each frame"
-  },
-  {
-    "slide": 124,
-    "chapter": "effects-depth",
     "deck_media": "ppt/media/image113.png",
     "file": "slide-124-2.png",
     "context": "ANIMATION AND EFFECTS / Uncharted 4: make the card fit each frame"
-  },
-  {
-    "slide": 127,
-    "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-127-1.png",
-    "context": "NIAGARA SIMULATION / Same effect, different simulation target"
   },
   {
     "slide": 127,
@@ -345,30 +135,9 @@
   {
     "slide": 128,
     "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-128-1.png",
-    "context": "NIAGARA SCALABILITY / A distance budget changes the workload"
-  },
-  {
-    "slide": 128,
-    "chapter": "effects-depth",
     "deck_media": "ppt/media/image116.png",
     "file": "slide-128-2.png",
     "context": "NIAGARA SCALABILITY / A distance budget changes the workload"
-  },
-  {
-    "slide": 168,
-    "chapter": "effects-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-168-1.png",
-    "context": "19  LIFECYCLE / Spawn and destroy versus pooling"
-  },
-  {
-    "slide": 140,
-    "chapter": "shipping-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-140-1.png",
-    "context": "PERFORMANCE BUILDS / What a perf bot runs"
   },
   {
     "slide": 140,
@@ -380,23 +149,9 @@
   {
     "slide": 144,
     "chapter": "shipping-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-144-1.png",
-    "context": "PERFORMANCE BUILDS / Three launches of the same build"
-  },
-  {
-    "slide": 144,
-    "chapter": "shipping-depth",
     "deck_media": "ppt/media/image122.png",
     "file": "slide-144-2.png",
     "context": "PERFORMANCE BUILDS / Three launches of the same build"
-  },
-  {
-    "slide": 145,
-    "chapter": "shipping-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-145-1.png",
-    "context": "TRACE THE HITCH / A slow frame with a steady GPU"
   },
   {
     "slide": 145,
@@ -408,23 +163,9 @@
   {
     "slide": 146,
     "chapter": "shipping-depth",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-146-1.png",
-    "context": "TRACE THE HITCH / Follow the waits in Unreal Insights"
-  },
-  {
-    "slide": 146,
-    "chapter": "shipping-depth",
     "deck_media": "ppt/media/image124.png",
     "file": "slide-146-2.png",
     "context": "TRACE THE HITCH / Follow the waits in Unreal Insights"
-  },
-  {
-    "slide": 17,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-017-1.png",
-    "context": "PROFILING AND CAPTURE / Factorio: cache the work that stays valid"
   },
   {
     "slide": 17,
@@ -436,13 +177,6 @@
   {
     "slide": 42,
     "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-042-1.png",
-    "context": "LIGHTING AND SHADOWS / DOOM: narrow each surface\u2019s light list"
-  },
-  {
-    "slide": 42,
-    "chapter": "cases",
     "deck_media": "ppt/media/image18.png",
     "file": "slide-042-2.png",
     "context": "LIGHTING AND SHADOWS / DOOM: narrow each surface\u2019s light list"
@@ -450,23 +184,9 @@
   {
     "slide": 57,
     "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-057-1.png",
-    "context": "GEOMETRY AND REPRESENTATION / Fortnite: replace distant groups with a proxy"
-  },
-  {
-    "slide": 57,
-    "chapter": "cases",
     "deck_media": "ppt/media/image35.png",
     "file": "slide-057-2.png",
     "context": "GEOMETRY AND REPRESENTATION / Fortnite: replace distant groups with a proxy"
-  },
-  {
-    "slide": 58,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-058-1.png",
-    "context": "GEOMETRY AND REPRESENTATION / LEGO: build geometry for the target"
   },
   {
     "slide": 58,
@@ -483,32 +203,11 @@
     "context": "GEOMETRY AND REPRESENTATION / Fortnite: more leaf geometry can cost less"
   },
   {
-    "slide": 74,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-074-2.png",
-    "context": "GEOMETRY AND REPRESENTATION / Fortnite: more leaf geometry can cost less"
-  },
-  {
-    "slide": 102,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-102-1.png",
-    "context": "MATERIALS AND SHADER LOGIC / Horizon: spend samples where clouds exist"
-  },
-  {
     "slide": 102,
     "chapter": "cases",
     "deck_media": "ppt/media/image98.png",
     "file": "slide-102-2.png",
     "context": "MATERIALS AND SHADER LOGIC / Horizon: spend samples where clouds exist"
-  },
-  {
-    "slide": 108,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-108-1.png",
-    "context": "MATERIALS AND SHADER LOGIC / Tsushima: let many systems share one wind"
   },
   {
     "slide": 108,
@@ -520,23 +219,9 @@
   {
     "slide": 116,
     "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-116-1.png",
-    "context": "MATERIALS AND SHADER LOGIC / Nanite work also follows material diversity"
-  },
-  {
-    "slide": 116,
-    "chapter": "cases",
     "deck_media": "ppt/media/image105.png",
     "file": "slide-116-2.png",
     "context": "MATERIALS AND SHADER LOGIC / Nanite work also follows material diversity"
-  },
-  {
-    "slide": 119,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-119-1.png",
-    "context": "ANIMATION AND EFFECTS / Fortnite: bake branch motion into a texture"
   },
   {
     "slide": 119,
@@ -548,22 +233,8 @@
   {
     "slide": 124,
     "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-124-1.png",
-    "context": "ANIMATION AND EFFECTS / Uncharted 4: make the card fit each frame"
-  },
-  {
-    "slide": 124,
-    "chapter": "cases",
     "deck_media": "ppt/media/image113.png",
     "file": "slide-124-2.png",
     "context": "ANIMATION AND EFFECTS / Uncharted 4: make the card fit each frame"
-  },
-  {
-    "slide": 139,
-    "chapter": "cases",
-    "deck_media": "ppt/media/image1.png",
-    "file": "slide-139-1.png",
-    "context": "PACKAGED BUILDS AND REGRESSION CHECKS / Fortnite: move first-use work into loading"
   }
 ]
